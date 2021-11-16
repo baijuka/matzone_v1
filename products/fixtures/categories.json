@@ -1,0 +1,74 @@
+[
+    {
+      "pk": 1,
+      "model": "products.category",
+      "fields": {
+        "name": "rubber_mat_rolls",
+        "friendly_name": "Rubber Mat Rolls"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.category",
+      "fields": {
+        "name": "ind_mats",
+        "friendly_name": "Industrial & Workplace Mats"
+      }
+    },
+    {
+      "pk": 3,
+      "model": "products.category",
+      "fields": {
+        "name": "sports_mats",
+        "friendly_name": "Sports & Gym Mats"
+      }
+    },
+    {
+      "pk": 4,
+      "model": "products.category",
+      "fields": {
+        "name": "household_mats",
+        "friendly_name": "Household Mats"
+      }
+    },
+    {
+      "pk": 5,
+      "model": "products.category",
+      "fields": {
+        "name": "kitchen_mats",
+        "friendly_name": "Kitchen Mats"
+      }
+    },
+    {
+      "pk": 6,
+      "model": "products.category",
+      "fields": {
+        "name": "coco_brush_grill",
+        "friendly_name": "Coco Brush Grill Mats"
+      }
+    },
+    {
+      "pk": 7,
+      "model": "products.category",
+      "fields": {
+        "name": "coco_rubber",
+        "friendly_name": "Coco Rubber Mats"
+      }
+    },
+    {
+      "pk": 8,
+      "model": "products.category",
+      "fields": {
+        "name": "coco_nonbrush_grill",
+        "friendly_name": "Coco Non-Brush Grill Mats"
+      }
+    },
+    {
+      "pk": 9,
+      "model": "products.category",
+      "fields": {
+        "name": "coco_nonbrush_holander",
+        "friendly_name": "Coco Non-Brush Holander Gril Mats"
+      }
+    }
+  ]

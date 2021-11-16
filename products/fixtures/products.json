@@ -1,0 +1,44 @@
+[
+    {
+      "pk": 1,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001340155",
+        "name": "Dolphin Bubble Roll- Yellow Border",
+        "description": "Yellow Border with Rubber Compound enhances durability.Tough and resilient. Several air pockets to enhance anti-fatigue property. Beveled edge of the Roll is brightly colored for increased awareness of location of the mat for improved safety when snowing.",
+        "price": 53.99,
+        "category": 1,
+        "rating": 4.6,
+        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0709201205510679M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+        "image": "rm-rol-1.jpg"
+      }
+    },
+    {
+      "pk": 2,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5001600425",
+        "name": "Coco Brush Grill Mat DCR 1489",
+        "description": "Can be used as entrance mat, door mat",
+        "price": 8.99,
+        "category": 6,
+        "rating": 4.6,
+        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0113201617034987M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+        "image": "cm-cocobrushgrill-1.jpg"
+      }
+    },
+    {
+      "pk": 174,
+      "model": "products.product",
+      "fields": {
+        "sku": "pp5007320233",
+        "name": "Scraper Mat",
+        "description": "Scraper Entrance Mats are designed to stop mud and larger particles of dirt from being tracked inside. Raised oval surface pattern effectively clean shoes and provide enhanced traction.",
+        "price": 36.99,
+        "category": 5,
+        "rating": 5,
+        "image_url": "http://s7d9.scene7.com/is/image/JCPenney/DP0429201617074742M.tif?hei=380&amp;wid=380&op_usm=.4,.8,0,0&resmode=sharp2&op_usm=1.5,.8,0,0&resmode=sharp",
+        "image": "kitchen-mat-1.jpg"
+      }
+    }
+  ]
