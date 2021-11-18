@@ -1,10 +1,9 @@
-
 html {
     height: 100%;
 }
 
 body {
-    background: url('/media/homepage_background_1.png') no-repeat center center fixed;
+    background: url('/media/home_background_2.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -61,7 +60,17 @@ body {
     background: #000 !important;
 }
 
-/* --------------------------------- Media queries */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
+}
+
+/* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
