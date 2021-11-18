@@ -43,32 +43,8 @@
       "pk": 6,
       "model": "products.category",
       "fields": {
-        "name": "coco_brush_grill",
-        "friendly_name": "Coco Brush Grill Mats"
-      }
-    },
-    {
-      "pk": 7,
-      "model": "products.category",
-      "fields": {
-        "name": "coco_rubber",
-        "friendly_name": "Coco Rubber Mats"
-      }
-    },
-    {
-      "pk": 8,
-      "model": "products.category",
-      "fields": {
-        "name": "coco_nonbrush_grill",
-        "friendly_name": "Coco Non-Brush Grill Mats"
-      }
-    },
-    {
-      "pk": 9,
-      "model": "products.category",
-      "fields": {
-        "name": "coco_nonbrush_holander",
-        "friendly_name": "Coco Non-Brush Holander Gril Mats"
+        "name": "coir_mats",
+        "friendly_name": "Coir Mats"
       }
     }
   ]
