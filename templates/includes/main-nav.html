@@ -17,12 +17,12 @@
                 Rubber Mats
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="rubber-link">
-                <a href="" class="dropdown-item">Rubber Mat Rolls</a>
-                <a href="" class="dropdown-item">Industrial/Workplace Mats</a>
-                <a href="" class="dropdown-item">Sports/Gym Mats</a>
-                <a href="" class="dropdown-item">Household/Gym Mats</a>
-                <a href="" class="dropdown-item">Kitceh Mats</a>
-                <a href="" class="dropdown-item">All Rubber Mats</a>
+                <a href="{% url 'products' %}?category=rubber_mat_rolls" class="dropdown-item" class="dropdown-item">Rubber Mat Rolls</a>
+                <a href="{% url 'products' %}?category=ind_mats" class="dropdown-item">Industrial/Workplace Mats</a>
+                <a href="{% url 'products' %}?category=sports_mats" class="dropdown-item">Sports/Gym Mats</a>
+                <a href="{% url 'products' %}?category=household_mats" class="dropdown-item">Household/Gym Mats</a>
+                <a href="{% url 'products' %}?category=kitchen_mats" class="dropdown-item">Kitceh Mats</a>
+                <a href="{% url 'products' %}?category=rubber_mat_rolls,ind_mats,sports_mats,household_mats,kitchen_mats" class="dropdown-item">All Rubber Mats</a>
             </div>
         </li>
 
@@ -31,11 +31,7 @@
                 Coir Mats
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="coir-link">
-                <a href="" class="dropdown-item">Coco Brush Grill Mats</a>
-                <a href="" class="dropdown-item">Coco Rubber Mats</a>
-                <a href="" class="dropdown-item">Coco Non-Brush Grill Mats</a>
-                <a href="" class="dropdown-item">Coco Non-Brush Holander Grill Mat</a>
-                <a href="" class="dropdown-item">All Coir Mats</a>
+                <a href="{% url 'products' %}?category=coir_mats" class="dropdown-item">All Coir Mats</a>
             </div>
         </li>
 
