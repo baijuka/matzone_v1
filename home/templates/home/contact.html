@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} - contact us {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/main.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="title mb-4 text-center">Contact Us</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="form-container col-8 offset-2 p-5">
+    <form method="POST" class="was-validated" action="{% url 'contact_submit' %}">
+      {% csrf_token %}
+      <div class="row">
+        <div class="col-25">
+          <label for="fname">First Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="fname" name="firstname" placeholder="Your name.."  pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="lname">Last Name</label>
+        </div>
+        <div class="col-75">
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="country">Email</label>
+        </div>
+        <div class="col-75">
+          <input type="email" id="email" name="email" placeholder="Your Email.." required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-25">
+          <label for="subject">Message</label>
+        </div>
+        <div class="col-75">
+          <textarea id="subject" name="message" placeholder="Your message.." style="height:200px" pattern="^[A-Za-z0-9 _]*[A-Za-z0-9][A-Za-z0-9 _]*$" required></textarea>
+        </div>
+      </div>
+      <br>
+      <div class="row margin">
+        <input type="submit" value="Submit" id="submit" class="btn btn-secondary">
+      </div>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} - about {% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/main.css' %}">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container margin">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="title mb-4 text-center">About Us</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="jumbotron">
+                <h1 class="display-4">Mats made to feel you comfortable!</h1>
+                <p class="lead">We makes your footing memorable by supplying innovative products made with state of the art technology and design.
+                    A range of products for you to choose depending on your requirements and situations.
+                </p>
+                <hr class="my-4">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="jumbotron">
+            <h1 class="display-4">Our Latest Additions</h1>
+            <p class="lead">
+                We offer high quality rolls of rubber matting with excellent anti-slip properties which are most suitable for both home & 
+                commercial use. Rubber Mat Roll will protect floors and your commercial equipment..
+            </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

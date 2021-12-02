@@ -1,5 +1,8 @@
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item">
+            <a href="{% url 'about' %}" class="logo-font font-weight-bold nav-link text-black mr-5 nav-text" id="about">About</a>
+        </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
@@ -35,7 +38,7 @@
             </div>
         </li>
 
-        <li class="nav-item dropdown">
+        <!-- <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
@@ -45,6 +48,9 @@
                 <a href="" class="dropdown-item">Clearance</a>
                 <a href="" class="dropdown-item">All Specials</a>
             </div>
+        </li> -->
+        <li class="nav-item">
+            <a href="{% url 'contact_form' %}" class="logo-font font-weight-bold nav-link text-black mr-5 nav-text" id="about">Contact Us</a>
         </li>
     </ul>
 </div>
