@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block extra_title %} Page Not Found {% endblock %}
+{% block content %}
+<div class="margin">
+    <div class="center">
+        <img src="{{ MEDIA_URL }}404.png" alt="Page not found error image">
+        <h1>Oops! Page not found!</h1>
+        <div>
+            <a href="{% url 'products' %}" class="btn btn-outline-dark mt-2">
+                <span >
+                    <i class="fas fa-chevron-left"></i>
+                </span>
+                Back to the shopping!
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}

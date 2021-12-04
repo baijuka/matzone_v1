@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/media/home_background_2.jpg') no-repeat center center fixed;
+    background: url('/media/home_background_1.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #555;
@@ -124,7 +124,7 @@ footer {
   .social:hover {
     color: #9e2a2b;
   }
-  
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
