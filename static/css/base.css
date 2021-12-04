@@ -109,11 +109,13 @@ input[name='q']::placeholder {
 /* Footer */
 footer {
     padding: 8px;
-    background-color: #4d4140 !important ;
+    background-color: #383636 !important ;
     color: #f8f9fa;
     text-align: center;
     position: absolute; 
-    left: 0 ; right: 0; bottom: 0; 
+    margin-left: 0 ; 
+    margin-right: 0; 
+    margin-bottom: 0; 
     height:[footer-height] 
   }
   .social {
