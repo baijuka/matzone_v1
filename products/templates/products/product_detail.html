@@ -52,25 +52,13 @@
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
-                            <!-- {% with product.has_sizes as s %}
-                            {% if s %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="xs">XS</option>
-                                        <option value="s">S</option>
-                                        <option value="m" selected>M</option>
-                                        <option value="l">L</option>
-                                        <option value="xl">XL</option>
-                                    </select>
-                                </div>
-                            {% endif %} -->
+                          
                             <div class="col-12"></div>
                                 <p><strong>Size:</strong></p>
                                 {%if product.productvariation_set.all %}
                                 <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
                                 {% for psize in product.productvariation_set.all %}
-                                    <option value='{{ psize.product_size }}'>{{ psize.product_size }}</option>
+                                    <option value='{{ psize.product_price }}'>{{ psize.product_size }}</option>
                                 {% endfor %}
                                 </select>
                                 {% endif %}
@@ -113,7 +101,7 @@
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
+                            
                         </div>
                     </form>
                 </div>
@@ -123,6 +111,7 @@
 {% endblock %}
 
 {% block postloadjs %}
+    <script src="{% static 'js/price.js'%}" />
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}

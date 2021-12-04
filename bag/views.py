@@ -1,13 +1,13 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
 
-from products.models import Product
+from products.models import Product, ProductVariation
 
 # Create your views here.
 
 def view_bag(request):
     """ A view that renders the bag contents page """
-
+    print('Baaaaag', request.session.get('bag', {}))
     return render(request, 'bag/bag.html')
 
 
@@ -18,8 +18,12 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
+    print('POST values', request.POST)
     if 'product_size' in request.POST:
-        size = request.POST['product_size']
+        product_variation = ProductVariation.objects.filter(product=product, product_price=float(request.POST['product_size']))
+        size = list(product_variation)[0].product_size
+        # size = request.POST['product_size']
+        print('Selected size', size)
     bag = request.session.get('bag', {})
 
     if size:
