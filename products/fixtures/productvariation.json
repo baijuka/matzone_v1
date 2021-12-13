@@ -1,0 +1,572 @@
+[
+    {
+      "pk": 1,
+      "model": "products.productvariation",
+      "fields": {
+        "product": 1,
+        "size": "0.9 x 9.3 m",
+        "price": 53.99,
+        "stock": 1000
+      }
+    },
+    {
+        "pk": 2,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 1,
+          "size": "1.20 x 9.3 m",
+          "price": 65.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 3,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 2,
+          "size": "0.9 x 9.33 m",
+          "price": 45.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 4,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 2,
+          "size": "1.20 x 9.33 m",
+          "price": 50.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 5,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 3,
+          "size": "1 x 9.3 m",
+          "price": 26.45,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 6,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 3,
+          "size": "1.3 x 9.3 m",
+          "price": 30.5,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 7,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 3,
+          "size": "1.94 x 9.3 m",
+          "price": 35.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 8,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 4,
+          "size": "1 X 7.5 m",
+          "price": 40.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 9,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 4,
+          "size": "1 X 9 m",
+          "price": 45.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 10,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 5,
+          "size": "90 x 190 cm",
+          "price": 60.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 11,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 5,
+          "size": "190 x 176 cm",
+          "price": 65.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 12,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 5,
+          "size": "190 x 264 cm",
+          "price": 70.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 13,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 6,
+          "size": "52 x 52 cm x 8 mm",
+          "price": 10.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 14,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 6,
+          "size": "52 x 52 cm x 9 mm",
+          "price": 11.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 15,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 7,
+          "size": "50 x 50 cm x 8 mm",
+          "price": 11.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 16,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 8,
+          "size": "60 x 90 cm",
+          "price": 11.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 17,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 8,
+          "size": "90 x 120 cm",
+          "price": 12.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 18,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 9,
+          "size": "100 x 100 cm",
+          "price": 12.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 19,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 10,
+          "size": "71 x 78 cm",
+          "price": 12.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 20,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 10,
+          "size": "71 x 80 cm",
+          "price": 14.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 21,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 11,
+          "size": "90 X 120 cm",
+          "price": 12.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 22,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 11,
+          "size": "125 X 186 cm",
+          "price": 14.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 23,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 12,
+          "size": "91 X 91 cm",
+          "price": 8.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 24,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 12,
+          "size": "91 X 98 cm",
+          "price": 9.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 25,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 13,
+          "size": "91 X 91 cm x 14 mm",
+          "price": 15.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 26,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 13,
+          "size": "91 X 91 cm x 18 mm",
+          "price": 17.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 27,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 14,
+          "size": "50 x 50 cm",
+          "price": 10.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 28,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 15,
+          "size": "50×50 cm",
+          "price": 10.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 29,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 15,
+          "size": "60×60 cm",
+          "price": 12.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 30,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 16,
+          "size": "45 x 75 cm",
+          "price": 12.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 31,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 16,
+          "size": "60 x 80 cm",
+          "price": 14.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 32,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 17,
+          "size": "30 x 45 cm",
+          "price": 8.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 33,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 17,
+          "size": "30 x 60 cm",
+          "price": 10.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 34,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 18,
+          "size": "40 x 70 cm",
+          "price": 11.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 35,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 19,
+          "size": "40 x 80 cm",
+          "price": 12.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 36,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 20,
+          "size": "40 x 45 cm",
+          "price": 11.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 37,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 21,
+          "size": "61 x 81 cm",
+          "price": 8.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 38,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 22,
+          "size": "40 X 60 CM",
+          "price": 5.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 39,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 22,
+          "size": "50 X 80 cm",
+          "price": 6.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 40,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 22,
+          "size": "55 X 85 cm",
+          "price": 7.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 41,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 23,
+          "size": "40 x 60 cm",
+          "price": 10.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 42,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 23,
+          "size": "50 x 80 cm",
+          "price": 11.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 43,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 24,
+          "size": "61 X 91 cm",
+          "price": 7.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 44,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 24,
+          "size": "91 X 91 cm",
+          "price": 8.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 45,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 25,
+          "size": "90 x 150 cm",
+          "price": 8.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 46,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 25,
+          "size": "110 x 172 cm",
+          "price": 10.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 47,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 26,
+          "size": "45 x 75 cm",
+          "price": 12.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 48,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 27,
+          "size": "45 x 75 cm",
+          "price": 11.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 49,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 28,
+          "size": "70 x 110 cm",
+          "price": 13.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 50,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 28,
+          "size": "75 x 120 cm",
+          "price": 14.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 51,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 29,
+          "size": "45 x 75 cm",
+          "price": 14.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 52,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 30,
+          "size": "45 x 75 cm",
+          "price": 13.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 53,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 31,
+          "size": "45 x 75 cm",
+          "price": 13.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 54,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 32,
+          "size": "45 x 75 cm",
+          "price": 13.99,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 55,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 33,
+          "size": "45 x 75 cm",
+          "price": 10.50,
+          "stock": 1000
+        }
+      },  
+      {
+        "pk": 56,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 34,
+          "size": "45 x 75 cm",
+          "price": 11.50,
+          "stock": 1000
+        }
+      },
+      {
+        "pk": 57,
+        "model": "products.productvariation",
+        "fields": {
+          "product": 35,
+          "size": "45 x 75 cm",
+          "price": 14.50,
+          "stock": 1000
+        }
+      }
+]
