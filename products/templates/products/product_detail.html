@@ -29,7 +29,7 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold" id="p_price">£{{ product.productvariation_set.first.product_price }}</p>
+                    <p class="lead mb-0 text-left font-weight-bold" id="p_price">£{{ product.productvariation_set.first.price }}</p>
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -42,35 +42,16 @@
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
-                    {% if request.user.is_superuser %}
-                        <small class="ml-3">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                        </small>
-                    {% endif %}
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
-                        <div class="form-row">
-                            <!-- {% with product.has_sizes as s %}
-                            {% if s %}
-                                <div class="col-12">
-                                    <p><strong>Size:</strong></p>
-                                    <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value="xs">XS</option>
-                                        <option value="s">S</option>
-                                        <option value="m" selected>M</option>
-                                        <option value="l">L</option>
-                                        <option value="xl">XL</option>
-                                    </select>
-                                </div>
-                            {% endif %} -->
-                            <div class="col-12"></div>
+                        <div class="form-row">                          
+                            <div class="col-12">
                                 <p><strong>Size:</strong></p>
-                                {%if product.productvariation_set.all %}
+                                {% if product.productvariation_set.all %}
                                 <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
                                 {% for psize in product.productvariation_set.all %}
-                                    <option value='{{ psize.product_size }}'>{{ psize.product_size }}</option>
+                                    <option value='{{ psize.price }}'>{{ psize.size }}</option>
                                 {% endfor %}
                                 </select>
                                 {% endif %}
@@ -112,8 +93,7 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            {% endwith %}
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">                           
                         </div>
                     </form>
                 </div>
@@ -123,6 +103,7 @@
 {% endblock %}
 
 {% block postloadjs %}
-{{ block.super }}
+    <script src="{% static 'js/price.js' %}" />
+{{ block.super }}   
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
