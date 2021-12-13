@@ -1,7 +1,10 @@
 from django.db import models
 
-
 class Category(models.Model):
+
+    class Meta:
+        verbose_name_plural = 'Categories'
+        
     name = models.CharField(max_length=254)
     friendly_name = models.CharField(max_length=254, null=True, blank=True)
 
@@ -17,8 +20,7 @@ class Product(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
-    has_sizes = models.BooleanField(default=False, null=True, blank=True)
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    baseprice = models.DecimalField(max_digits=6,decimal_places=2, default=0)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
@@ -29,9 +31,9 @@ class Product(models.Model):
 
 class ProductVariation(models.Model):
     product = models.ForeignKey('Product', on_delete=models.CASCADE)
-    product_size = models.CharField(max_length=100, null=True, blank=True)
-    product_price = models.DecimalField(max_digits=6, decimal_places=2)
+    size = models.CharField(max_length=100, null=True, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.IntegerField(default=True)
 
     def __str__(self):
-        return self.product.name +' ('+self.product_size+')'
+        return self.product.name +' ('+self.size+')'

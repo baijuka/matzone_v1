@@ -1,7 +1,17 @@
 from django.contrib import admin
 from .models import Product, Category, ProductVariation
 
-# Register your models here.
+class ProductAdmin(admin.ModelAdmin):
+    list_display = (
+        'sku',
+        'name',
+        'category',
+        'baseprice',
+        'rating',
+        'image',
+    )
+
+    ordering = ('sku',)
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
@@ -9,16 +19,14 @@ class CategoryAdmin(admin.ModelAdmin):
         'name',
     )
 
-class ProductAdmin(admin.ModelAdmin):
+class ProductVariationAdmin(admin.ModelAdmin):
     list_display = (
-        'sku',
-        'name',
-        'category',
+        'product',
+        'size',
         'price',
-        'rating',
-        'image',
+        'stock',
     )
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(ProductVariation)
+admin.site.register(ProductVariation, ProductVariationAdmin)
