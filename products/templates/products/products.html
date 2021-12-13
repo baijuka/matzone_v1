@@ -30,8 +30,8 @@
                         <div class="sort-select-wrapper w-50">
                             <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
                                 <option value="reset" {% if current_sorting == 'None_None' %}selected{% endif %}>Sort by...</option>
-                                <option value="price_asc" {% if current_sorting == 'price_asc' %}selected{% endif %}>Price (low to high)</option>
-                                <option value="price_desc" {% if current_sorting == 'price_desc' %}selected{% endif %}>Price (high to low)</option>
+                                <option value="baseprice_asc" {% if current_sorting == 'baseprice_asc' %}selected{% endif %}>Price (low to high)</option>
+                                <option value="baseprice_desc" {% if current_sorting == 'baseprice_desc' %}selected{% endif %}>Price (high to low)</option>
                                 <option value="rating_asc" {% if current_sorting == 'rating_asc' %}selected{% endif %}>Rating (low to high)</option>
                                 <option value="rating_desc" {% if current_sorting == 'rating_desc' %}selected{% endif %}>Rating (high to low)</option>
                                 <option value="name_asc" {% if current_sorting == 'name_asc' %}selected{% endif %}>Name (A-Z)</option>
@@ -69,7 +69,7 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.productvariation_set.first.product_price }}</p>
+                                            <p class="lead mb-0 text-left font-weight-bold">£{{ product.productvariation_set.first.price }}</p>
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -81,12 +81,6 @@
                                                 <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
-                                            {% endif %}
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
                                             {% endif %}
                                         </div>
                                     </div>
