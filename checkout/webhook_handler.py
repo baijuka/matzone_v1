@@ -4,7 +4,7 @@ from django.template.loader import render_to_string
 from django.conf import settings
 
 from .models import Order, OrderLineItem
-from products.models import Product
+from products.models import Product, ProductVariation
 from profiles.models import UserProfile
 
 import json
