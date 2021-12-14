@@ -45,13 +45,23 @@
                     <p class="mt-3">{{ product.description }}</p>
                     <form class="form" action="{% url 'add_to_bag' product.id %}" method="POST">
                         {% csrf_token %}
+<<<<<<< HEAD
                         <div class="form-row">                          
                             <div class="col-12">
+=======
+                        <div class="form-row">
+                          
+                            <div class="col-12"></div>
+>>>>>>> a6659350daad7aa977d1ffee7caff789a1ffc7cc
                                 <p><strong>Size:</strong></p>
                                 {% if product.productvariation_set.all %}
                                 <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
                                 {% for psize in product.productvariation_set.all %}
+<<<<<<< HEAD
                                     <option value='{{ psize.price }}'>{{ psize.size }}</option>
+=======
+                                    <option value='{{ psize.product_price }}'>{{ psize.product_size }}</option>
+>>>>>>> a6659350daad7aa977d1ffee7caff789a1ffc7cc
                                 {% endfor %}
                                 </select>
                                 {% endif %}
@@ -93,7 +103,12 @@
                                 </a>
                                 <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
                             </div>
+<<<<<<< HEAD
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">                           
+=======
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            
+>>>>>>> a6659350daad7aa977d1ffee7caff789a1ffc7cc
                         </div>
                     </form>
                 </div>
@@ -103,7 +118,12 @@
 {% endblock %}
 
 {% block postloadjs %}
+<<<<<<< HEAD
     <script src="{% static 'js/price.js' %}" />
 {{ block.super }}   
+=======
+    <script src="{% static 'js/price.js'%}" />
+{{ block.super }}
+>>>>>>> a6659350daad7aa977d1ffee7caff789a1ffc7cc
 {% include 'products/includes/quantity_input_script.html' %}
 {% endblock %}
