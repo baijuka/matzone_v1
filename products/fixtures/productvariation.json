@@ -568,15 +568,5 @@
           "price": 14.50,
           "stock": 1000
         }
-      },
-      {
-        "pk": 0,
-        "model": "products.productvariation",
-        "fields": {
-          "product": 35,
-          "size": "10 x 10 cm",
-          "price": 10.00,
-          "stock": 1000
-        }
       }
 ]
