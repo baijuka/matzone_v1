@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, ProductVariation
 from django.db.models.functions import Lower
-
+from django.forms import inlineformset_factory
 from .forms import ProductForm
 
 
@@ -88,6 +88,7 @@ def add_product(request):
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
+        #form = inlineformset_factory(parent_model=Category, model=Product, fk_name='category', extra=1, fields=('category','name', 'sku', 'description',))
         
     template = 'products/add_product.html'
     context = {
