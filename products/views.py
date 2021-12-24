@@ -5,7 +5,7 @@ from django.db.models import Q
 from .models import Product, Category, ProductVariation
 from django.db.models.functions import Lower
 from django.forms import inlineformset_factory
-from .forms import ProductForm
+from .forms import ProductForm, ProductVariationForm
 
 
 def all_products(request):
@@ -82,17 +82,25 @@ def add_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
+            size = request.POST['size']
+            price = request.POST['price']
+            stock = request.POST['stock']
+            variation = ProductVariation(size=size, price=price, stock=stock, product=product)
+            variation.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
+        variation_form = ProductVariationForm()
+        # form = ProductVariationForm()
         #form = inlineformset_factory(parent_model=Category, model=Product, fk_name='category', extra=1, fields=('category','name', 'sku', 'description',))
         
     template = 'products/add_product.html'
     context = {
         'form': form,
+        'variation_form': variation_form
     }
 
     return render(request, template, context)
