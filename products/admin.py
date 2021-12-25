@@ -1,7 +1,25 @@
 from django.contrib import admin
 from .models import Product, Category, ProductVariation
 
+
+class CategoryAdmin(admin.ModelAdmin):
+    list_display = (
+        'friendly_name',
+        'name',
+    )
+
+
+class ProductVariationAdmin(admin.TabularInline):
+    model = ProductVariation
+    list_display = (
+        'product',
+        'size',
+        'price',
+        'stock',
+    )
+
 class ProductAdmin(admin.ModelAdmin):
+    inlines = (ProductVariationAdmin,)
     list_display = (
         'sku',
         'name',
@@ -13,20 +31,6 @@ class ProductAdmin(admin.ModelAdmin):
 
     ordering = ('sku',)
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = (
-        'friendly_name',
-        'name',
-    )
-
-class ProductVariationAdmin(admin.ModelAdmin):
-    list_display = (
-        'product',
-        'size',
-        'price',
-        'stock',
-    )
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(Category, CategoryAdmin)
-admin.site.register(ProductVariation, ProductVariationAdmin)
