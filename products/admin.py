@@ -17,6 +17,7 @@ class ProductVariationAdmin(admin.TabularInline):
         'price',
         'stock',
     )
+    extra =1
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = (ProductVariationAdmin,)
