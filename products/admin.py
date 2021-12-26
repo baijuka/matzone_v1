@@ -19,8 +19,9 @@ class ProductVariationAdmin(admin.TabularInline):
     )
     extra =1
 
+
 class ProductAdmin(admin.ModelAdmin):
-    inlines = (ProductVariationAdmin,)
+    inlines = [ProductVariationAdmin,]
     list_display = (
         'sku',
         'name',
