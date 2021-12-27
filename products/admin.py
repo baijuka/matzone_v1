@@ -18,6 +18,7 @@ class ProductVariationAdmin(admin.TabularInline):
         'stock',
     )
     extra =1
+    ordering = ("price",)
 
 
 class ProductAdmin(admin.ModelAdmin):

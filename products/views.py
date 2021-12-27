@@ -9,9 +9,9 @@ from .forms import ProductForm, ProductVariationForm
 
 
 def all_products(request):
-    """ A view to show all products, including sorting and search queries """
 
     products = Product.objects.all()
+    print (products[36].baseprice)
     query = None
     categories = None
     sort = None
