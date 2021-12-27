@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Product, Category, ProductVariation
-
+from .forms import ProductForm
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
@@ -11,7 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class ProductVariationAdmin(admin.TabularInline):
     model = ProductVariation
-    list_display = (
+    fields = (
         'product',
         'size',
         'price',
@@ -23,6 +23,7 @@ class ProductVariationAdmin(admin.TabularInline):
 
 class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductVariationAdmin,]
+    form = ProductForm
     list_display = (
         'sku',
         'name',
@@ -32,7 +33,7 @@ class ProductAdmin(admin.ModelAdmin):
         'image',
     )
 
-    ordering = ('sku',)
+    ordering = ('name',)
 
 
 admin.site.register(Product, ProductAdmin)

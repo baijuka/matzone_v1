@@ -11,7 +11,6 @@ from .forms import ProductForm, ProductVariationForm
 def all_products(request):
 
     products = Product.objects.all()
-    print (products[36].baseprice)
     query = None
     categories = None
     sort = None
@@ -56,7 +55,6 @@ def all_products(request):
     }
 
     return render(request, 'products/products.html', context)
-
 
 
 def product_detail(request, product_id):

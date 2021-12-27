@@ -89,6 +89,7 @@
 
 {% block postloadjs %}
 <script type="text/javascript">
+    {{ block.super }}  
     var date = new Date();
     var date = date. getDate()+'-'+(date. getMonth()+1)+'-'+date. getFullYear();
     document.getElementById('newproduct1').innerHTML=date;
