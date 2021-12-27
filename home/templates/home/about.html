@@ -15,7 +15,7 @@
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container margin">
+<div class="container">
     <div class="row">
         <div class="col">
             <hr>
@@ -28,22 +28,71 @@
             <div class="jumbotron">
                 <h1 class="display-4">Mats made to feel you comfortable!</h1>
                 <p class="lead">We makes your footing memorable by supplying innovative products made with state of the art technology and design.
-                    A range of products for you to choose depending on your requirements and situations.
+                    A range of products for you to choose depending on your requirements and situations.  A continue our success with the addition 
+                    of new products every year.  Our products have a high demand all around the world due to its uncompromised quality and durability.
                 </p>
                 <hr class="my-4">
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="jumbotron">
-            <h1 class="display-4">Our Latest Additions</h1>
-            <p class="lead">
-                We offer high quality rolls of rubber matting with excellent anti-slip properties which are most suitable for both home & 
-                commercial use. Rubber Mat Roll will protect floors and your commercial equipment..
-            </p>
+        <div class="col">
+            <div class="jumbotron">
+                <h1 class="display-4">Our Latest Additions</h1>
+                <p class="lead">
+                    We offer high quality rolls of rubber matting with excellent anti-slip properties which are most suitable for both home & 
+                    commercial use. Rubber Mat Roll will protect floors and your commercial equipment..
+                </p>
+            </div>
         </div>
     </div>
 </div>
 
+<div class="container">
+    <div class="card-deck">
+        <div class="card">
+          <img class="card-img-top" src="/media/IMG_RMDRS622DYR.jpg" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">Dolphin Bubble Roll- Yellow Border</h5>
+            <p class="card-text">Yellow Border with Rubber Compound enhances durability. Tough and resilient. Several air pockets to enhance 
+                anti-fatigue property. Bevelled edge of the Roll is brightly colored for increased awareness of location of the mat for improved 
+                safety when snowing</p>
+            <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct1"> </span></small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="/media/IMG_RMDRH101YR0.jpg" alt="Rubber Mat">
+          <div class="card-body">
+            <h5 class="card-title">Dolphin O-Ring Rolls</h5>
+            <p class="card-text">Advanced technology to meet your connecting needs. Designed to cover large area without the hurdles of 
+                traditional connecting process.  Easy to install. Applicable in entrance mat, laundry mat, snow mat, scraper mat or garden 
+                mat.  The best surfacing options to install and can be slice to order and its flexibility helps to cut to fit odd angles. Crossed 
+                linked rings in the mat protects the lawns and grassed area from becoming boggy. Rubber Runners work well on hard floor and 
+                can be used near ice rinks.</p>
+                <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct2"> </span></small></p>
+          </div>
+        </div>
+        <div class="card">
+          <img class="card-img-top" src="/media/IMG_CMDCR148900.jpg" alt="Coir mat">
+          <div class="card-body">
+            <h5 class="card-title">Coco Brush Grill Mat DCR 1489</h5>
+            <p class="card-text">Specially desined mat for your door steps.  It is made with coir fibre and natural rubber latex. 
+                High quality underlay with non-slip grip.  Will enhance the elegance of your home and office door steps.</p>
+            <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct3"> </span></small></p>
+          </div>
+        </div>
+      </div>
+</div>
 
+
+{% endblock %}
+
+{% block postloadjs %}
+<script type="text/javascript">
+    var date = new Date();
+    var date = date. getDate()+'-'+(date. getMonth()+1)+'-'+date. getFullYear();
+    document.getElementById('newproduct1').innerHTML=date;
+    document.getElementById('newproduct2').innerHTML=date;
+    document.getElementById('newproduct3').innerHTML=date;
+</script>
 {% endblock %}
