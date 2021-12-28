@@ -35,7 +35,8 @@
                     <div id='variation-list'>
                         {{ formset.management_form }}
                         {% for form in formset %}
-                            {{ form }}
+                            {{ form.as_table }}
+                            <hr>
                         {% endfor %}
                         <button id="add-more" class="btn btn-black rounded-0" type="button">Add More</button>
                     </div>

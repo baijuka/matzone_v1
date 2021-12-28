@@ -72,7 +72,7 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    variation_formset = formset_factory(ProductVariationForm, extra=1)
+    variation_formset = formset_factory(ProductVariationForm, extra=5)
     
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have permission to access this page.")
