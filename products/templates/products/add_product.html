@@ -32,14 +32,21 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                    {% for field in variation_form %}
+                    <div>
+                    
+                    <!-- {% for field in variation_form %}
                         {% if field.name != 'image' %}
                             {{ field | as_crispy_field }}
                         {% else %}
                             {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    
+                        {% endif %}   
+                    {% endfor %} -->
+                    {{ variation_form }}
+                    <div id="item-list"></div>
+                    </div>
+                    <div id="empty-form" class="hidden"> {{ variation_form }}</div>
+                    <button id='add-more' type="button">Add more</button>
+                    </div>
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Add Product</button>
@@ -57,5 +64,20 @@
             var file = $('#new-image')[0].files[0];
             $('#filename').text(`Image will be set to: ${file.name}`);
         });
+    </script>
+    <script>
+        const addMoreBtn = document.getElementById('add-more');
+        addMoreBtn.addEventListener('click',add_new_item);
+
+        function add_new_item(event){
+            if (event) {
+                event.preventDefault();
+            }
+            const formItemLocation = document.getElementById('item-list');
+            const emptyFormElement = document.getElementById('empty-form').cloneNode(true);
+            emptyFormElement.setAttribute('id','');
+            formItemLocation.append(emptyFormElement);
+        }
+
     </script>
 {% endblock %}
