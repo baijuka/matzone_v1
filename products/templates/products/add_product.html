@@ -32,20 +32,12 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                    <div>
-                    
-                    <!-- {% for field in variation_form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}   
-                    {% endfor %} -->
-                    {{ variation_form }}
-                    <div id="item-list"></div>
-                    </div>
-                    <div id="empty-form" class="hidden"> {{ variation_form }}</div>
-                    <button id='add-more' type="button">Add more</button>
+                    <div id='variation-list'>
+                        {{ formset.management_form }}
+                        {% for form in formset %}
+                            {{ form }}
+                        {% endfor %}
+                        <button id="add-more" class="btn btn-black rounded-0" type="button">Add More</button>
                     </div>
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
@@ -68,16 +60,11 @@
     <script>
         const addMoreBtn = document.getElementById('add-more');
         addMoreBtn.addEventListener('click',add_new_item);
-
-        function add_new_item(event){
-            if (event) {
-                event.preventDefault();
-            }
-            const formItemLocation = document.getElementById('item-list');
-            const emptyFormElement = document.getElementById('empty-form').cloneNode(true);
-            emptyFormElement.setAttribute('id','');
-            formItemLocation.append(emptyFormElement);
+        function add_new_item() {
+            const formItemLocation = document.getElementById('variation-list');
+            //const emptyFormElement = document.getElementById('empty-form').cloneNode(true);
+            console.log(request.POST);
         }
-
+       
     </script>
 {% endblock %}

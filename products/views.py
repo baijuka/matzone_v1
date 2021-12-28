@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, ProductVariation
 from django.db.models.functions import Lower
-from django.forms import inlineformset_factory
+from django.forms import formset_factory
 from .forms import ProductForm, ProductVariationForm
 
 
@@ -72,33 +72,46 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
+    variation_formset = formset_factory(ProductVariationForm, extra=1)
+    
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
 
     if request.method == 'POST':
+        print(request.POST)
         form = ProductForm(request.POST, request.FILES)
-        if form.is_valid():
+        formset = variation_formset(request.POST, request.FILES)
+        if form.is_valid() and formset.is_valid():
             product = form.save()
-            size = request.POST['size']
-            price = request.POST['price']
-            stock = request.POST['stock']
-            variation = ProductVariation(size=size, price=price, stock=stock, product=product)
-            variation.save()
+            print('FORM',product.id)
+            for item in formset:
+                instance = item.save(commit=False)
+                instance.product_id = product.pk
+                print (instance.pk)
+                instance.save()
+          
+            # size = request.POST['size']
+            # price = request.POST['price']
+            # stock = request.POST['stock']
+            # variation = ProductVariation(size=size, price=price, stock=stock, product=product)
+            #variation.save()
+            #formset.save()
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.')
     else:
         form = ProductForm()
-        variation_form = ProductVariationForm()
-        # form = ProductVariationForm()
-        #form = inlineformset_factory(parent_model=Category, model=Product, fk_name='category', extra=1, fields=('category','name', 'sku', 'description',))
+        formset = variation_formset()
+        #variation_form = ProductVariationForm()
+        ## form = ProductVariationForm()
+        ##form = inlineformset_factory(parent_model=Category, model=Product, fk_name='category', extra=1, fields=('category','name', 'sku', 'description',))
         
     template = 'products/add_product.html'
     context = {
         'form': form,
-        'variation_form': variation_form
+        'formset': formset
     }
 
     return render(request, template, context)
