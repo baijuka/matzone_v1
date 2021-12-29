@@ -72,14 +72,14 @@ def product_detail(request, product_id):
 @login_required
 def add_product(request):
     """ Add a product to the store """
-    variation_formset = formset_factory(ProductVariationForm, extra=5)
+    variation_formset = formset_factory(ProductVariationForm, extra=1)
     
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        print(request.POST)
+        #print(request.POST)
         form = ProductForm(request.POST, request.FILES)
         formset = variation_formset(request.POST, request.FILES)
         if form.is_valid() and formset.is_valid():

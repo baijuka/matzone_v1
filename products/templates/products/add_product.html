@@ -23,7 +23,7 @@
 
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                <form id="form-container" method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
@@ -32,14 +32,15 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                    <div id='variation-list'>
+                   
                         {{ formset.management_form }}
                         {% for form in formset %}
+                        <div class='variation-form'>
                             {{ form.as_table }}
-                            <hr>
+                        </div>
                         {% endfor %}
-                        <button id="add-more" class="btn btn-black rounded-0" type="button">Add More</button>
-                    </div>
+                        <button id="add-form" class="btn btn-black rounded-0" type="button">Add More</button>
+                    
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Add Product</button>
@@ -59,12 +60,24 @@
         });
     </script>
     <script>
-        const addMoreBtn = document.getElementById('add-more');
-        addMoreBtn.addEventListener('click',add_new_item);
-        function add_new_item() {
-            const formItemLocation = document.getElementById('variation-list');
-            //const emptyFormElement = document.getElementById('empty-form').cloneNode(true);
-            console.log(request.POST);
+        let variationForm = document.querySelectorAll(".variation-form");
+        let container = document.querySelector("#form-container");
+        let addButton = document.querySelector("#add-form");
+        let totalForms = document.querySelector("#id_form-TOTAL_FORMS");
+        let formNum = variationForm.length-1
+        addButton.addEventListener('click', addForm);
+
+        function addForm(e) {
+        e.preventDefault()
+
+        let newForm = variationForm[0].cloneNode(true) //Clone the bird form
+        let formRegex = RegExp(`form-(\\d){1}-`,'g') //Regex to find all instances of the form number
+
+        formNum++ //Increment the form number
+        newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`) //Update the new form to have the correct form number
+        container.insertBefore(newForm, addButton) //Insert the new form at the end of the list of forms
+
+        totalForms.setAttribute('value', `${formNum+1}`) //Increment the number of total forms in the management form
         }
        
     </script>
