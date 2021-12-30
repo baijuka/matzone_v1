@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Product, Category, ProductVariation
 from django.db.models.functions import Lower
-from django.forms import formset_factory
+from django.forms import formset_factory, inlineformset_factory
 from .forms import ProductForm, ProductVariationForm
 
 
@@ -79,24 +79,18 @@ def add_product(request):
         return redirect(reverse('home'))
 
     if request.method == 'POST':
-        #print(request.POST)
         form = ProductForm(request.POST, request.FILES)
         formset = variation_formset(request.POST, request.FILES)
         if form.is_valid() and formset.is_valid():
             product = form.save()
-            print('FORM',product.id)
+            #print('FORM',product.id)
+
             for item in formset:
                 instance = item.save(commit=False)
                 instance.product_id = product.pk
-                print (instance.pk)
+                #print (instance.pk)
                 instance.save()
-          
-            # size = request.POST['size']
-            # price = request.POST['price']
-            # stock = request.POST['stock']
-            # variation = ProductVariation(size=size, price=price, stock=stock, product=product)
-            #variation.save()
-            #formset.save()
+
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -104,10 +98,7 @@ def add_product(request):
     else:
         form = ProductForm()
         formset = variation_formset()
-        #variation_form = ProductVariationForm()
-        ## form = ProductVariationForm()
-        ##form = inlineformset_factory(parent_model=Category, model=Product, fk_name='category', extra=1, fields=('category','name', 'sku', 'description',))
-        
+                
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -124,22 +115,37 @@ def edit_product(request, product_id):
         messages.error(request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
 
-    product = get_object_or_404(Product, pk=product_id)
+    variation_formset = inlineformset_factory(Product, ProductVariation, fields="__all__", extra=0)
+    product = get_object_or_404(Product, id=product_id)
+ 
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
+        instance = get_object_or_404(Product, id=product_id)
+        form = ProductForm(request.POST, request.FILES or None, instance=instance)
+        formset = variation_formset(request.POST, request.FILES or None, instance=instance)
+
+        if form.is_valid() and formset.is_valid():
+            product = form.save()
+
+            for item in formset:
+                instance = item.save(commit=False)
+                instance.product_id = product.id
+                instance.save()
+      
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
             messages.error(request, 'Failed to update product. Please ensure the form is valid.')
     else:
-        form = ProductForm(instance=product)
+        instance = get_object_or_404(Product, id=product_id)   
+        form = ProductForm(request.POST or None, request.FILES or None, instance=instance)
+        formset = variation_formset(instance=product)
+
         messages.info(request, f'You are editing {product.name}')
 
     template = 'products/edit_product.html'
     context = {
         'form': form,
+        'formset': formset,
         'product': product,
     }
 
