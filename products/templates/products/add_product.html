@@ -33,14 +33,14 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
-                   
-                        {{ formset.management_form }}
-                        {% for form in formset %}
-                        <div class='variation-form'>
-                            {{ form.as_table }}
-                        </div>
-                        {% endfor %}
-                        <button id="add-form" class="btn btn-black rounded-0" type="button">Add More</button>
+                    <h5 class="text-muted">Product Variatons</h5>
+                    {{ formset.management_form }}
+                    {% for form in formset %}
+                    <div class='variation-form' style="border-bottom:black 1px solid; margin-bottom: 5px;">
+                        {{ form |crispy }}
+                    </div>
+                    {% endfor %}
+                    <button id="add-form" class="btn btn-black rounded-0" type="button">Add More Size</button>
                     
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
