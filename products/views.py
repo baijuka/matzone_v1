@@ -126,11 +126,20 @@ def edit_product(request, product_id):
         if form.is_valid() and formset.is_valid():
             product = form.save()
 
+            forms = formset.save(commit=False)
+            try:
+                for obj in formset.deleted_objects:
+                    print("OBJ", obj)
+                    obj.delete()
+            except:
+                pass
+
             for item in formset:
                 instance = item.save(commit=False)
                 instance.product_id = product.id
                 instance.save()
-      
+            formset.save()
+
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
