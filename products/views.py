@@ -46,12 +46,14 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
+    review = Review.objects.all()
 
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'review': review,
     }
 
     return render(request, 'products/products.html', context)

@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models import Min
 from decimal import Decimal
+from django.db.models import Avg, Count
 from profiles.models import UserProfile
 
 
