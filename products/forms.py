@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Category, ProductVariation
+from .models import Product, Category, ProductVariation, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -31,3 +31,10 @@ class ProductVariationForm(forms.ModelForm):
     #     super().__init__(*args, **kwargs)
     #     self.fields['category'].choices = Category.objects.all().values_list('id', 'name')
     #     self.fields['product'].choices = Product.objects.all().values_list('id', 'name')
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['subject','review', 'rating']
+
