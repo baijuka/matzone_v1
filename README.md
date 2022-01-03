@@ -38,11 +38,9 @@ website within a user-friendly platform.
 
 ## <a name="Strategy"></a> Strategy
 
-|As a    |I want to be able to..          |So that I can…                                                                    |
-|--------|--------------------------------|----------------------------------------------------------------------------------|
-|Shopper |View a list of products         |Select some to purchase                                                           |
-|--------|--------------------------------|----------------------------------------------------------------------------------|
-|Shopper |View individual product details |Identify the price, description, product rating, product image and available sizes|
-|--------|--------------------------------|----------------------------------------------------------------------------------|
+   |As a    |I want to be able to..          |So that I can…                                                                    
+---|--------|--------------------------------|----------------------------------------------------------------------------------
+ 1.|Shopper |View a list of products         |Select some to purchase                                                           
+ 2.|Shopper |View individual product details |Identify the price, description, product rating, product image and available sizes
 
 
