@@ -57,7 +57,7 @@
             <p class="card-text">Yellow Border with Rubber Compound enhances durability. Tough and resilient. Several air pockets to enhance 
                 anti-fatigue property. Bevelled edge of the Roll is brightly colored for increased awareness of location of the mat for improved 
                 safety when snowing</p>
-            <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct1"> </span></small></p>
+            <p class="card-text"><small class="text-muted">Last updated on: <span id="newproduct1"> </span></small></p>
           </div>
         </div>
         <div class="card">
@@ -69,7 +69,7 @@
                 mat.  The best surfacing options to install and can be slice to order and its flexibility helps to cut to fit odd angles. Crossed 
                 linked rings in the mat protects the lawns and grassed area from becoming boggy. Rubber Runners work well on hard floor and 
                 can be used near ice rinks.</p>
-                <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct2"> </span></small></p>
+                <p class="card-text"><small class="text-muted">Last updated on: <span id="newproduct2"> </span></small></p>
           </div>
         </div>
         <div class="card">
@@ -78,7 +78,7 @@
             <h5 class="card-title">Coco Brush Grill Mat DCR 1489</h5>
             <p class="card-text">Specially desined mat for your door steps.  It is made with coir fibre and natural rubber latex. 
                 High quality underlay with non-slip grip.  Will enhance the elegance of your home and office door steps.</p>
-            <p class="card-text"><small class="text-muted">Last updated on <span id="newproduct3"> </span></small></p>
+            <p class="card-text"><small class="text-muted">Last updated on: <span id="newproduct3"> </span></small></p>
           </div>
         </div>
       </div>
@@ -89,11 +89,10 @@
 
 {% block postloadjs %}
 <script type="text/javascript">
-    {{ block.super }}  
     var date = new Date();
     var date = date. getDate()+'-'+(date. getMonth()+1)+'-'+date. getFullYear();
     document.getElementById('newproduct1').innerHTML=date;
     document.getElementById('newproduct2').innerHTML=date;
-    document.getElementById('newproduct3').innerHTML=date;
+    document.getElementById('newproduct3').innerHTML=date; 
 </script>
 {% endblock %}
