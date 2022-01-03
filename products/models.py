@@ -35,6 +35,10 @@ class Product(models.Model):
         self.baseprice = self.variations.aggregate(Min('price'))['price__min'] or 0
         self.save()
     
+    def update_rating(self):
+        self.rating = float(self.reviews.aggregate(Avg('rating'))['rating__avg']) or 0
+        self.save()
+
     def __str__(self):
         return self.name
     
@@ -59,7 +63,7 @@ class ProductVariation(models.Model):
 
 class Review(models.Model):
     allowed_rating = ((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='reviews')
     user_profile = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     subject = models.CharField(max_length=100, blank=True)
     review = models.TextField(max_length=500, blank=True)
