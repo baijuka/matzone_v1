@@ -46,7 +46,7 @@ website within a user-friendly platform.
  4.|Site User|Easily register for an account |Have a personal account and to be able to view my profile
  5.|Site User|Easily login and logout  |Access my personal account information
  6.|Site User|Receive an email confirmation after registering |Verify that my account registration was successful
- 7.|Stie User|Have a personalised user profile |View my personal order history, order confirmation and save my payment information
+ 7.|Site User|Have a personalised user profile |View my personal order history, order confirmation and save my payment information
  8.|Shopper |Sort the list of available products |Easily identify the best rated, best priced and categorically sorted products
  9.|Shopper |Sort a specific category of product |Find the best priced or best rated product in a specific category or sort the products in that category by name
 10.|Shopper |Sort multiple categories of products simultaneously |Find the best priced or best rated products across broad categories such as ‘Rubber mats’ or ‘Coir mats’ etc.
