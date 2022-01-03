@@ -28,7 +28,11 @@
                     <h5 style="color: rgb(161, 108, 9);">{{product.name}}</h5>
                 
                         <div>
-                            <img src="{{  product.image.url }}" alt="Product Image" style="width: 100px; height: auto;">
+                            {% if product.image %}
+                                <img src="{{  product.image.url }}" alt="Product Image" style="width: 100px; height: auto;">
+                            {% else %}
+                                <img src="/media/noimage.png" alt="Product Image" style="width: 100px; height: auto;">
+                            {% endif %}
                         </div>
 
                     <div>
