@@ -65,3 +65,7 @@ website within a user-friendly platform.
 24.|Store Owner |Edit/Update a product |Change product prices, descriptions, images and other product criteria
 25.|Store Owner |Delete a product |Remove items that are no longer for sale
 
+## **Database Model**
+
+Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
+
