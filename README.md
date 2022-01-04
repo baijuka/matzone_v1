@@ -454,6 +454,60 @@ DEBUG = "DEVELOPMENT" in os.environ
 ```
 heroku config
 ```
+https://ms4-matzone-v1.herokuapp.com/checkout/wh/
+
+```
+11.Get the new `STRIPE_WH_SECRET` and added it to the config vars.
+
+12.Now your site is fully deployed at [https://ms4-matzone-v1.herokuapp.com/](https://ms4-matzone-v1.herokuapp.com/)
+
+</details>
+
+[Back to contents](#contents) 
+
+## **Testing**
+
+Full details of testing can be found [here.](testing.md)
+
+[Back to contents](#contents) 
+
+## **Credits**
+
+### **Resources and Tutorials**
+
+- [Django Docs](https://docs.djangoproject.com/en/3.2/)
+
+- [Code Institute Boutique Ado walk through](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/)
+
+- [Coding Point - Django Tutorial for beginners](https://www.youtube.com/playlist?list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK) - create "ProductImage" model and attach multiple images to single product.
+
+- [Django Ecommerce | Build Advanced Django Web Application](https://www.udemy.com/course/django-ecommerce-project-based-course-python-django-web-development/) - learned create variation model and variation manager from this course
+
+### **Code modified from other sources**
+
+- [How to Customize Django Admin](https://www.youtube.com/watch?v=yEJH6sZFsAY&list=PLgnySyq8qZmrxJvJbZC1eb7PD4bu0a-sB&index=7&t=252s) - Banners and featured products
+
+- [Upload Multiple Images to a Django Model without plugins](https://soshace.com/upload-multiple-images-to-a-django-model-without-plugins/) - upload multiple images in django admin product model
+
+- [Add a Custom Favicon to your Django Web App](https://www.ordinarycoders.com/blog/article/add-a-custom-favicon-to-your-django-web-app) - add favicon to the site
+
+### **Content**
+
+- [Martial Arts Inc](https://martialartsinc.com/) - used this site as an inspiration
+
+- [Blitzsports.com](https://www.blitzsport.com/) - all products images and descriptions
+
+### **Media**
+
+- [pixabay](https://pixabay.com/) - logo and hero images
+
+### **Acknowledgements**
+
+I would like to thank:
+
+- My mentor Antonio Rodriguez for his patience and generosity with his times.
+
+- Help and support from fellow students in the Slack community.
 
 11.Set `DATABASE_URL` in env.py
 
