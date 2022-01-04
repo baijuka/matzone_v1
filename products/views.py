@@ -86,12 +86,10 @@ def add_product(request):
         formset = variation_formset(request.POST, request.FILES)
         if form.is_valid() and formset.is_valid():
             product = form.save()
-            #print('FORM',product.id)
 
             for item in formset:
                 instance = item.save(commit=False)
                 instance.product_id = product.pk
-                #print (instance.pk)
                 instance.save()
 
             messages.success(request, 'Successfully added product!')
@@ -151,6 +149,7 @@ def edit_product(request, product_id):
         instance = get_object_or_404(Product, id=product_id)   
         form = ProductForm(request.POST or None, request.FILES or None, instance=instance)
         formset = variation_formset(instance=product)
+        formset1 = variation_formset()
 
         messages.info(request, f'You are editing {product.name}')
 
@@ -158,6 +157,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'formset': formset,
+        'formset1': formset1,
         'product': product,
     }
 

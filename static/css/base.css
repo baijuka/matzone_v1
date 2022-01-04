@@ -314,3 +314,10 @@ footer {
         height: calc(100vh - 116px);
     }
 }
+
+.hiddenForm {
+    display: none;
+}
+.displayForm {
+    display: block;
+}
