@@ -1,7 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block extra_title %} Page Not Found {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock%}
+
 {% block content %}
+<div class="overlay"></div>
 <div class="margin">
     <div class="center">
         <img src="{{ MEDIA_URL }}404.png" alt="Page not found error image">
