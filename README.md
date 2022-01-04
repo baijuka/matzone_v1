@@ -116,7 +116,7 @@ Relational databases are widely used to store complex data.  It's primary key, f
 
 - This model keeps the customer reviews of various products.  This model has foreign key relationship with Product model.
 
-<p align="right">[Back to contents](#contents)</p>
+[Back to contents](#contents)
 
 ## **Features**
 
