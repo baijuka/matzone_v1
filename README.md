@@ -69,3 +69,50 @@ website within a user-friendly platform.
 
 Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
 
+
+### **Key Models**
+
+#### **User**
+
+- This model is created by Django admin for user creation and management.
+
+#### **UserProfile**
+
+- Created on registration for each user, holds user information that can be used to speed up checkout process.
+
+- Stores order history for previous orders to encourage repeat orders.
+
+#### **Product**
+
+- Holds the infomation about a product including name, description, basepprice, image and rating.
+
+- The foreign key to 'ProductImage' is very important as it allows multiple images attach to this particular product.
+
+- The relationship to 'Category' is descriptive.
+
+#### **ProductVariation**
+
+- The product table does not keep the size.  Each product has may or may have various sizes and values. This model was created to keep size, value and corresponding stock. This table has a foreign key relationship with Product(parent).
+
+#### **Category**
+
+- This model divides the products into category according to their types.
+
+- Considering the chances of blank spaces we also give it a friendly name.
+
+#### **Order**
+
+- Stores information about an order such as user, order number, delivery details and total cost.
+
+#### **OrderLineItem**
+
+- This model stores each product in each order by its name, size, quantity and a subtotal.
+
+#### **Contact**
+
+- This model sends the users' name, email and messages into admin.
+
+#### **Review**
+
+- This model keeps the customer reviews of various products.  This model has foreign key relationship with Product model.
+
