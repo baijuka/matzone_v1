@@ -4,8 +4,7 @@
 
 # [Matzone](https://ms3-bju-project.herokuapp.com/)
 
-<div id="contents"></div>
-## [Contents]
+## <a name="contents"></a>Contents
 1. [Summary](#summary)
 1. [UX](#ux)
     1. [Strategy](#strategy)
@@ -263,7 +262,7 @@ Routes are protected using Django's @login_required route decorators to ensure n
 
 - "Learning App" to show karate techniques and videos etc.
 
-[Back to contents](#contents) ⬆️
+[Back to contents](#contents)
 
 ## **Technologies Used**
 
@@ -317,7 +316,7 @@ Routes are protected using Django's @login_required route decorators to ensure n
 
 - [Google Font](https://fonts.google.com/)
 
-[Back to contents](#contents) ⬆️
+[Back to contents](#contents) 
 
 ## **Deployment**
 
@@ -738,13 +737,13 @@ https://ms4-matzone-v1.herokuapp.com/checkout/wh/
 
 </details>
 
-[Back to contents](#contents) ⬆️
+[Back to contents](#contents) 
 
 ## **Testing**
 
 Full details of testing can be found [here.](testing.md)
 
-[Back to contents](#contents) ⬆️
+[Back to contents](#contents) 
 
 ## **Credits**
 
