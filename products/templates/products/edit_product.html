@@ -39,10 +39,7 @@
                         {{ form |crispy }}
                     </div>
                     {% endfor %}
-                    <div class="hiddenForm">
-                        {{ formset1 }}
-                    </div>
-                    <button id="add-form" class="btn btn-black rounded-0" type="button">Add More Size</button>
+                    <!-- <button id="add-form" class="btn btn-black rounded-0" type="button">Add More Size</button> -->
                     <div class="text-right">
                         <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-black rounded-0" type="submit">Update Product</button>
@@ -65,7 +62,7 @@
         let variationForm = document.querySelectorAll(".variation-form");
         let container = document.querySelector("#form-container");
         let addButton = document.querySelector("#add-form");
-        let totalForms = document.querySelector("#id_form-TOTAL_FORMS");
+        let totalForms = document.querySelector("#id_variations-TOTAL_FORMS");
         let formNum = variationForm.length-1
         addButton.addEventListener('click', addForm);
 
@@ -75,9 +72,9 @@
         let newForm = variationForm[0].cloneNode(true); 
         newForm.setAttribute('class','displayForm');
 
-        let formRegex = RegExp(`form-(\\d){1}-`,'g'); 
+        let formRegex = RegExp(`variations-(\\d){1}-`,'g'); 
         formNum++ 
-        newForm.innerHTML = newForm.innerHTML.replace(formRegex, `form-${formNum}-`); 
+        newForm.innerHTML = newForm.innerHTML.replace(formRegex, `variations-${formNum}-`); 
         container.insertBefore(newForm, addButton); 
         totalForms.setAttribute('value', `${formNum+1}`) 
         }

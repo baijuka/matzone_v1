@@ -115,32 +115,19 @@ def edit_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
-
-    variation_formset = inlineformset_factory(Product, ProductVariation, fields="__all__", extra=0)
+        
     product = get_object_or_404(Product, id=product_id)
+    variationFormset = inlineformset_factory(Product, ProductVariation, fields="__all__", extra=1)
+    formset = variationFormset(instance=product)
  
     if request.method == 'POST':
-        instance = get_object_or_404(Product, id=product_id)
-        form = ProductForm(request.POST, request.FILES or None, instance=instance)
-        formset = variation_formset(request.POST, request.FILES or None, instance=instance)
+        form = ProductForm(request.POST, request.FILES or None, instance=product)       
+        formset = variationFormset(request.POST, instance=product)
+        if form.is_valid():
+            form.save()
 
-        if form.is_valid() and formset.is_valid():
-            product = form.save()
-
-            forms = formset.save(commit=False)
-            try:
-                for obj in formset.deleted_objects:
-                    print("OBJ", obj)
-                    obj.delete()
-            except:
-                pass
-
-            for item in formset:
-                instance = item.save(commit=False)
-                instance.product_id = product.id
-                instance.save()
+        if formset.is_valid():
             formset.save()
-
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
@@ -148,8 +135,8 @@ def edit_product(request, product_id):
     else:
         instance = get_object_or_404(Product, id=product_id)   
         form = ProductForm(request.POST or None, request.FILES or None, instance=instance)
-        formset = variation_formset(instance=product)
-        formset1 = variation_formset()
+        formset = variationFormset(instance=product)
+        #formset1 = variationFormset()
 
         messages.info(request, f'You are editing {product.name}')
 
@@ -157,7 +144,7 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'formset': formset,
-        'formset1': formset1,
+        #'formset1': formset1,
         'product': product,
     }
 
