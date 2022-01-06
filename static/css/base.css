@@ -313,7 +313,11 @@ footer {
     body {
         height: calc(100vh - 116px);
     }
+    #product-row {
+        margin-top: 100px !important;
+    }
 }
+
 
 .hiddenForm {
     display: none;
