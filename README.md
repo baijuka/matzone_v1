@@ -118,12 +118,12 @@ Store Owner |Delete a product |Remove items that are no longer for sale
 
 ## <a name="skeleton"></a> Skeleton
 **Wireframes** for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
--   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Recipies</a>
--   Profile Page - <a href="./static/wireframe/profile.pdf" target="_blank" >Profile</a>
--   Add Recipe Page - <a href="./static/wireframe/addrecipe.pdf" target="_blank" >Add Recipe</a>
--   Edit Recipe Page - <a href="./static/wireframe/editrecipe.pdf" target="_blank" >Edit Recipe</a>
--   User Registration Page - <a href="./static/wireframe/register.pdf" target="_blank" >Register</a>
--   Manage Categoris Page - <a href="./static/wireframe/categories.pdf" target="_blank" >Categories</a>
+-   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Home Page</a>
+-   About Page - <a href="./static/wireframe/about.pdf" target="_blank" >About</a>
+-   Product List Page - <a href="./static/wireframe/product-list.pdf" target="_blank" >All Products</a>
+-   Product Detail Page - <a href="./static/wireframe/product-details.pdf" target="_blank" >Product Detail</a>
+-   Contact Page - <a href="./static/wireframe/contact.pdf" target="_blank" >Contact</a>
+-   Product Management Page - <a href="./static/wireframe/product-management.pdf" target="_blank" >Product Management</a>
 
 
 ## <a name="surface"></a> Surface
