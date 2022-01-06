@@ -75,6 +75,7 @@ def checkout(request):
                                 product=product,
                                 quantity=quantity,
                                 productsize=psize,
+                                productprice=psize.price,
                             )
                             order_line_item.save()
                 except Product.DoesNotExist:
