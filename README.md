@@ -1,6 +1,6 @@
 <h1 align="center">Matzone Online Shop</h1>
 
-![Matzone](./media/home_background_1.jpg)
+![Matzone](./static/wireframe/sitepicture.png)
 
 # [Matzone](https://ms4-matzone-v1.herokuapp.com/)
 
@@ -37,37 +37,110 @@ The primary objective of Matzone is to provide its users a user-friendly, intuit
 website within a user-friendly platform.
 
 ## <a name="Strategy"></a> Strategy
+### **Viewing and Navigation**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Shopper |View a list of products                  |Select some to purchase                                                           
+Shopper |View individual product details          |Identify the price, description, product rating, product image and available sizes
+Shopper |Easily view the items in shopping bag and total of my purchases at any time |Avoid spending too much
 
-   |As a    |I want to be able to..                   |So that I can…                                                                    
----|--------|-----------------------------------------|----------------------------------------------------------------------------------
- 1.|Shopper |View a list of products                  |Select some to purchase                                                           
- 2.|Shopper |View individual product details          |Identify the price, description, product rating, product image and available sizes
- 3.|Shopper |Easily view the items in shopping bag and total of my purchases at any time |Avoid spending too much
- 4.|Site User|Easily register for an account |Have a personal account and to be able to view my profile
- 5.|Site User|Easily login and logout  |Access my personal account information
- 6.|Site User|Receive an email confirmation after registering |Verify that my account registration was successful
- 7.|Site User|Have a personalised user profile |View my personal order history, order confirmation and save my payment information
- 8.|Shopper |Sort the list of available products |Easily identify the best rated, best priced and categorically sorted products
- 9.|Shopper |Sort a specific category of product |Find the best priced or best rated product in a specific category or sort the products in that category by name
-10.|Shopper |Sort multiple categories of products simultaneously |Find the best priced or best rated products across broad categories such as ‘Rubber mats’ or ‘Coir mats’ etc.
-11.|Shopper |Search for a product by name or description |Find a specific product I would like to purchase
-12.|Shopper |Easily see what I’ve searched for and the number of results |Quickly decide whether the product I want is available
-13.|Shopper |Easily select the size and quantity of a product when purchasing it |Ensure I don’t accidently select the wrong product, size or quantity 
-14.|Shopper |View items in my bag to be purchased |Identify the total cost of my purchase and all items I will receive
-15.|Shopper |Adjust the quantity of individual items in my shopping bag |Easily make changes to my purchase before checkout
-16.|Shopper |Easily enter my payment information |Checkout quickly and without any hassles
-17.|Shopper |Feel my personal and payment information is safe and secure |Confidently provide the information needed to make a purchase
-18.|Shopper |View an order confirmation after checkout |Verify that I haven’t made ay mistake
-19.|Shopper |Receive an email confirmation after checkout |Keep the confirmation of what I have purchased for my records
-20.|Shopper |Review and rate the products I purchased |I can provide my views and experience about the product which will help other shoppers make decision before buying a specific product
-21.|Shopper |Contact the Store Owner for details about a product or service |I can clear my doubts about a particular product or service
-23.|Store Owner |Add a product |Add new items to my store
-24.|Store Owner |Edit/Update a product |Change product prices, descriptions, images and other product criteria
-25.|Store Owner |Delete a product |Remove items that are no longer for sale
+### **Registration and User Accounts**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Site User|Easily register for an account |Have a personal account and to be able to view my profile
+Site User|Easily login and logout  |Access my personal account information
+Site User|Receive an email confirmation after registering |Verify that my account registration was successful
+Site User|Have a personalised user profile |View my personal order history, order confirmation and save my payment information
+
+### **Sorting and Searching**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Shopper |Sort the list of available products |Easily identify the best rated, best priced and categorically sorted products
+Shopper |Sort a specific category of product |Find the best priced or best rated product in a specific category or sort the products in that category by name
+Shopper |Sort multiple categories of products simultaneously |Find the best priced or best rated products across broad categories such as ‘Rubber mats’ or ‘Coir mats’ etc.
+Shopper |Search for a product by name or description |Find a specific product I would like to purchase
+Shopper |Easily see what I’ve searched for and the number of results |Quickly decide whether the product I want is available
+
+### **Purchasing and Checkout**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Shopper |Easily select the size and quantity of a product when purchasing it |Ensure I don’t accidently select the wrong product, size or quantity 
+Shopper |View items in my bag to be purchased |Identify the total cost of my purchase and all items I will receive
+Shopper |Adjust the quantity of individual items in my shopping bag |Easily make changes to my purchase before checkout
+Shopper |Easily enter my payment information |Checkout quickly and without any hassles
+Shopper |Feel my personal and payment information is safe and secure |Confidently provide the information needed to make a purchase
+Shopper |View an order confirmation after checkout |Verify that I haven’t made ay mistake
+Shopper |Receive an email confirmation after checkout |Keep the confirmation of what I have purchased for my records
+
+### **Review/Rate Products and Contact Store Owner**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Shopper |Review and rate the products I purchased |I can provide my views and experience about the product which will help other shoppers make decision before buying a specific product
+Shopper |Contact the Store Owner for details about a product or service |I can clear my doubts about a particular product or service
+
+### **Admin and Store Management**
+As a |I want to be able to.. |So that I can…                                                                    
+---|--------|-----------------------------------------
+Store Owner |Add a product |Add new items to my store
+Store Owner |Edit/Update a product |Change product prices, descriptions, images and other product criteria
+Store Owner |Delete a product |Remove items that are no longer for sale
+
+## <a name="scope"></a> Scope
+**Functional requirements:**
+#### For ease of use:
+* Navigation bar which is simple and easy to navigate
+* A search Function to search for recipes
+#### To ensure the database is up to date and editable:
+* Function to add a product
+* Function to edit a product
+* Function to delete a product
+* For the product to be only editable by the super user
+* User with admin status is able to add, delete and edit products categories
+
+**Content requirements:**
+#### To ensure the site is visually appealing and to draw the user's eye:
+* Images of products
+* Color scheme was chosen to make the site attractive, memorable and trustworthy. 
+
+## <a name="structure"></a> Structure
+**Interaction design:**
+* User friendly interface to ensure usability and to encourage the user to return
+* Responsive and visible links which change on hover to provide user feedback as they navigate the site
+* Ability to exit pop ups so a user is not forced to use the browser navigation tools
+
+**Information Architecture:**
+* Navigation bar at the top of the page
+* Footer at the bottom of the page - sticky to the bottom so it is only visible when the bottom of the page is reached
+* Responsive navigation bar - adjusting for mobile for ease of use
+* Responsive images to ensure they fit within the designated spaces, no matter what device is being used or the size of the screen
+* All features appropriate size and responsive for mobile and desktop viewing
+* All information is appropriate and relative to the subject and not misleading or hard to find
+
+## <a name="skeleton"></a> Skeleton
+**Wireframes** for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
+-   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Recipies</a>
+-   Profile Page - <a href="./static/wireframe/profile.pdf" target="_blank" >Profile</a>
+-   Add Recipe Page - <a href="./static/wireframe/addrecipe.pdf" target="_blank" >Add Recipe</a>
+-   Edit Recipe Page - <a href="./static/wireframe/editrecipe.pdf" target="_blank" >Edit Recipe</a>
+-   User Registration Page - <a href="./static/wireframe/register.pdf" target="_blank" >Register</a>
+-   Manage Categoris Page - <a href="./static/wireframe/categories.pdf" target="_blank" >Categories</a>
+
+
+## <a name="surface"></a> Surface
+The intention of the website is to be clean, crisp and clear
+
+* The font family chosen is 'Roboto' which is simple and allowing letters to be settled into their natural width.
+* The colour scheme selected is shades of Materialze blue-grey and off-white with black font. Shades of blue, orange and red were used for buttons to match the context.
+* Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
+
+### Mockups
+* <a href="./static/mockup/mockup.pdf" target="_blank" >Mockups</a>
 
 ## **Database Model**
 
 Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
+
+![Database](./static/wireframe/schemadiagram.png)
 
 
 ### **Key Models**
@@ -308,7 +381,7 @@ Routes are protected using Django's @login_required route decorators to ensure n
 
 - [Balsamiq](https://balsamiq.com/wireframes/)
 
-- [DB Diagram](https://dbdiagram.io/home)
+- [QuicDBD](https://www.quickdatabasediagrams.com/)
 
 - [Font Awesome](https://fontawesome.com/)
 
