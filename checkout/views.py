@@ -106,7 +106,24 @@ def checkout(request):
             currency=settings.STRIPE_CURRENCY,
         )
 
-        order_form = OrderForm()
+        
+       
+        #this is for prefill form
+        if request.user.id == None:
+            order_form = OrderForm()
+        else:
+            user = request.user
+            user_data = get_object_or_404(UserProfile, user=request.user)
+            order_form = OrderForm()
+            order_form.initial['full_name'] = user.first_name + ' '+ user.last_name
+            order_form.initial['email'] = user.email
+            order_form.initial['phone_number'] = user_data.default_phone_number
+            order_form.initial['street_address1'] = user_data.default_street_address1
+            order_form.initial['street_address2'] = user_data.default_street_address2
+            order_form.initial['town_or_city'] = user_data.default_town_or_city
+            order_form.initial['postcode'] = user_data.default_postcode
+            order_form.initial['country'] = user_data.default_country
+            order_form.initial['county'] = user_data.default_county         
 
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
