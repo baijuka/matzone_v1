@@ -86,23 +86,164 @@ Store Owner |Edit/Update a product |Change product prices, descriptions, images 
 Store Owner |Delete a product |Remove items that are no longer for sale
 
 ## <a name="scope"></a> Scope
-**Functional requirements:**
-#### For ease of use:
-* Navigation bar which is simple and easy to navigate
-* A search Function to search for recipes
-#### To ensure the database is up to date and editable:
-* Function to add a product
-* Function to edit a product
-* Function to delete a product
-* For the product to be only editable by the super user
-* User with admin status is able to add, delete and edit products categories
+#### **Requirements**
+1. A home page with navbar and footer.
+2. A responsive design.
+3. A page where all products are displayed.
+4. An option to register and login/logout.
+5. Defensive programming, e.g. confirmation on buying, deleting, logging out, etc.
+6. A profile page where registered users can add and edit personal information, see their orders and reviews.
+7. A shop page.
+8. An about page where users can get more information about the company and/or available products.
+9. A contact page with contact form where users can contact the site’s owner.
+10. Individual pages for products to display its details.
+11. Indication/banner for offers or deals.
+12. A shopping cart icon with relevant info that is displayed at all times.
+13. An admin page with options to Create, Read, Edit and Delete (CRUD) products.
+14. An option to search the site.
+15. An option to filter and sort.
+16. An indication of search term and numbers of results.
+17. A checkout page with details on the shopping items.
+18. An option to adjust items in the shopping bag.
+19. Secure checkout via Stripe payment.
+20. Email confirmation on purchase.
 
-**Content requirements:**
-#### To ensure the site is visually appealing and to draw the user's eye:
-* Images of products
-* Color scheme was chosen to make the site attractive, memorable and trustworthy. 
+#### **Extra requirements**
+1. An option to delete a profile.
+2. An option to recover the password.
+3. The option to see reviews on products.
+4. The option to Create, Read, Edit and Delete (CRUD) own reviews.
 
 ## <a name="structure"></a> Structure
+## **Structure Level**
+### **Interaction Design and Information Design**
+The overall look is kept the same on each page as much as possible, to enhance single-use-learning:
+- The header and footer are kept mostly the same on each page.
+- Buttons are styled in the same way.
+- The layout is consistent inside each page.
+- The use of colours are kept the same on each page.
+
+The navigation is kept simple and consistent:
+- responsive navigation bar at the top of the page.
+- A landing page with clearly indicating the options and information for first time users.
+- The logo at the top of the page is also the link to the home page.
+- Buttons can be used to navigate.
+
+The information provided should be easily visible:
+- Visual aids are used, like icons and complementary colours.
+- The amount of information is kept to a minimum.
+- The user gets an indication on which page they are, e.g. by using headers.
+
+The user is given feedback, in order to enhance a pleasant user experience:
+- The user gets a visual feedback during certain actions (e.g. focussing on, clicking on, hovering over buttons and links).
+- Messages(toasts) are used to confirm or inform about current actions.
+- The user get's a feedback when an error has occurred (via warning text or error handlers). In case of error handlers there is a button that 
+leads back to the home page.
+
+### **The pages**
+        FRONTEND  
+The website has 19 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
+The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
+The main navigation bar has links to home, products, shop, about, contact, account, shopping basket and search.
+When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
+When the user is admin, an extra link for site managing is shown.  
+
+The footer has a section with contact details, an overview of some important links and links to socials.
+
+#### Description of the pages
+
+- **The landing page/home page:**  
+This is the first page a user sees when they come to the site. There is a hero image and a CTA-text and button for the products.
+Below that there is a section for the shop where the user can see the latest products and a link to the shop page.
+
+- **The products page:**  
+On this pages all the products are displayed.  All the products are displayed with a corresponding image, 
+the name of the product and a link to the individual product.
+
+- **The product details page:**  
+This is where the individual product is displayed. The user can get more information about the  product, 
+like description and price. There is an option to choose the amount and the departure date.
+
+- **The about page:**  
+This page has a short description about the website and the background of the  products.
+
+- **The contact page:**  
+This page has a contact form, where the user can ask questions or give remarks. 
+A confirmation email is sent to the user’s email address after submitting.
+
+- **The sign up page:**  
+This page has a signup form where the user can register and create an account. After registration 
+the user is asked to confirm their email address. After confirmation the user is redirected to the
+home page. There is a button to go to the login page, if a user already has an account.
+
+- **The sign in page:**  
+This page has a login form where users that have an account can login. After login the user will be 
+redirected to the home page. There is a button to the register page, in case the user has no account.
+
+- **The profile page:**  
+This is the personal page of the user. Here the user can see and edit their shipping information, 
+see an overview of their orders (with a link to that order) and any reviews they have written 
+(with a link to that product).
+
+- **The product management page:**  
+On this page, the admin can add a new product or  product by filling in the form. After submitting the admin 
+is redirected to the individual page of the added product.
+
+- **The edit product page:**  
+On this page, the admin can edit an existing product by editing the pre filled form. After submitting the admin is redirected to the individual
+page of the added product.
+
+- **The delete product confirmation page:**  
+On this page, the admin can confirm the delete action.  Pressing 'Yes' will lead to permanent deletion of the product and 'Cancel' will abandon 
+cancellation and redirects to products listing page.
+
+- **The shopping bag page:**  
+This page contains all the items the user has put in their shopping bag. It has an overview of the product, the amount, the price, 
+the subtotal and the grand total. There is a button to go back to the shop page and a button to go to the checkout page.
+
+- **The checkout page:**  
+This page has an form the user has to fill out iot complete their order. The user has to provide delivery information and credit card details. 
+After submitting the form, the user gets a confirmation email. There is also an order summary.
+
+- **The checkout success page:**  
+This page is shown when the payment was successfull. It has an overview of the order, delivery details and payment details. 
+
+- **The order history page:**  
+This page is used to display the history orders made by each individual user. Users should be logged in to view this page.
+
+- **The review page:**  
+This page is intented for logged in users to add product rating and reviews. 
+
+- **The 403 error handler page:**   
+This page is shown in case of forbidden access.
+
+- **The 404 error handler page:**  
+This page is shown in case no page is found.
+
+- **The 500 error handler page:**  
+This page is shown in case of an internal service error.
+
+
+        BACKEND 
+During development the Sqlite3 database is used. This is the default database used by Django.
+During production PostgreSQL is used in conjunction with deployment on Heroku.
+
+### **Database Model**
+
+Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
+
+![Database](./static/wireframe/schemadiagram.png)
+
+## **Skeleton Level**
+### Wireframes
+- [Home Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/index.pdf)  
+- [Products Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-list.pdf)  
+- [Product Details Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-details.pdf)  
+- [About Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/about.pdf)  
+- [Product Management Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-management.pdf)  
+- [Contact Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/contact.pdf)  
+
+--------------------
 **Interaction design:**
 * User friendly interface to ensure usability and to encourage the user to return
 * Responsive and visible links which change on hover to provide user feedback as they navigate the site
@@ -136,11 +277,6 @@ The intention of the website is to be clean, crisp and clear
 ### Mockups
 * <a href="./static/mockup/mockup.pdf" target="_blank" >Mockups</a>
 
-## **Database Model**
-
-Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
-
-![Database](./static/wireframe/schemadiagram.png)
 
 
 ### **Key Models**
