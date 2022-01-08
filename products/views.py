@@ -157,12 +157,21 @@ def delete_product(request, product_id):
     if not request.user.is_superuser:
         messages.error(request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
-        
-    product = get_object_or_404(Product, pk=product_id)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products'))
 
+    if request.method == "POST":
+        product = get_object_or_404(Product, pk=product_id)
+        product.delete()
+        messages.success(request, 'Product deleted!')
+        return redirect(reverse('products'))
+    else:
+        product = get_object_or_404(Product, pk=product_id)
+        template = 'products/delete_product.html'
+        context = {
+            'product': product,
+        }
+    return render(request, template, context)
+
+    
 #Credit : https://www.youtube.com/watch?v=eIN1nZCt7Ww
 
 @login_required
