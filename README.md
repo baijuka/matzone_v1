@@ -270,418 +270,486 @@ Relational databases are widely used to store complex data.  It's primary key, f
 ## <a name="surface"></a> Surface
 The intention of the website is to be clean, crisp and clear
 
-* The font family chosen is 'Roboto' which is simple and allowing letters to be settled into their natural width.
-* The colour scheme selected is shades of Materialze blue-grey and off-white with black font. Shades of blue, orange and red were used for buttons to match the context.
+* The font family chosen is 'Lato'. The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides 
+stability and seriousness. “Male and female, serious but friendly. 
+* The colour scheme selected is shades of off-white background with dark (#555) font color. Shades of Bootstrap primary(blue), secondary(dark grey),
+ danger(red) and warning (orange) were used for buttons to match the context.
 * Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
 
 ### Mockups
-* <a href="./static/mockup/mockup.pdf" target="_blank" >Mockups</a>
-
-
-
-### **Key Models**
-
-#### **User**
-
-- This model is created by Django admin for user creation and management.
-
-#### **UserProfile**
-
-- Created on registration for each user, holds user information that can be used to speed up checkout process.
-
-- Stores order history for previous orders to encourage repeat orders.
-
-#### **Product**
-
-- Holds the infomation about a product including name, description, basepprice, image and rating.
-
-- The relationship to 'Category' is descriptive.
-
-#### **ProductVariation**
-
-- The product table does not keep the size.  Each product has may or may have various sizes and values. This model was created to keep size, value and corresponding stock. This table has a foreign key relationship with Product(parent).
-
-#### **Category**
-
-- This model divides the products into category according to their types.
-
-- Considering the chances of blank spaces we also give it a friendly name.
-
-#### **Order**
-
-- Stores information about an order such as user, order number, delivery details and total cost.
-
-#### **OrderLineItem**
-
-- This model stores each product in each order by its name, size, quantity and a subtotal.
-
-#### **Contact**
-
-- This model sends the users' name, email and messages into admin.
-
-#### **Review**
-
-- This model keeps the customer reviews of various products.  This model has foreign key relationship with Product model.
-
-[Back to contents](#contents)
-
-## **Features**
-
-### **Existing Features**
-
-#### **Across the Site**
-
-- **Navbar** - consistent on all pages and provides quick access to all areas of the site.
-
-- **Search Bar** - allows the user to search a particular product with a key word.
-
-- **Toasts** - Bootstrap toasts give interaction to users after each action carried out. Shows the shopping bag view for quick checkout option. Avoids confusion and gives user a better experience.
-
-- **Responsive** - Bootstrap's grid system and various media queries had been used throughout the project to ensure responsiveness.
-
-- **User Profile** - allow users to save their information for easy acess for next visit. Order history encourages repeat order.
-
-- **Bag Item Counts** - the number of items in the shopping bag tells users how many items they have added to the bag.
-
-- **Navbar Banner** - tells the user about free classes and free delivery offer.
-
-- **Footer** - tells the user about the site purpose and developer info.
-
-#### **Page Specific**
-
-#### ***Home***
-
-- Hero image slides gives potential customers a brief idea what the dojo providing.
-
-- The quick links give the users quick access to specific areas of the site.
-
-- The featured products section draws users attention that there is a shop in the site to encourage potential purchases.
-
-#### ***Products***
-
-- Product cards show the essential details of the product (name, rating, price and category)
-
-- View Prouct details button tells the user there's more to explore.
-
-- Bootstrap Breadcrumb indicates which page the user is on and how many products are avaliable on the page.
-
-- The filtering bar allows the users to sort the products by specific query.
-
-- Back to top button allows the users to go back to the top at any time.
-
-#### ***Product Detail***
-
-- In addtion to the information the products page gives to the user, the product detail page gives the user a brief description about the product.
-
-- There are also more images displayed when applicable.
-
-- The user then has an option of choosing a color or size for that specific product if it applies.
-
-- Two buttons provided at the bottom to add to bag or keep shopping.
-
-#### ***Bag***
-
-- Allows line item quantities to be altered or removed from the bag and updates on each change.
-
-- Shows bag total, delivery, and grand total of the order.
-
-- Provides link to the specific product, allow easy alteration to sizes and colors etc.
-
-- If bag total is less than free delivery threshold, amount required to receive free delivery is shown.
-
-#### ***Checkout***
-
-- Shows order summary and form to input delivery details.
-
-- Payment handled by Stripe and reliability improved by use of webhooks.
-
-    *Registered users*
-
-- If delivery details previously saved, form will be pre-populated with them.
-
-- Option to save delivery details for future purchases.
-
-#### ***Checkout Success***
-
-- Shows a summary of the order identifier, contact info and delivery information provided, as well as details of the order itself. On checkout the user is sent a confirmation email with details about their order.
-
-- A quick link to go back to the shop.
-
-#### ***My Profile***
-
-#### *Registered User*
-
-- Default contact and delivery info
-
-- Ability to update to make future checkouts quicker
-
-- View previous orders using same template as checkout success page
-
-#### ***Add/Edit Product***
-
-#### *Super users*
-
-- Can add/edit a product, chosing all of its required features.
-
-- Can choose whether or not the product shows on home page featured product section.
-
-- On submitting the addition/change, super user is sent to the updated product detail page.
-
-#### **Secure Accounts**
-
-Account security is covered by Django's allauth.
-
-#### **CRUD functionality**
-
-*All users:*
-
-- Read all products
-
-*Registered users:*
-
-- Update their delivery details
-
-*Super users:*
-
-- Create, update and delete any products
-
-#### **Static and image file hosting**
-
-Static and image files are served from an Amazon S3 Bucket.
-
-#### **Confirm delete**
-
-When users request to delete an 'orderline' product from their shopping bag or a superuser request to delete an product, an alert pops up to confirm if they wish to do so to prevent accidental deletion.
-
-#### **Access protection**
-
-Routes are protected using Django's @login_required route decorators to ensure non-super-users cannot interfere with the database.
-
-404 and 500 error handling Pages for 404 and 500 errors keep the user on the site when something goes wrong, allowing them to return to the content with minimal disruption.
-
-### **Features Left to Implement**
-
-- Blog app to display industry and Kumite Dojo news, including comments feature to engage with the community and gather more feedback.
-
-- Wishlisht for users to save their favourite products.
-
-- Product reviews, so the users can come back and leave a review after their purchase.
-
-- "Learning App" to show karate techniques and videos etc.
-
-[Back to contents](#contents)
-
-## **Technologies Used**
-
-### **Languages**
-
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
-
-- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
-
-- [Python](https://www.python.org/)
-
-- [Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-
-### **Frameworks**
-
-- [Bootstrap 4.4](https://getbootstrap.com/docs/4.4/getting-started/introduction/)
-
-- [Django](https://www.djangoproject.com/)
-
-- [jQuery](https://jquery.com/)
-
-### **Database**
-
-- [sqlite3](https://www.sqlite.org/index.html)
-
-- [Heroku Postgres](https://www.heroku.com/postgres)
-
-### **Extensions and kits**
-
-- [Boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/index.html)
-
-- [Pillow](https://pillow.readthedocs.io/en/stable/)
-
-- [stripe](https://stripe.com/docs)
-
-### **Project Management**
-
-- [Amazon AWS](https://aws.amazon.com/?nc2=h_lg) (S3, IAM)
-
-- [Github](https://github.com/)
-
-- [Heroku](https://heroku.com)
-
-### **Tools**
-
-- [Balsamiq](https://balsamiq.com/wireframes/)
-
-- [QuicDBD](https://www.quickdatabasediagrams.com/)
-
-- [Font Awesome](https://fontawesome.com/)
-
-- [Google Font](https://fonts.google.com/)
-
-[Back to contents](#contents) 
+* <a href="" >Mockups</a>
+
+# **Features**
+## **Existing Features**
+
+- **Responsiveness** on all viewports, which allows users to use the website on all devices.
+- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, part of the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
+- **Register functionality**, which allows users to create an account, by filling in the register form. 
+- **Login functionality**, which allows users to log in their account, by filling in the login form. 
+- **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
+- A **search bar**, which allows users to search products, by entering a keyword into the search bar.
+- **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.  
+- **Sort select box**, which allow users to sort items by price, rating, name and category.  
+- **Navbar Banner** - tells the user about free delivery offer.
+- **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
+- **Stripe functionality**, which allow users to safely pay by credit card.
+- A **confirmation page** as a defensive programming tool, which allows users to confirm to delete their review and 
+admin to delete a product or trip.
+
+**Icons**
+- Social media icons, which allow users to go to the corresponding social platform, by clicking on the social icon.
+- Icons as a visual aid, which allow users to quickly and intuitively see what is meant. 
+
+**Forms**  
+- A form that allows users to register for an account, by filling in the sign up form on the signup page.
+- A form that allows users to log in to the site, by filling in the log in form on the signin page.
+- A form that allows users to get in contact with the website owner, by filling in the contact form on the contact page.
+- A form that allows users to edit their delivery information, by filling out/editing the default delivery information form on their profile page.
+- A form that allows users to add a review for a product by filling in the add review form on the individual product page.  
+- A form the allows users to edit their review for a product by filling in the edit review form on the edit review page.
+- A form that allows the admin to add a new product, by filling in the form on the product management page.
+- A form that allows the admin to edit a product, by editing the prefilled form on the product management page.
+
+**CRUD (Create, Read, Update, Delete) functionality**  
+*Create:*  
+- Admin can create new trips and products.  
+- Users can create a review for a product.
+
+*Read:*  
+- All users can search and view trips and products.  
+
+*Update:*
+- Admin can edit products.  
+- Users can edit their own review.
+
+*Delete:*
+- Admin can delete products.  
+- Users can delete their own review.
+
+## **Features left to implement**
+- **Sharing option** via social media, email or other ways of communication.
+- **Deleting a profile**, when a user doesn't want to use the account anymore.
+- **Wishlisht** for users to save their favourite products.
+
+
+
+# **Technologies used**
+
+### **Languages used**  
+- [HTML5](https://en.wikipedia.org/wiki/HTML) for markup.  
+- [CSS](https://en.wikipedia.org/wiki/CSS) for styling.
+- [Javascript](https://en.wikipedia.org/wiki/JavaScript) for interactivity.
+- [Python3](https://www.python.org/) for backend programming.
+
+### **Frameworks and libraries used**   
+- [Bootstrap v4.4.1](https://getbootstrap.com/) a frontend-framework with precoded code-snippets, like navigation bar, modals, and to help with the responsiveness of the website.
+- [jQuery](https://jquery.com/), a javascript library for easier DOM traversing and manipulation and shortening of javascript. 	
+- [Google fonts](https://fonts.google.com/) for the fonts used on the website. 
+- [Font Awesome](https://fontawesome.com/) for the icons used on the website. 
+- [Django](https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) is a fast, expressive, extensible templating engine for Python.
+
+### **Tools and Programmes used**
+- [Balsamiq](https://balsamiq.com/) for making the wireframes. 
+- [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools)
+ to debug and checking/testing the website.
+- [Git](https://git-scm.com/) for version control.  
+- [GitHub](https://github.com/) for storing the files and version control of the website.  
+- [Visual Studio Code](https://code.visualstudio.com/) for coding (IDE) the website.
+- [PostgreSQL](https://www.postgresql.org/) used as an open source relational cloud database during development.
+- [Amazon AWS](https://aws.amazon.com/) used to store static files after deployment.
+- [Heroku](https://www.heroku.com/) a cloud platform for deploying the website.
+- [W3C Markup Validation Service](https://validator.w3.org/) to check for markup validity.
+- [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) to check the CSS-code.
+- [JSHint](https://jshint.com/) to check the Javascript code.
+- [PEP8 checker](http://pep8online.com/) to check the python code for PEP8 requirements. 
 
 # **Testing**
 For testing results, see [TEST.md](https://github.com/baijuka/matzone_v1/blob/main/TEST.md)
 
+---
 ## **Deployment**
+Heroku is used to deploy this application, since GitHub can only deploy static websites.
 
-### **Requirements**
-
-[Python 3](https://www.python.org/downloads/) - core code
-
-[pipenv](https://pypi.org/project/pipenv/) - package installation and python environment control
-
-[Git](https://git-scm.com/) - version control
-
-[Amazon AWS S3 Bucket](https://aws.amazon.com/) - host the site's static and media files
-
-<details>
-<summary>How to clone Matzone and run locally</summary>
-<br>
-
-To clone this project from its [GitHub repository](https://https://github.com/baijuka/matzone_v1):
-
-1.From the repository, click **Code**
-
-2.Go to the Clone >> HTTPS section, copy the clone URL for the repository
-
-3.Go to your local IDE open your CLI
-
-4.Change the current working directory to the location where you want the cloned directory to be made
-
-5.Type `git clone`, and then paste the URL you copied in Step 2
-
+This application was developed using VSCode as IDE, commited to Git and pushed to GitHub.
+The GitHub repository is linked to the Heroku App via automatic deployment (see below).
+Every time commits and pushes are sent to GitHub, the Heroku App is updated shortly after.
+Committing to GitHub is done as follow:  
 ```
-git clone https://github.com/baijuka/matzone_v1.git
+    git add .
+    git commit -m "commit message"
+    git push
 ```
 
-6.Press Enter. Your local clone will be created
+### Deployment to Heroku  
 
-7.Create a file called env.py to hold your app's environment variables, which should contain the following:
+1. **Create a Heroku App**
+    1. Create a new app by clicking the ‘New’ button.
+    2. Give a unique name and set region to your nearest region.
+    3. Click ‘Create App’.
+    4. Click on the 'Resources' tab, in Add-ons type: postgress and choose 'Heroku Postgres'.
+    5. For plan name choose the free plan and click submit form.
 
-```
-import os
-os.environ["SECRET_KEY"] = "app secret key of your choice"
-os.environ["STRIPE_PUBLIC_KEY"] = "stripe public key generated by stripe"
-os.environ["STRIPE_SECRET_KEY"] = "Stripe secret key generated by stripe"
-os.environ["STRIPE_WH_SECRET"] = "webhook secret key generated by stripe"
-os.environ["DEVELOPMENT"] = "True"
-```
-
-To find your Stripe keys, login to Stripe and then under the **Developers** tab look for the 'Publishable Key' and 'Secret Key'
-
-The webhook secret key can be found under Webhooks once you have created an endpoint, which should be set to receive all events and match this url structure:
-
-```
-<your site's base url>/checkout/wh/
-```
-
-You will need a different endpoint for the local version and deployed site, updating the STRIPE_WH_SECRET accordingly in their respective environment variables.
-
-8.Make sure the following are listed in your .gitignore file to prevent any environment variables being pushed publicly:
-
-```
-env.py
-__pycache__/
-*.sqlite3
-*.pyc
-```
-9.Create and activate virtual environment using:
-```
-pipenv shell
-```
-
-10.Install all the app requirements using:
-
-```
-pip install requirements.txt
-```
-
-11.Apply database migrations using:
-
-```
-python manage.py migrate
-```
-12.Create a new superuser and fill in your own details using:
-
-```
-python manage.py createsuperuser
-```
-
-13.The app can now be running loacally using:
-```
-python manage.py runserver
-```
-</details>
-<details>
-<summary>How to deploy to Heroku</summary>
-<br>
-
-1.Log In to Heroku
-
-2.Select **Create new app** from the dropdown in the Heroku dashboard
-
-3.Choose a unique name('matzone-v1') for the app and the location nearest to you
-
-4.Under **Resources** search and add **Heroku Postgres** database to your app and choose the free plan
-
-5.Go to your CLI install **dj_database_url** and **psycopg2** so that you can sue Postges on your deployed site, commands are:
-```
-pipenv install dj_database_url
-pipenv install Psycopg2-binary
-```
-
-6.Add those packages to requirements.txt using:
-```
-pip freeze > requirements.txt
-```
-
-7.Go to settings.py, setup the new database using code below:
-```
-import dj_database_url
-```
-```
-if "DATABASE_URL" in os.environ:
-    DATABASES = {"default": dj_database_url.parse(os.environ.get("DATABASE_URL"))}
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": BASE_DIR / "db.sqlite3",
+2. **Setup the Postgres Database**
+    1. In your IDE install dj_database_url and psycopg2.   
+        ```
+        pip3 install dj_database_url
+        pip3 install psycopg2-binary
+        ```
+    2. Create a requirements file.  
+        ```
+        pip3 freeze > requirements.txt
+        ```
+    3. Import dj_database_url in `settings.py`.
+    4. Backup the database if you're using a local database instead of fixtures.  
+        ```
+        python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
+        ```  
+        p.s. make sure you're connected to your mysql database.  
+    5. Scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
+        ```
+        DATABASES = {
+                'default': dj_database_url.parse('DATABASE_URL')
         }
-    }
-```
+        ```
+        You can the database url from Heroku's Config Vars in the Settings tab. 
+        > Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be committed in version control.
+    6. Run migrations.  
+          ```
+          python3 manage.py migrate
+          ```
+    7. In case of using a local database type:  
+        ```
+        python3 manage.py loaddata db.json
+        ```  
+        to import the data from the mySQL database to Postgre.
+    8. In case of using fixtures:  
+        First import the categories:  
+        ```
+        python3 manage.py loaddata categories
+        ```  
+        And then the products:  
+        ```
+        python3 manage.py loaddata products
+        ```  
+    
+3. **Create a superuser**  
+    - Type: `python3 manage.py createsuperuser`  
+    - Add a username and password.
 
-9.Set debug using:
-```
-DEBUG = "DEVELOPMENT" in os.environ
-```
+4. **Make a distinction between local and remote database**  
+    Create an if-statement in `settings.py` so that when the app is running on Heroku it connects to Postgres(remote) and otherwise, it connects to sequel light(local).  
+    ```
+    if 'DATABASE_URL' in os.environ:
+        DATABASES = {
+            'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+        }
+    else:
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db.sqlite3',
+            }
+        }
+    ```
+5. **Install gunicorn**  
+    Gunicorn will replace the development server once the app is deployed to Heroku and will act as the web server.  
+    type: `pip3 install gunicorn`
 
-10.Get database url from heroku settings > config vars or using:
-```
-heroku config
-```
-https://ms4-matzone-v1.herokuapp.com/checkout/wh/
+6. **Create a Heroku 'Procfile'**  
+    The Procfile is what Heroku looks for to know which file runs the app and how to run it.
+    1. In the terminal type: **touch Procfile** or create a new file named 'Procfile' in the root.
+    2. Inside the Procfile type:   
+    ```
+    web: gunicorn <Github appname>.wsgi:application
+    ```
 
-```
-11.Get the new `STRIPE_WH_SECRET` and added it to the config vars.
+7. **Connect to Heroku in the terminal**
+    1. Login to your account on the Heroku website.
+    2. Go to account settings (click on your avatar).
+    3. Scroll down to the API Key section.
+    4. Click 'Reveal' and copy your API Key.
+    5. Login to Heroku via CLI  
+     ```
+     heroku login -i
+     ```
+    6. Login with your email but use the API Key as the password.
+    7. Temporarily disable the collection of static files until AWS has been setup.  
+        ```
+        heroku config:set DISABLE_COLLECTSTATIC=1 --app <Heroku appname>
+        ```  
+    8. Add the hostnames to allowed hosts in `settings.py`.  
+        ```
+        ALLOWED_HOSTS = ['<heroku appname>.herokuapp.com', 'localhost', '127.0.0.1']
+        ```
+       where 127.0.0.1 is the IP of the localhost, so that the app can also run locally.
+    9. Commit to GitHub.
+    10. Commit to Heroku. Make sure you have git remote initialized.  
+        ```
+        heroku git:remote -a <Heroku appname>
+        ```  
+        Push to Heroku.  
+        ```
+        git push heroku
+        ```
 
-12.Now your site is fully deployed at [https://ms4-matzone-v1.herokuapp.com/](https://ms4-matzone-v1.herokuapp.com/)
+8. **Setup automatic deployment from GitHub/Connect Heroku app to GitHub.**  
+    1. Go to the Deploy tab.  
+    2. Under 'Deployment method', Click on 'Connect to GitHub'.
+    3. Under 'Connect to GitHub', enter the GitHub repository name and click ‘Search’ and click 'Connect'.
+    4. Scroll down to Automatic deploys and click the ‘Enable Automatic Deploys’ button.  
 
-</details>
+9. **Set up Amazon AWS**
+    1. Login to AWS or create an account.
+    2. Search for S3 and click it.
+    3. Create a new bucket  
+    4. Give the bucket a unique name.
+    5. Select the region closest to you.
+    6. Uncheck block all public access and acknowledge that the bucket will be public.  
+    7. Click 'Create bucket'.  
+    8. Set basic settings
+        - Click on the bucketname.
+        - Click the 'Properties' tab.
+        - Scroll down to 'Static website hosting' and click 'Edit'
+        - Click 'Enable' and enter the default values for index and error document.
+        - Click 'Save changes'.
+    9. Set permissions
+        - Click on the 'Permissions' tab.
+        - Scroll down to 'CORS' and click 'Edit'.
+        - Past the following configuration:
+        ```
+            [
+                {
+                    "AllowedHeaders": [
+                        "Authorization"
+                    ],
+                    "AllowedMethods": [
+                        "GET"
+                    ],
+                    "AllowedOrigins": [
+                        "*"
+                    ],
+                    "ExposedHeaders": [
 
-[Back to contents](#contents) 
+                    ]
+                }
+            ]
+        ```
+        - Click 'Save changes'
+    10. Set Bucket Policy
+        - In the Permissions tab scroll to Bucket Policy and click 'Edit'.
+        - Click on 'Policy generator'  
+        - In the new window that opens select 'S3 bucket policy' as the 'Type of Policy'.
+        - Add * to 'Principal'.
+        - Select 'GetObject' in 'Actions'.
+        - Copy your ARN from the other tab and paste it in the ARN field.
+        - Click 'Add Statement'.
+        - Click 'Generate policy'.
+        - Copy the policy and paste it in the Bucket Policy of the first tab.
+        - Add '/*' to the end of the resource key.
+        - Click 'Save changes'.
+        - Scroll down to Access control list (ACL) and click 'Edit'.
+        - Select 'List' for Everyone (public access) and select 'I understand...' at the bottom.
+        - Click 'Save changes'.
+    11. Create AWS groups, policies and users
+        - Click Iam (via search bar or Services).
+        - Create a group
+            - Click on 'Users groups' on the left.  
+            - Click 'Create group' and enter a group name.
+            - Scroll down and click 'Create group'.
+        - Create the policy used to access the bucket
+            - Click on 'Policies' on the left.
+            - Click 'Create policy'.
+            - Click the JSON tab and then on 'Import managed policy'.
+            - Search for 'S3' in the pop up window and select 'AmazonS3FullAccess' and click 'Import'.  
+            - Copy your ARN (Open S3 in a new tab, click the bucket name, click Permission tab, click Bucket policy and copy the ARN)
+            - Paste it in the 'Resource' in the JSON tab.  
+            - Click 'Next: Tags', then 'Next: Review'.
+            - Give the policy a name and description.
+            - Click 'Create policy'.
+        - Attach the policy to the group
+            - Click 'User groups' on the left.
+            - Click the group name.
+            - Click the 'Permissions' tab.
+            - Click 'Add permission', then click 'Attach Policies'.  
+            - Search for the policy that you created above, select it.
+            - Click 'Attach policy'.
+        - Create a user to put in the group
+            - Click 'Users' on the left.
+            - Click 'Add user' and create a username.
+            - Select 'Access Key - Programmatic access' and click 'Next: Permissions'.
+            - Select the group you want to add the user to.
+            - Click 'Next: Tags', then 'Next: Review' and 'Create User'.
+            - Download the .csv file and save it well, since it contains this users access key and secret access key and can't be downloaded again.
+    12. Connect Django to S3
+        - Install boto3 and django-storages.  
+        ```
+        pip3 install boto3  
+        pip3 install django-storages
+        ```  
+        - Add these to requirements.
+        ```
+        pip3 freeze > requirements.txt
+        ```  
+        - Add storages to INSTALLED APPS in `settings.py`.
+        - Add the following settings to `settings.py`.  
+        ```
+        if 'USE_AWS' in os.environ:
+            # Cache control
+            AWS_S3_OBJECT_PARAMETERS = {
+                'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+                'CacheControl': 'max-age=94608000',
+            }
+            
+            # Bucket Config
+            AWS_STORAGE_BUCKET_NAME = '<bucket name>'
+            AWS_S3_REGION_NAME = '<bucket region>'
+            AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID') 
+            AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY') 
+            AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-## **Testing**
+            # Static and media files
+            STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+            STATICFILES_LOCATION = 'static'
+            DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+            MEDIAFILES_LOCATION = 'media'
 
-Full details of testing can be found [here.](testing.md)
+            # Override static and media URLs in production
+            STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+            MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+        ```  
+        > 'Cache control' will tell the browser that it's okay to cache static files for a long time.  
+        > 'Bucket Config' will tell Django which bucket it should be communicating with.  
+        > 'Static and media files' will tell where to find static and media files.  
+        > 'Override static and media URLs in production' will tell which url's to use in production.    
 
-[Back to contents](#contents) 
+        - Go to Heroku and add these values to the Config Vars (under Settings):
+        - Create a custom class to tell django that in production we want to use s3 to store our static files.  
+        - Add the folowing code to custom_storages.py  
+        ```
+            from django.conf import settings
+            from storages.backends.s3boto3 import S3Boto3Storage
+
+
+            class StaticStorage(S3Boto3Storage):
+                location = settings.STATICFILES_LOCATION
+
+
+            class MediaStorage(S3Boto3Storage):
+                location = settings.MEDIAFILES_LOCATION
+        ```  
+        - Push to GitHub.
+    13. Add media files to S3
+        - In your Amazon S3 bucket click 'Create folder' and name it 'media'.
+        - Open the folder and click 'Upload'.
+        - Click 'Add files' and select all your product images.
+        - Under 'Permissions' select 'Grant public-read access'.
+        - Select 'I understand...' and click 'Upload'.
+10. **Setup Stripe**
+    1. Add Stripe keys to Config Var
+        - Login to Stripe or create and [account](https://dashboard.stripe.com/register).
+        - Click developers and then API Keys.
+        - Copy the public and secret key and add them to Config Vars in Heroku.  
+        ```
+        STRIPE_PUBLIC_KEY = <your Stripe public key>
+        STRIPE_SECRET_KEY = <your Stripe secret key>
+        ```  
+    2. Create a webhook endpoint
+        - In Stripe - Developers click 'webhooks'.
+        - Click 'Add endpoint'.
+        - Enter your heroku url and add /checkout/wh/ to it.
+        ```
+        https://<projectname>.herokuapp.com/checkout/wh/
+        ```  
+        - Select 'receive all events' and click 'Add endpoint.
+        - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
+        - Copy the signing secret and add to the Config Vars in Heroku.
+
+### Forking this GitHub Repository
+A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
+To achieve this follow these steps:
+1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency).
+2. At the top right of the page, click on the fork button.  
+![fork button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/forking.png)
+3. You now have a copy of the repository in your GitHub account.
+
+### Cloning this GitHub repository
+1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency)
+2. Click on the ‘Code’ button 
+![Code button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-clone.png)
+3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
+![save icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-copy.png).
+4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
+5. Use  the ‘git clone’ command and add the link that you copied in step 3.
+6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
+7. Click the button 'Clone Repository', add the url you copied above and hit enter.
+8. A clone will be created locally.
+
+> For more info on how to clone a repository check [here](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository)
+
+### Setup local deployment
+1. **Clone or fork this repository (see above)**.
+2. **Install the requirements by typing:**  
+        ```
+        pip3 install -r requirements.txt
+        ```  
+   in the terminal.
+3. **Set the environment variables.**
+    1. If you're using GitPod.
+        - In your workspace click 'Settings'.
+        - In Environment Variables insert the following variables:
+        ```
+        'DEVELOPMENT', 'True'
+        'SECRET_KEY', '<your secret key>'  e.g. from a key generator
+        'STRIPE_PUBLIC_KEY', '<your stripe public key>'
+        'STRIPE_SECRET_KEY', '<your stripe secret key>'
+        'STRIPE_WH_SECRET', '<your stripe webhook secret>'
+        ```
+    2. If you're using a local IDE, like VSCode.
+        - Create a .gitignore file in the root directory, if there isn't one.
+        - Open the .gitignore file and add 'env.py' to it, if it isn't in there. 
+        - Create an env.py file and set the environment variables by adding the following text: 
+        ```
+            import os
+
+            os.environ["STRIPE_PUBLIC_KEY"] = '<your stripe public key>'
+            os.environ["STRIPE_SECRET_KEY"] = '<your stripe secret key>'
+            os.environ["STRIPE_WH_SECRET"] = '<your stripe webhook secret>'
+
+            os.environ["SECRET_KEY"] = '<your secret key>'  e.g. from a key generator
+
+            os.environ["DEVELOPMENT"] = 'True'
+        ```  
+    > See [above](#setup-stripe) how to get your stripe keys.  
+    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
+4. **Migrate the database models**
+    - Check migrations
+    ```
+    python3 manage.py makemigrations --dry-run
+    ```
+    - Make migrations
+    ```
+    python3 manage.py makemigrations
+    ```
+    - Check migrate
+    ```
+    python3 manage.py migrate --plan
+    ```
+    - Migrate
+    ```
+    python3 manage.py migrate
+    ```
+
+5. **Load product data.**
+    - Type `python3 manage.py loaddata db.json`
+6. **Create a superuser account**
+    - `python3 manage.py createsuperuser`
+    - Add a username and password.   
+7.**Run the app.**
+   - In the terminal, type: `python3 <your python file name>.py`  
+
+
+
 
 ## **Credits**
 
@@ -1010,6 +1078,9 @@ Full details of testing can be found [here.](testing.md)
 [Back to contents](#contents) 
 
 ## **Credits**
+### **Code**  
+- This project was heavily based on the Code Intitute walkthrough project 'Boutique Ado'. 
+Part of the code has been copied and changed to fit the purpose of this project. 
 
 ### **Resources and Tutorials**
 
