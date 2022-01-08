@@ -389,6 +389,9 @@ Routes are protected using Django's @login_required route decorators to ensure n
 
 [Back to contents](#contents) 
 
+# **Testing**
+For testing results, see [TEST.md](https://github.com/baijuka/matzone_v1/blob/main/TEST.md)
+
 ## **Deployment**
 
 ### **Requirements**
