@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="black-overlay"></div>
+<div class="container">
+    <div class="row my-5">
+        <div class="col text-center">
+            <h1 class="display-1 text-space">403</h1>
+            <p class="display-6">Forbidden Access!</p>
+            <p>You are not allowed to visit this page. Click the button below to return home.</p>
+            <a class="btn btn-outline-light rounded-0" href="{% url 'home' %}">Go back Home</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
