@@ -33,19 +33,12 @@ Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/REA
 - The total amount is shown at the top of the page below the shopping bag icon:  
 ![shopping total]()
 
-**4. As a shopper I want to be able to	find information about Space Travel Agency so that I can learn more about space travel and the company.**  
+**4. As a shopper I want to be able to	find information about Matzone online shop so that I can learn more about its products and offers.**  
 - The user can navigate to the about page by clicking the link in the navbar:  
-![about page link]()  
-or click the link in the footer:  
-![about page link footer]()  
 
 **5. As a shopper I want to be able to	contact the site owner/company so that I can get answer to my questions or get more information about certain things.**  
-- The user can navigate to the contact page by clicking the link in the navbar:  
-![contact page link]()  
-or click the link in the footer:  
-![contact page link footer]()  
-- There the user can fill in a contact form:  
-![contact form]()
+- The user can navigate to the contact page by clicking the link in the navbar.    
+- There the user can fill in a contact form.  
 
 **6. As a shopper I want to be able to	see reviews on the products so that I can make a better decision which product to buy.**  
 - On the individual product page, the user can scroll down to view reviews:  
@@ -373,17 +366,17 @@ Expected:
 The user can send the site owner a message by filling in the contact form.
 
 Testing:
-1. Go to the contact page by clicking on 'About' and then on the 'contact' link in the navbar.
+1. Go to the contact page by clicking on the 'contact' link in the navbar.
 2. Confirm you are redirected to the contact page.
-3. Don't fill in the contact form and click 'Send'.
+3. Don't fill in the contact form and click 'Submit'.
 4. Confirm that a warning message appears.
-5. Fill in the contact form except for the full name and click the 'Send' button.
+5. Fill in the contact form except for the first name and click the 'Send' button.
 6. Confirm that a warning message appears.
-7. Repeat steps 5 and 6 for the email address, subject and message inputs.
+7. Repeat steps 5 and 6 for the last name, email address and message inputs.
 8. Fill in the complete contact form and click the 'Send' button.
-9. Confirm that a success toast appears with the message 'Your message was sent successfully!'.
+9. Confirm that a success toast appears with the message 'Your message has been sent, thank you for contacting us!'.
 10. Go to your email inbox and confirm a confirmation email was sent to your email address.
-11. Log in to the django admin of the site, go to Received contact forms and confirm the contact form was created.
+11. Log in to the django admin of the site, go to Contact table and confirm the contact form was created.
 
 Result:  
 The user can send the site owner a message by filling in the contact form.
@@ -730,7 +723,7 @@ code line length of 72, correct line breaks, etc.
 
 ---
 ## Testing browser compatibility
-I've tested the website on Safari, Chrome and Mozilla Firefox.  
+I've tested the website on Microsoft Edge, Safari, Chrome and Mozilla Firefox.  
 The testing was done by:
 
 - Visually checking the pages.
