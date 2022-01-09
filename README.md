@@ -1,6 +1,6 @@
 <h1 align="center">Matzone Online Shop</h1>
 
-![Matzone](./static/wireframe/sitepicture.png)
+![Matzone](./static/wireframe/responsive.jpg)
 
 # [Matzone](https://ms4-matzone-v1.herokuapp.com/)
 
