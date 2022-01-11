@@ -14,7 +14,7 @@
     1. [Surface](#surface)
 1. [Features](#features)
     1. [Existing Features](#existing-features)
-    1. [Features left to implement](#left-to)
+    1. [Features left to implement](#Features-left-to-implement)
 1. [Known Bugs](#bugs)
 1. [Technologies used](#tech)
 1. [Testing](#testing)
