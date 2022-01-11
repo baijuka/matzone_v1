@@ -14,16 +14,17 @@
     1. [Surface](#surface)
 1. [Features](#features)
     1. [Existing Features](#existing-features)
-    1. [Features left to implement](#left-to)
-1. [Known Bugs](#bugs)
-1. [Technologies used](#tech)
+    1. [Features left to implement](#Features-left-to-implement)
+1. [Technologies used](#Technologies-used)
 1. [Testing](#testing)
 1. [Deployment](#deployment)
-    1. [Github Pages](#github)
-    1. [heroku](#heroku)
+    1. [Deployment to Heroku](#deployment-to-heroku)
+    1. [Forking GitHub Repository](#forking-github-repository)
+    1. [Cloning GitHub Repository](#cloning-github-repository)
+    1. [Setup local deployment](#setup-local-deployment)
 1. [Credits](#credits)
     1. [Content](#content)
-    1. [Acknowledgements](#acks)
+    1. [Acknowledgements](#Acknowledgements)
 
 # <a name="summary"></a> Summary
 A clean environment is essential for healthy living. Every home, office or place of work ensure that their floors are clean and dust/dirt free.  Matzone comes 
@@ -124,7 +125,7 @@ The overall look is kept the same on each page as much as possible, to enhance s
 - The use of colours are kept the same on each page.
 
 The navigation is kept simple and consistent:
-- responsive navigation bar at the top of the page.
+- Responsive navigation bar at the top of the page.
 - A landing page with clearly indicating the options and information for first time users.
 - The logo at the top of the page is also the link to the home page.
 - Buttons can be used to navigate.
@@ -141,35 +142,34 @@ The user is given feedback, in order to enhance a pleasant user experience:
 leads back to the home page.
 
 ### **The pages**
-        FRONTEND  
+	FRONTEND
 The website has 19 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, products, shop, about, contact, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
 When the user is admin, an extra link for site managing is shown.  
 
-The footer has a section with contact details, an overview of some important links and links to socials.
+The footer has a section with contact the business and links to social media accounts.
 
 #### Description of the pages
 
 - **The landing page/home page:**  
-This is the first page a user sees when they come to the site. There is a hero image and a CTA-text and button for the products.
-Below that there is a section for the shop where the user can see the latest products and a link to the shop page.
+This is the first page a user sees when they come to the site. There is a background image and a text,  a banner for offers
+and shopping button which will take the user to the products page.
 
 - **The products page:**  
-On this pages all the products are displayed.  All the products are displayed with a corresponding image, 
-the name of the product and a link to the individual product.
+On this page all the products are displayed.  All the products are displayed with a corresponding image, 
+the name of the product, base price, rating and a link to the individual product.
 
 - **The product details page:**  
 This is where the individual product is displayed. The user can get more information about the  product, 
-like description and price. There is an option to choose the amount and the departure date.
+like description and price. There is an option to choose the size and quantiy of the product to be purchased.
 
 - **The about page:**  
 This page has a short description about the website and the background of the  products.
 
 - **The contact page:**  
 This page has a contact form, where the user can ask questions or give remarks. 
-A confirmation email is sent to the user’s email address after submitting.
 
 - **The sign up page:**  
 This page has a signup form where the user can register and create an account. After registration 
@@ -191,25 +191,26 @@ is redirected to the individual page of the added product.
 
 - **The edit product page:**  
 On this page, the admin can edit an existing product by editing the pre filled form. After submitting the admin is redirected to the individual
-page of the added product.
+page of the updated product.
 
 - **The delete product confirmation page:**  
-On this page, the admin can confirm the delete action.  Pressing 'Yes' will lead to permanent deletion of the product and 'Cancel' will abandon 
-cancellation and redirects to products listing page.
+On this page, the admin can confirm the delete action.  Pressing 'Yes' will lead to permanent deletion of the product and 'Cancel' will cancel 
+the deletion and redirects to products listing page.
 
 - **The shopping bag page:**  
 This page contains all the items the user has put in their shopping bag. It has an overview of the product, the amount, the price, 
 the subtotal and the grand total. There is a button to go back to the shop page and a button to go to the checkout page.
 
 - **The checkout page:**  
-This page has an form the user has to fill out iot complete their order. The user has to provide delivery information and credit card details. 
-After submitting the form, the user gets a confirmation email. There is also an order summary.
+This page has a form the user has to fill out to complete their order. The user has to provide delivery information and credit card details. 
+After submitting the form, the user gets a confirmation email. The order summary will be displayed after the successful submission.
 
 - **The checkout success page:**  
 This page is shown when the payment was successfull. It has an overview of the order, delivery details and payment details. 
 
 - **The order history page:**  
-This page is used to display the history orders made by each individual user. Users should be logged in to view this page.
+This page is used to display the history orders made by each individual user. Users should be logged in to view this page and can be accessed 
+thorugh My Profile link.
 
 - **The review page:**  
 This page is intented for logged in users to add product rating and reviews. 
@@ -230,7 +231,7 @@ During production PostgreSQL is used in conjunction with deployment on Heroku.
 
 ### **Database Model**
 
-Relational databases are widely used to store complex data.  It's primary key, foreign key ralationships makes data retrieval easy for the developers. It's speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between and in such case the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
+Relational databases are widely used to store complex data.  Its primary key, foreign key ralationships makes data retrieval easy for the developers. The speed, acccuracy, simplicity, security, accessibility and multi user functionality are the major factors make it popular. This project uses various models that need to establish relationships between various models and, therefore, the developer decided to use relational database for backend storage. SQLite was used during development and Heroku Postgres in production. The database schema diagram explains the relationship between models.
 
 ![Database](./static/wireframe/schemadiagram.png)
 
@@ -254,7 +255,7 @@ Relational databases are widely used to store complex data.  It's primary key, f
 * Footer at the bottom of the page - sticky to the bottom so it is only visible when the bottom of the page is reached
 * Responsive navigation bar - adjusting for mobile for ease of use
 * Responsive images to ensure they fit within the designated spaces, no matter what device is being used or the size of the screen
-* All features appropriate size and responsive for mobile and desktop viewing
+* All features are appropriate size and responsive for mobile and desktop viewing
 * All information is appropriate and relative to the subject and not misleading or hard to find
 
 ## <a name="skeleton"></a> Skeleton
@@ -271,13 +272,10 @@ Relational databases are widely used to store complex data.  It's primary key, f
 The intention of the website is to be clean, crisp and clear
 
 * The font family chosen is 'Lato'. The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides 
-stability and seriousness. “Male and female, serious but friendly. 
+stability and seriousness. 
 * The colour scheme selected is shades of off-white background with dark (#555) font color. Shades of Bootstrap primary(blue), secondary(dark grey),
  danger(red) and warning (orange) were used for buttons to match the context.
 * Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
-
-### Mockups
-* <a href="" >Mockups</a>
 
 # **Features**
 ## **Existing Features**
@@ -288,13 +286,13 @@ stability and seriousness. “Male and female, serious but friendly.
 - **Login functionality**, which allows users to log in their account, by filling in the login form. 
 - **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
 - A **search bar**, which allows users to search products, by entering a keyword into the search bar.
-- **Category buttons**, which allow users to filter recipes by category, by clicking on the corresponding button.  
+- **Category buttons**, which allow users to filter products by category, by clicking on the corresponding button.  
 - **Sort select box**, which allow users to sort items by price, rating, name and category.  
 - **Navbar Banner** - tells the user about free delivery offer.
 - **Error handler pages**, which handle *'forbidden access'*, *'page not found'* and *'internal server'* errors, by giving users information on the error that has occurred and redirect the user back to the home page.
 - **Stripe functionality**, which allow users to safely pay by credit card.
 - A **confirmation page** as a defensive programming tool, which allows users to confirm to delete their review and 
-admin to delete a product or trip.
+admin to delete a product.
 
 **Icons**
 - Social media icons, which allow users to go to the corresponding social platform, by clicking on the social icon.
@@ -305,22 +303,23 @@ admin to delete a product or trip.
 - A form that allows users to log in to the site, by filling in the log in form on the signin page.
 - A form that allows users to get in contact with the website owner, by filling in the contact form on the contact page.
 - A form that allows users to edit their delivery information, by filling out/editing the default delivery information form on their profile page.
-- A form that allows users to add a review for a product by filling in the add review form on the individual product page.  
-- A form the allows users to edit their review for a product by filling in the edit review form on the edit review page.
+- A form that allows users to add a review for a product by filling in the add review form their profile page.  
+- A form the allows users to edit their review for a product by filling in the edit review form edit review page.
 - A form that allows the admin to add a new product, by filling in the form on the product management page.
 - A form that allows the admin to edit a product, by editing the prefilled form on the product management page.
 
 **CRUD (Create, Read, Update, Delete) functionality**  
 *Create:*  
-- Admin can create new trips and products.  
+- Admin can create new products.  
 - Users can create a review for a product.
 
 *Read:*  
-- All users can search and view trips and products.  
+- All users can search and view products.  
 
 *Update:*
 - Admin can edit products.  
 - Users can edit their own review.
+- Users can edit their profile
 
 *Delete:*
 - Admin can delete products.  
@@ -405,14 +404,14 @@ Committing to GitHub is done as follow:
         ```
         python3 manage.py dumpdata --exclude auth.permission --exclude contenttypes > db.json
         ```  
-        p.s. make sure you're connected to your mysql database.  
+        > Note: Make sure you're connected to your mysql database.  
     5. Scroll down to DATABASES, comment out the default configuration and add the database url from Heroku   
         ```
         DATABASES = {
                 'default': dj_database_url.parse('DATABASE_URL')
         }
         ```
-        You can the database url from Heroku's Config Vars in the Settings tab. 
+        You can copy the database url from Heroku's Config Vars in the Settings tab. 
         > Note: The DATABASE_URL from Heroku is an environment variable and shouldn't be committed in version control.
     6. Run migrations.  
           ```
@@ -665,20 +664,17 @@ Committing to GitHub is done as follow:
         - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
         - Copy the signing secret and add to the Config Vars in Heroku.
 
-### Forking this GitHub Repository
+### Forking GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
-1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency).
+1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/baijuka/matzone_v1).
 2. At the top right of the page, click on the fork button.  
-![fork button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/forking.png)
 3. You now have a copy of the repository in your GitHub account.
 
-### Cloning this GitHub repository
-1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/chizzletaz/SpaceTravelAgency)
+### Cloning GitHub repository
+1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/baijuka/matzone_v1)
 2. Click on the ‘Code’ button 
-![Code button](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-clone.png)
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
-![save icon](https://github.com/chizzletaz/SpaceTravelAgency/blob/main/README/images/github-copy.png).
 4. Open a terminal in your preferred IDE (e.g. VSCode or Atom)
 5. Use  the ‘git clone’ command and add the link that you copied in step 3.
 6. Or for VSCode: click 'Explorer' or 'Shift + CMD + E'. 
@@ -720,8 +716,6 @@ To achieve this follow these steps:
 
             os.environ["DEVELOPMENT"] = 'True'
         ```  
-    > See [above](#setup-stripe) how to get your stripe keys.  
-    > Tip: use this [key generator](https://miniwebtool.com/django-secret-key-generator/)   
 4. **Migrate the database models**
     - Check migrations
     ```
@@ -750,7 +744,6 @@ To achieve this follow these steps:
 
 
 
-
 ## **Credits**
 
 ### **Resources and Tutorials**
@@ -767,337 +760,16 @@ To achieve this follow these steps:
 
 - [How to Customize Django Admin](https://www.youtube.com/watch?v=yEJH6sZFsAY&list=PLgnySyq8qZmrxJvJbZC1eb7PD4bu0a-sB&index=7&t=252s) - Banners and featured products
 
-- [Upload Multiple Images to a Django Model without plugins](https://soshace.com/upload-multiple-images-to-a-django-model-without-plugins/) - upload multiple images in django admin product model
-
 - [Add a Custom Favicon to your Django Web App](https://www.ordinarycoders.com/blog/article/add-a-custom-favicon-to-your-django-web-app) - add favicon to the site
 
 ### **Content**
 
-- [Martial Arts Inc](https://martialartsinc.com/) - used this site as an inspiration
-
-- [Blitzsports.com](https://www.blitzsport.com/) - all products images and descriptions
-
-### **Media**
-
-- [pixabay](https://pixabay.com/) - logo and hero images
-
-### **Acknowledgements**
-
-I would like to thank:
-
-- My mentor Antonio Rodriguez for his patience and generosity with his times.
-
-- Help and support from fellow students in the Slack community.
-
-11.Set `DATABASE_URL` in env.py
-
-12.Log into heroku via Heroku CLI using:
-```
-heroku login -i
-```
-
-13.Migrate the database into Postgres using:
-```
-python manage.py migrate
-```
-
-14.Import all product data using the fixtures created during development
-
-15.Create a new superuser and fill in your own details using:
-```
-python manage.py createsuperuser
-```
-
-16.Install gunicorn
-```
-pipenv install gunicorn
-```
-
-17.Add the package into requirements
-```
-pip freeze > requirements.txt
-```
-
-18.Create a file call **Procfile** and include the following, making sure not to leave a blank line after it:
-```
-web:gunicorn kumite_dojo.wsgi:application
-```
-
-19.Disable Heroku's static file collection (temporarily)
-```
-heroku config:set DISABLE_COLLECTSTATIC=1 --app kumite-dojo
-```
-
-20.Add the hostname of your heroku app to settings.py
-```
-ALLOWED_HOSTS = ["ms4-matzone-v1.herokuapp.com/", "localhost"]
-```
-
-21.Commit all changeds to github
-
-22.Go to the **Settings** tab and under **Config Vars** choose **Reveal Config Vars** and set Django secret key where you can find in your env.py as **SECRET_KEY**
-
-23.Initial heroku git remote using:
-```
-heroku git:remote -a matzone
-```
-
-24.Deploy to Heroku using:
-```
-git push heroku main
-```
-
-25.Your deployed site can be launched by clicking **Open App** from its page within Heroku.
-
-26.Back in Heroku, select the **Deploy** tab and under **Deployment method** choose GitHub
-
-27.Go to **Connect to GitHub** enter your GitHub repository details and once found, click **Connect**, under **Automatic deploys** choose **Enable Automatic Deploys**
-</details>
-
-<details>
-<summary>Setting up an S3 Bucket (Amazon Simple Storage Service)</summary>
-<br>
-
-1.Create an [Amazon AWS](https://aws.amazon.com/?nc2=h_lg) account
-
-2.Search for **S3** and create a new bucket name it the same as your Heroku app(matzone-v1)
-
-- uncheck block all public access box
-
-- check "I acknowledge that the current settings might result in this bucket and the objects within becoming public."
-
-3.Under **Properties > Static**website hosting
-
-- enable
-
-- index.html as Index document
-
-- error.html as Error document
-
-- save
-
-4.Under **Permissions > CORS** use:
-
-```
-[
-  {
-      "AllowedHeaders": [
-          "Authorization"
-      ],
-      "AllowedMethods": [
-          "GET"
-      ],
-      "AllowedOrigins": [
-          "*"
-      ],
-      "ExposeHeaders": []
-  }
-]
-```
-
-5.Under **Permissions > Bucket** Policy:
-
-- Generate Bucket Policy and take note of **Bucket ARN**
-
-- Chose **S3 Bucket Policy** as Type of Policy
-
-- For **Principal**, enter *
-
-- Actions **Get Object** and **Put Object**
-
-- Enter **ARN** noted above
-
-- **Add statement**
-
-- **Generate policy**
-
-- Copy the **policy JSON Document** paste into **Edit bucket policy**
-
-- Add a /* onto the end of the **resource key**
-
-- Save changes
-
-6.Under **Access Control List (ACL)**:
-
-- For **Everyone (public access)**, tick **List**
-
-- Accept that everyone in the world may access the Bucket
-
-- Save changes
-
-</details>
-
-<details>
-
-<summary>Setting up AWS IAM (Identity and Access Management)</summary>
-
-<br>
-
-1.From the **IAM dashboard** within **AWS**, select User Groups:
-
-- Create new group e.g. manage-kumite-dojo
-
-- Click through without adding a policy
-
-- **Create Group**
-
-2.Select **Policies**:
-
-- Create policy
-
-- Under **JSON** tab, click **Import managed policy**
-
-- Choose **AmazongS3FullAccess**
-
-- Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy:
-
-```
-                "Resource": [
-			                "arn:aws:s3:::kumite-dojo",
-			                "arn:aws:s3:::kumite-dojo/*"
-                ]
-```
-
-- Click **next step** and go to **Review policy**
-
-- Give the policy a name e.g. kumite-dojo-policy and description
-
-- **Create Policy**
-
-3.Go back to **User Groups** and choose the group created earlier
-
-- Under **Permissions > Add permissions**, choose **Attach Policies** and select the one just created
-
-- **Add Permissions**
-
-4.Under **Users:**
-
-- Choose a user name e.g. kumite-dojo-staticfiles-user
-
-- Select **Programmatic access** as the **Access type**
-
-- Click Next
-
-- Add the user to the Group just created
-
-- Click Next and **Create User**
-
-5.**Download the .csv containing the access key and secret access key. This will NOT be available to download again**
-
-</details>
-
-<details>
-
-<summary>Connecting Django to S3</summary>
-
-<br>
-
-1.Install boto3 and django-storages
-
-```
-pipenv install boto3
-pipenv install django-storages
-pip freeze > requirements.txt
-```
-
-2.Add 'storages' to settings.py ` INSTALLED_APPS`
-
-3.Go to settings.py and set the bucket config, 
-
-```
-if "USE_AWS" in os.environ:
-    # Bucket Config
-    AWS_STORAGE_BUCKET_NAME = "kumite-dojo"
-    AWS_S3_REGION_NAME = "eu-west-1"
-    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
-
-```
-
-4.Add the values from the **.csv** you downloaded to your Heroku Config Vars under Settings:
-
-```
-AWS_ACCESS_KEY_ID
-AWS_SECRET_ACCESS_KEY
-USE_AWS=True
-```
-5.Delete the `DISABLE_COLLECTSTATIC` variable from your Config Vars and deploy your Heroku app
-
-6. Create custom_storage.py with code below:
-
-```
-from django.conf import settings
-from storages.backends.s3boto3 import S3Boto3Storage
-
-
-class StaticStorage(S3Boto3Storage):
-    location = settings.STATICFILES_LOCATION
-
-
-class MediaStorage(S3Boto3Storage):
-    location = settings.MEDIAFILES_LOCATION
-```
-
-7.Go to settings.py, set the static and media files storage and location and override static and media urls in production:
-
-```
-# Static and media files
-STATICFILES_STORAGE = "custom_storages.StaticStorage"
-STATICFILES_LOCATION = "static"
-DEFAULT_FILE_STORAGE = "custom_storages.MediaStorage"
-MEDIAFILES_LOCATION = "media"
-
-# Override static and media URLs in production
-STATIC_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/"
-MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/"
-```
-
-8.With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it, making sure they are publicly accessible under **Permissions**
-
-9.Add stripe keys in Config Vars in heroku, making sure the name matches settings.py
-
-10.Add stripe webhook endpoint with the deployed site url:
-
-```
-https://ms4-matzone-v1.herokuapp.com/checkout/wh/
-
-```
-11.Get the new `STRIPE_WH_SECRET` and added it to the config vars.
-
-12.Now your site is fully deployed at [https://ms4-matzone-v1.herokuapp.com/](https://ms4-matzone-v1.herokuapp.com/)
-
-</details>
-
-[Back to contents](#contents) 
-
-## **Testing**
-
-Full details of testing can be found [here.](testing.md)
-
-[Back to contents](#contents) 
-
-## **Credits**
-### **Code**  
-- This project was heavily based on the Code Intitute walkthrough project 'Boutique Ado'. 
-Part of the code has been copied and changed to fit the purpose of this project. 
-
-### **Resources and Tutorials**
-
-- [Django Docs](https://docs.djangoproject.com/en/3.2/)
-
-- [Code Institute Boutique Ado walk through](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/)
-
-
-### **Code modified from other sources**
-
-
-### **Content**
+- [Dolphin Rubber Industries ](https://www.dolphinrubbermat.com/) - all images were down loaded from this site and copied text contents and product description
 
 
 ### **Media**
 
-
+- [Dolphin Rubber Industries ](https://www.dolphinrubbermat.com/) - Product images
 
 ### **Acknowledgements**
 
