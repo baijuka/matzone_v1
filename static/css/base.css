@@ -200,6 +200,13 @@ footer {
     overflow-y: auto;
 }
 
+.hiddenForm {
+    display: none;
+}
+.displayForm {
+    display: block;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
@@ -318,18 +325,13 @@ footer {
     #product-row {
         margin-top: 100px !important;
     }
-}
-
-
-.hiddenForm {
-    display: none;
-}
-.displayForm {
-    display: block;
-}
-
-@media (max-width: 991px) {
     .h1, h1 {
-      font-size: 1.5rem !important;
+        font-size: 1.5rem !important;
     }
-  }
+    #pdetail {
+        margin-top: 100px !important;
+    }
+}
+
+
+
