@@ -18,7 +18,7 @@
 1. [Technologies used](#Technologies-used)
 1. [Testing](#testing)
 1. [Deployment](#deployment)
-   [Deployment to Heroku](#deployment-to-heroku)
+    1. [Deployment to Heroku](#deployment-to-heroku)
     1. [Forking this GitHub Repository](#forking-this-github-repository)
     1. [Cloning this GitHub Repository](#cloning-this-github-repository)
     1. [Setup local deployment](#setup-local-deployment)
