@@ -19,8 +19,8 @@
 1. [Testing](#testing)
 1. [Deployment](#deployment)
     1. [Deployment to Heroku](#deployment-to-heroku)
-    1. [Forking this GitHub Repository](#forking-this-github-repository)
-    1. [Cloning this GitHub Repository](#cloning-this-github-repository)
+    1. [Forking GitHub Repository](#forking-github-repository)
+    1. [Cloning GitHub Repository](#cloning-github-repository)
     1. [Setup local deployment](#setup-local-deployment)
 1. [Credits](#credits)
     1. [Content](#content)
@@ -664,14 +664,14 @@ Committing to GitHub is done as follow:
         - Scroll down to 'Signing secret' and click 'Reveal signing secret'.
         - Copy the signing secret and add to the Config Vars in Heroku.
 
-### Forking this GitHub Repository
+### Forking GitHub Repository
 A fork is a copy of a repository. Forking a repository allows you to freely experiment with changes without affecting the original project.
 To achieve this follow these steps:
 1. Login to GitHub and follow this link to [the GitHub Repository](https://github.com/baijuka/matzone_v1).
 2. At the top right of the page, click on the fork button.  
 3. You now have a copy of the repository in your GitHub account.
 
-### Cloning this GitHub repository
+### Cloning GitHub repository
 1. Log in to GitHub and follow this link to [the GitHub Repository](https://github.com/baijuka/matzone_v1)
 2. Click on the ‘Code’ button 
 3. To clone using HTTPS, copy the link that is displayed by clicking on the copy icon 
