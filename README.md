@@ -23,7 +23,7 @@
     1. [heroku](#heroku)
 1. [Credits](#credits)
     1. [Content](#content)
-    1. [Acknowledgements](#acks)
+    1. [Acknowledgements](#Acknowledgements)
 
 # <a name="summary"></a> Summary
 A clean environment is essential for healthy living. Every home, office or place of work ensure that their floors are clean and dust/dirt free.  Matzone comes 
