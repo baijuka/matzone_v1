@@ -15,7 +15,6 @@
 1. [Features](#features)
     1. [Existing Features](#existing-features)
     1. [Features left to implement](#Features-left-to-implement)
-1. [Known Bugs](#Known-Bugs)
 1. [Technologies used](#Technologies-used)
 1. [Testing](#testing)
 1. [Deployment](#deployment)
