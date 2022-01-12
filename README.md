@@ -273,7 +273,7 @@ The intention of the website is to be clean, crisp and clear
 
 * The font family chosen is 'Lato'. The semi-rounded details of the letters give Lato a feeling of warmth, while the strong structure provides 
 stability and seriousness. 
-* The colour scheme selected is shades of off-white background with dark (#555) font color. Shades of Bootstrap primary(blue), secondary(dark grey),
+* The colour scheme selected is shades of off-white(#f5f5f5) background with dark (#555) font color. Shades of Bootstrap primary(blue), secondary(dark grey),
  danger(red) and warning (orange) were used for buttons to match the context.
 * Color scheme was chosen considering users from all aspects of life. Too bright and vibrant colors were avoided to accommodate users with different visual capacities.
 
@@ -347,6 +347,8 @@ admin to delete a product.
 - [Font Awesome](https://fontawesome.com/) for the icons used on the website. 
 - [Django](https://www.djangoproject.com/) is a high-level Python web framework that encourages rapid development and clean, pragmatic design. 
 - [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) is a fast, expressive, extensible templating engine for Python.
+- [Bulma](https://bulma.io/) is an open source framework that provides ready-to-use frontend components that you can easily combine to build responsive web interfaces.
+- [CSS-Tricks](https://css-tricks.com/), a portal with plenty of css styling resources.
 
 ### **Tools and Programmes used**
 - [Balsamiq](https://balsamiq.com/) for making the wireframes. 
@@ -760,6 +762,7 @@ To achieve this follow these steps:
 - [Brennan Tymrak](https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript) - Dynamically Add Forms in Django with Formsets and JavaScript 
 - [Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs) - Porduct Review and Rating 
 - [Stack Overflow](https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number) - Regular expression to match standard 10 digit phone number
+- [Codemy.com](https://www.youtube.com/watch?v=N-PB-HMFmdo - Pagination For Django )
 
 ### **Content**
 

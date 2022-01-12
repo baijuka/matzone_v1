@@ -6,6 +6,7 @@ from .models import Product, Category, ProductVariation, Review
 from django.db.models.functions import Lower
 from django.forms import formset_factory, inlineformset_factory
 from .forms import ProductForm, ProductVariationForm, ReviewForm
+from django.core.paginator import Paginator
 
 
 def all_products(request):
@@ -46,10 +47,13 @@ def all_products(request):
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
+    paginator = Paginator(products, 12)
+    page = request.GET.get('page')
+    product_list = paginator.get_page(page)
     review = Review.objects.all()
 
     context = {
-        'products': products,
+        'products': product_list,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
