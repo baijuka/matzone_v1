@@ -749,17 +749,16 @@ To achieve this follow these steps:
 ### **Resources and Tutorials**
 
 - [Django Docs](https://docs.djangoproject.com/en/3.2/)
-
 - [Code Institute Boutique Ado walk through](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/)
-
-- [Coding Point - Django Tutorial for beginners](https://www.youtube.com/playlist?list=PLPp4GCMxKSjCM9AvhmF9OHyyaJsN8rsZK) - create "ProductImage" model and attach multiple images to single product.
-
-- [Django Ecommerce | Build Advanced Django Web Application](https://www.udemy.com/course/django-ecommerce-project-based-course-python-django-web-development/) - learned create variation model and variation manager from this course
+- [Tutprial Point - Learn Django](https://www.tutorialspoint.com/django/index.htm)
+- [Coding Point - Django Tutorial For Beginners](https://www.youtube.com/watch?v=UjisbVs6gww) - Product variation model and variation manager
+- [W3Schools](https://www.w3schools.com/) - For Python, CSS, HTML and JavaScript
 
 ### **Code modified from other sources**
 
-- 
-- Porduct Reviw and Rating [by Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs)
+- [Code Institute Boutique Ado walk through](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/)
+- [Brennan Tymrak](https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript) - Dynamically Add Forms in Django with Formsets and JavaScript 
+- [Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs) - Porduct Review and Rating 
 
 ### **Content**
 
