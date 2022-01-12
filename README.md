@@ -759,6 +759,7 @@ To achieve this follow these steps:
 - [Code Institute Boutique Ado walk through](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+FSF_102+Q1_2020/courseware/4201818c00aa4ba3a0dae243725f6e32/d3188bf68530497aa5fba55d07a9d7d7/)
 - [Brennan Tymrak](https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript) - Dynamically Add Forms in Django with Formsets and JavaScript 
 - [Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs) - Porduct Review and Rating 
+- [Stack Overflow](https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number) - Regular expression to match standard 10 digit phone number
 
 ### **Content**
 
