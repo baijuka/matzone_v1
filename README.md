@@ -758,8 +758,7 @@ To achieve this follow these steps:
 
 ### **Code modified from other sources**
 
-- [How to Customize Django Admin](https://www.youtube.com/watch?v=yEJH6sZFsAY&list=PLgnySyq8qZmrxJvJbZC1eb7PD4bu0a-sB&index=7&t=252s) - Banners and featured products
-
+- 
 - Porduct Reviw and Rating [by Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs)
 
 ### **Content**
