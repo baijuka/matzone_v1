@@ -25,140 +25,98 @@ Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/REA
 ## Testing user stories
 ### Viewing and navigation:
 **1. As a shopper I want to be able to	view a list of products so that I can see what is available.**
-
-**2. As a shopper I want to be able to	view individual destinations/products so that I can identify the price, description, product rating and other details.**  
-
+- To view all the available products, the user can navigate to the products page via the landing page either by clicking on the menu links on the Navbar or SHOP NOW button on the landing page:  
+**2. As a shopper I want to be able to	view individual product so that I can identify the price, description, product rating and other details.**  
+- To view individual products and get more information about them, first the user need to go to produt list either by clicking the 'SHOP NOW' button
+on the landing page or menu links on the Navbar.
+- Clicking on the image of the product to be viewed will take the user to the details page of that product where user can see avaiable sizes, prices, description and customer revies of the product.
 
 **3. As a shopper I want to be able to	easily view my shopping cart total at any time so that I can avoid spending to much.**  
-- The total amount is shown at the top of the page below the shopping bag icon:  
-![shopping total]()
+- The total amount is shown at the top of the page below the shopping bag icon
 
 **4. As a shopper I want to be able to	find information about Matzone online shop so that I can learn more about its products and offers.**  
 - The user can navigate to the about page by clicking the link in the navbar:  
 
-**5. As a shopper I want to be able to	contact the site owner/company so that I can get answer to my questions or get more information about certain things.**  
+**5. As a shopper I want to be able to	contact the site owner/business so that I can get answer to my questions or get more information about certain things.**  
 - The user can navigate to the contact page by clicking the link in the navbar.    
-- There the user can fill in a contact form.  
+- There the user can fill in a contact form and send it to the site owner/business.  
 
 **6. As a shopper I want to be able to	see reviews on the products so that I can make a better decision which product to buy.**  
-- On the individual product page, the user can scroll down to view reviews:  
-![product review]()   
-
+- On the individual product page, the user can scroll down to view reviews:    
 
 ### Registration and User Accounts:
 **8. As a user I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
-- When a user is logged in they can go to a product page and click the 'Write Review' button. A form will appear where they can add their review.  
-![add review form]()  
+- When a user is logged in they can go to a product page and click the 'Write Review' button. A form will appear where they can add their review.   
 - When a user is logged in and the review is theirs, an edit button and a delete icon is shown on their review:  
-![edit review button]()  
 - If they click the edit button, they will be redirected to the edit review page and alter the form to edit their review:  
-![edit review form]()  
 - If they click the delete icon a modal pops up to confirm if they want to delete their review:  
-![delete review confirmation]()  
 
 **9. As a user I want to be able to	easily register for an account so that I can have a personal account and be able to view my profile.**  
-- A user can click the 'MY ACCOUNT' navlink and then click 'SIGN UP' to register for an account (See #13 for the user profile page):  
-![sign up link]()  
-- There the user can fill in the sign up form:  
-![sign up form]() 
+- A user can click the 'My Account' navlink and then click 'Sign Up' to register for an account    
+- There the user can fill in the sign up form  
 
 **10. As a user I want to be able to easily login or logout so that I can access my account and personal account information.**  
-- A user can click the 'MY ACCOUNT' navlink and then click 'SIGN IN' to sign in:  
-![sign in link]()  
-- When a user is logged in, they can click the 'MY ACCOUNT' navlink and click on 'LOG OUT':  
-![sign out link]()  
+- A user can click the 'My Account' navlink and then click 'Sign In' to sign in:  
+- When a user is logged in, they can click the 'My Account' navlink and click on 'Log Out':  
 
 **11. As a user I want to be able to easily reset my password in case I forget it so that I can recover access to my account when I forget my password.**  
 - On the sign in page (see above) there is a 'Forgot Password?' link:  
-![forgot password link]()  
 - After clicking the link, the user will be redirected to a password recover page, where they can fill in the form to reset their password:  
-![reset password form]() 
 
 **12. As a user I want to be able to receive some kind of confirmation after registering so that I can confirm that my account registration was successful.**  
 - After registration a confirmation email is sent to the address that is given.  
-![confirmation email]() 
-![confirmation email header]()   
-![confirmation email message]()    
 
 **13. As a user I want to be able to have a personalised user profile so that I can view my personal order history and update my personal account information and see my reviews.**  
-- When a user is logged in, they can click on 'MY ACCOUNT' and then on 'my profile' to go to their personal profile page:  
-![profile page link]()  
-- On that page they have an overview of their delivery information, order history and reviews:  
-![profile page overview]()   
-For large screens   
-![profile page overview]()  
-For smaller screens the order history and reviews are in accordeons.  
-- The user can update their delivery information by editing the form. Or they can go to the product they reviewed by clicking the 'Go to product' button.  
+- When a user is logged in, they can click on 'My Account' and then on 'My Profile' to go to their personal profile page:  
+- On that page they have an overview of their delivery information, order history and reviews:    
+- The user can update their delivery information by editing the form.   
 
 ### Sorting and Searching:
 **14. As a shopper I want to be able to	sort products by category so that I can narrow down my search.**  
 - On the shop page the user can sort product by category, by clicking the relevant button for large screens.  
-![sort category large screen]()
 - For smaller screens the user can sort by category by selecting the relevant category from the dropdown button.  
-![sort category small screen]() 
 
 **15. As a shopper I want to be able to	filter the list of products by rating, price, name and category so that I can choose a product better.**  
-- On the shop page, the user can click on the 'sort by' button and select a filter by which they want the products to be filtered.  
-![filter options]()  
+- On the shop page, the user can click on the 'sort by' combo box and select a filter by which they want the products to be filtered.  
 
 **16. As a shopper I want to be able to	search for a product by keywords, such as name or description so that I can find a specific product I’d like to purchase.**  
-- The user can click on the search icon at the top of the page and enter a search term. All products name, category and description are queried by the search term:  
-![search icon]()   
+- The user can click on the search icon at the top of the page and enter a search term. All products name, category and description are queried by the search term.  
 
 **17. As a shopper I want to be able to	easily see what I’ve searched for and the number of results so that I can see whether the product I want is available.**  
 - When a user enters makes a query, the search term and the number of results are shown above the results.  
-![query results]()  
 
 ### Purchasing and Checkout:  
 **18. As a shopper I want to be able to view items and their details in my shopping bag so that I can see what I will purchase and what the total cost is.**  
-- After a user has enter an item in their shopping bag, they can click on the 'GO TO SECURE CHECKOUT' button in the toast card     
-![checkout succes button]()   
-or click on the shopping bag icon at the top of the page, to go to their shopping bag.  
-![shopping bag icon]() 
+- After a user has enter an item in their shopping bag, they can click on the 'GO TO SECURE CHECKOUT' button in the toast card or click on the shopping bag icon at the top of the page, to go to their shopping bag.  
 - On the shopping bag page the details of the items are shown, including the total cost.  
-![shopping bag overview]() 
 
 **19. As a shopper I want to be able to update items in my bag so that I can easily make changes to my purchase before checkout.**  
 - On the shopping bag page each item has an option to change the quantity. This is done by clicking the + or - buttons and then click 'update'.   
-![update quantity buttons]() 
-- The user also has the option to delete an item. This is done by clicking the bin icon and then confirm the delete in the modal popup.  
+- The user also has the option to delete an item. This is done by clicking the bin icon.  
 
 **20. As a shopper I want to be able to easily enter my payment information so that I can check out quickly and with no hassles.**  
 - On the shopping bag page, the user can click on the 'secure checkout' button to go the checkout page.  
-![secure checkout button]() 
 - On the checkout page, the user has to fill in their delivery information and payment details.  
-![checkout form]() 
 
 **21. As a shopper I want to be able to view an order confirmation after checkout so that I can verify that I haven’t made any mistakes.**  
 - After a successful payment, the user is redirected to the checkout success page, where an overview is shown.  
-![order confirmation overview]()  
 
 **22. As a shopper I want to be able to receive an email confirmation after checking out, so that I can keep the details of what I’ve purchased for my records.**  
 - After a succesful payment an email is sent to user containing and overview of their purchase.  
-![order confirmation email]()  
 
 ### Admin and Store Management:  
 **23. As an admin I want to be able to add a product so that I can add new items to my store.**  
-- When logged in, the admin can go the the 'product management' page by clicking 'my account' and then 'product management' in the navbar.  
-![product management link]()  
+- When logged in, the admin can go the the 'product management' page by clicking 'My Account' and then 'Product Management' in the navbar.   
 - The product management page has a form where the admin can add new products.  
-![add product form]()  
 
 **24. As an admin I want to be able to edit/update product so that I can change and update my products.**  
-- The admin can go to the edit product page by clicking the 'edit' button of the item they want to edit on the shop page:  
-![edit product button shop page]()  
-or on the 'edit' button on the indivual product page.  
-![edit product button individual page]()  
+- The admin can go to the edit product page by clicking the 'edit' button of the item they want to edit on the products page or on the 'edit' button on the indivual product page.  
 - The edit product page has a prefilled form where the admin can edit the product.  
-![edit product form]()  
 
 **25. As an admin I want to be able to delete a product so that I can remove items that are no longer for sale.**  
-- The admin can delete product by clicking the 'delete' button of the item they want to delete on the shop page  
-![add product form]()  
-or by clicking on the 'delete' button on the individual product page.  
-![add product form]()  
+- The admin can delete product by clicking the 'delete' button of the item they want to delete on the shop page or by clicking on the 'delete' button on the individual product page.  
 
-
+---------END OF TEST -----
 ## Manual testing features
 **Responsiveness**   
 See [below](#testing-responsiveness) for responsive testing.  
