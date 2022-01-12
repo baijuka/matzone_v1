@@ -762,7 +762,7 @@ To achieve this follow these steps:
 - [Brennan Tymrak](https://www.brennantymrak.com/articles/django-dynamic-formsets-javascript) - Dynamically Add Forms in Django with Formsets and JavaScript 
 - [Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs) - Porduct Review and Rating 
 - [Stack Overflow](https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number) - Regular expression to match standard 10 digit phone number
-- [Codemy.com](https://www.youtube.com/watch?v=N-PB-HMFmdo - Pagination For Django )
+- [Codemy.com](https://www.youtube.com/watch?v=wY_BNsxCEi4) - Pagination For Django )
 
 ### **Content**
 
