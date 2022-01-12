@@ -760,7 +760,7 @@ To achieve this follow these steps:
 
 - [How to Customize Django Admin](https://www.youtube.com/watch?v=yEJH6sZFsAY&list=PLgnySyq8qZmrxJvJbZC1eb7PD4bu0a-sB&index=7&t=252s) - Banners and featured products
 
-- [Add a Custom Favicon to your Django Web App](https://www.ordinarycoders.com/blog/article/add-a-custom-favicon-to-your-django-web-app) - add favicon to the site
+- Porduct Reviw and Rating [by Rathan Kuamr](https://www.youtube.com/watch?v=Zkmu93lMLPs)
 
 ### **Content**
 
