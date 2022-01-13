@@ -115,7 +115,7 @@ def checkout(request):
             user = request.user
             user_data = get_object_or_404(UserProfile, user=request.user)
             order_form = OrderForm()
-            order_form.initial['full_name'] = user.first_name + ' '+ user.last_name
+            order_form.initial['full_name'] = user_data.default_full_name
             order_form.initial['email'] = user.email
             order_form.initial['phone_number'] = user_data.default_phone_number
             order_form.initial['street_address1'] = user_data.default_street_address1
@@ -154,6 +154,7 @@ def checkout_success(request, order_number):
 
         if save_info:
             profile_data = {
+                'default_full_name': order.full_name,
                 'default_phone_number': order.phone_number,
                 'default_country': order.country,
                 'default_postcode': order.postcode,
