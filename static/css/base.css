@@ -331,6 +331,12 @@ footer {
     #pdetail {
         margin-top: 100px !important;
     }
+    #id-review {
+        width: 100px;
+        font-size: small;
+        margin-left: 0;
+        padding-left: 0;
+    } 
 }
 
 

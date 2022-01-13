@@ -75,6 +75,35 @@
                     </table>
                 </div>
             </div>
+            <div id= "id-review" class="col-12 col-lg-8">
+                <p class="text-muted" style="font-weight: bold;">My Reviews</p>
+                <div>
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Date</th>
+                                <th>Subject</th>
+                                <th>Review</th>
+                                <th>Rating</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rev in reviews %}
+                                <tr>
+                                    <td>{{ rev.product }}</td>
+                                    <td>{{ rev.updated_at }}</td>
+                                    <td>{{ rev.subject }}</td>
+                                    <td>{{ rev.review }}</td>
+                                    <td>{{ rev.rating }}</td>
+                                    <td>Edit</td>
+                                    <td>Delete</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 {% endblock %}
