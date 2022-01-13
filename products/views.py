@@ -228,6 +228,13 @@ def edit_review(request, review_id):
             form = ReviewForm(request.POST, instance=review)       
             if form.is_valid():
                 form.save()
+                messages.success(request, 'Your review is \
+                    edited successfully!')
+            else:
+                messages.error(request, 'Failed to edit review. \
+                    Please ensure the form is valid.')
+
+            return redirect(reverse('profile'))
         else:
             form = ReviewForm(instance=review)
             messages.info(request, f'You are editing {review.product}')
@@ -239,3 +246,23 @@ def edit_review(request, review_id):
         }
 
         return render(request, template, context)
+
+
+@login_required
+def delete_review(request, review_id):
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only logged in users can \
+            delete a review.')
+        return redirect(reverse('login'))
+
+    if request.user.is_authenticated:
+        review = get_object_or_404(Review, pk=review_id)
+
+        if request.user:
+            review.delete()
+            messages.success(request, 'Your review has been deleted.')
+            return redirect(reverse('profile'))
+        else:
+            messages.error(request, 'Cannot delete review, \
+                this is not your review')
+            return redirect(reverse('profile'))

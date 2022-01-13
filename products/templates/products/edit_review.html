@@ -29,20 +29,38 @@
                     {% csrf_token %}
                     <h5 style="color: rgb(161, 108, 9);">{{review.product}}</h5>
                     <div>
-						<label>How do you rate this product?</label>
+                        {% if product.image %}
+                            <img src="{{  product.image.url }}" alt="Product Image" style="width: 100px; height: auto;">
+                        {% else %}
+                            <img src="{{ MEDIA_URL }}noimage.png" alt="Product Image" style="width: 100px; height: auto;">
+                        {% endif %}
+                    </div>
+                    <div>
+						
 						<br>
+                        <h6>Current Rating</h6>
+                        <div class="rating-star">
+                            <span style="color: #f8d50f;">
+                                <i class="fa fa-star{% if review.rating < 1 %}-o {% endif %}" aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating < 2 %}-o {% endif %}" aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating < 3 %}-o {% endif %}" aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating < 4 %}-o {% endif %}" aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating < 5 %}-o {% endif %}" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <label>How do you rate this product?</label>
+                        <br>
 						<div class="rate">
 							<input type="radio" name="rating" id="rating5" value="5" required /><label for="rating5" title="5"></label>
 							<input type="radio" name="rating" id="rating4" value="4" required /><label for="rating4" title="4"></label>
 							<input type="radio" name="rating" id="rating3" value="3" required /><label for="rating3" title="3"></label>
 							<input type="radio" name="rating" id="rating2" value="2" required /><label for="rating2" title="2"></label>
-							<input type="radio" name="rating" id="rating1" value="1" required /><label for="rating1" title="1"></label>
+							<input type="radio" name="rating" id="rating1" value="1" checked required /><label for="rating1" title="1"></label>
 						</div>
                         <br>
                         
                             {{ form.subject | as_crispy_field }}
                             {{ form.review | as_crispy_field }}
-                            {{ form.rating | as_crispy_field }}
                         
 					</div>        
 				
