@@ -46,8 +46,8 @@ on the landing page or menu links on the Navbar.
 
 ### Registration and User Accounts:
 **8. As a user I want to be able to	add, edit and delete my own review so that I can let others/the site owner know my experience and help other users.**  
-- When a user is logged in they can go to a product page and click the 'Write Review' button. A form will appear where they can add their review.   
-- When a user is logged in and the review is theirs, an edit button and a delete icon is shown on their review:  
+- When a user is logged in they can go to a product detail page and click the 'RATE AND REVIEW THIS PRODUCT' button. A form will appear where they can add their review.   
+- When a user is logged in they can see their reviews in their profiles page, an edit button and a delete icon is shown on their review:  
 - If they click the edit button, they will be redirected to the edit review page and alter the form to edit their review:  
 - If they click the delete icon a modal pops up to confirm if they want to delete their review:  
 
@@ -66,7 +66,7 @@ on the landing page or menu links on the Navbar.
 **12. As a user I want to be able to receive some kind of confirmation after registering so that I can confirm that my account registration was successful.**  
 - After registration a confirmation email is sent to the address that is given.  
 
-**13. As a user I want to be able to have a personalised user profile so that I can view my personal order history and update my personal account information and see my reviews.**  
+**13. As a user I want to be able to have a personalised user profile so that I can view my personal order history and update my personal account information and My Reviews.**  
 - When a user is logged in, they can click on 'My Account' and then on 'My Profile' to go to their personal profile page:  
 - On that page they have an overview of their delivery information, order history and reviews:    
 - The user can update their delivery information by editing the form.   

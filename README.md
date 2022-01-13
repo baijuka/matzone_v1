@@ -182,8 +182,7 @@ redirected to the home page. There is a button to the register page, in case the
 
 - **The profile page:**  
 This is the personal page of the user. Here the user can see and edit their shipping information, 
-see an overview of their orders (with a link to that order) and any reviews they have written 
-(with a link to that product).
+see an overview of their orders (with a link to that order) and any reviews they have written.
 
 - **The product management page:**  
 On this page, the admin can add a new product or  product by filling in the form. After submitting the admin 
@@ -303,7 +302,7 @@ admin to delete a product.
 - A form that allows users to log in to the site, by filling in the log in form on the signin page.
 - A form that allows users to get in contact with the website owner, by filling in the contact form on the contact page.
 - A form that allows users to edit their delivery information, by filling out/editing the default delivery information form on their profile page.
-- A form that allows users to add a review for a product by filling in the add review form their profile page.  
+- A form that allows users to add a review for a product by filling in the add review form the product details page.  
 - A form the allows users to edit their review for a product by filling in the edit review form edit review page.
 - A form that allows the admin to add a new product, by filling in the form on the product management page.
 - A form that allows the admin to edit a product, by editing the prefilled form on the product management page.
