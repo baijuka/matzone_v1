@@ -96,8 +96,12 @@
                                     <td>{{ rev.subject }}</td>
                                     <td>{{ rev.review }}</td>
                                     <td>{{ rev.rating }}</td>
-                                    <td>Edit</td>
-                                    <td>Delete</td>
+                                    <td class="ml-3">
+                                        <a href="">Edit</a>
+                                    </td>
+                                    <td class="ml-3">
+                                        <a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a>
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
