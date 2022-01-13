@@ -140,7 +140,6 @@ def edit_product(request, product_id):
         instance = get_object_or_404(Product, id=product_id)   
         form = ProductForm(request.POST or None, request.FILES or None, instance=instance)
         formset = variationFormset(instance=product)
-        #formset1 = variationFormset()
 
         messages.info(request, f'You are editing {product.name}')
 
@@ -148,7 +147,6 @@ def edit_product(request, product_id):
     context = {
         'form': form,
         'formset': formset,
-        #'formset1': formset1,
         'product': product,
     }
 
@@ -214,4 +212,30 @@ def add_review(request, product_id):
         messages.error(request, 'Sorry, only logged in users can \
             leave a review.')
         return redirect(reverse('login'))
-        
+
+
+@login_required
+def edit_review(request, review_id):
+
+    if not request.user.is_authenticated:
+        messages.error(request, 'Sorry, only logged in users can \
+            edit a review.')
+        return redirect(reverse('login'))
+
+    if request.user.is_authenticated:
+        review = get_object_or_404(Review, pk=review_id)
+        if request.method == 'POST':
+            form = ReviewForm(request.POST, instance=review)       
+            if form.is_valid():
+                form.save()
+        else:
+            form = ReviewForm(instance=review)
+            messages.info(request, f'You are editing {review.product}')
+
+        template = 'products/edit_review.html'
+        context = {
+            'form': form,
+            'review': review,
+        }
+
+        return render(request, template, context)

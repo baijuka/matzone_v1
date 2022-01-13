@@ -97,7 +97,7 @@
                                     <td>{{ rev.review }}</td>
                                     <td>{{ rev.rating }}</td>
                                     <td class="ml-3">
-                                        <a href="">Edit</a>
+                                        <a href="{% url 'edit_review' rev.id %}">Edit</a>
                                     </td>
                                     <td class="ml-3">
                                         <a class="text-danger" href=""><i class="fas fa-trash-alt"></i></a>

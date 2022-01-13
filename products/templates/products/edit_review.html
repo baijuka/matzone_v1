@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <hr>
+                <h5 class="text-muted">Edit your review here</h5>
+                <hr>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <form method="POST" action="{% url 'edit_review' review.id %}" class="form mb-2" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h5 style="color: rgb(161, 108, 9);">{{review.product}}</h5>
+                    <div>
+						<label>How do you rate this product?</label>
+						<br>
+						<div class="rate">
+							<input type="radio" name="rating" id="rating5" value="5" required /><label for="rating5" title="5"></label>
+							<input type="radio" name="rating" id="rating4" value="4" required /><label for="rating4" title="4"></label>
+							<input type="radio" name="rating" id="rating3" value="3" required /><label for="rating3" title="3"></label>
+							<input type="radio" name="rating" id="rating2" value="2" required /><label for="rating2" title="2"></label>
+							<input type="radio" name="rating" id="rating1" value="1" required /><label for="rating1" title="1"></label>
+						</div>
+                        <br>
+                        
+                            {{ form.subject | as_crispy_field }}
+                            {{ form.review | as_crispy_field }}
+                            {{ form.rating | as_crispy_field }}
+                        
+					</div>        
+				
+                <br>
+                    <div class="text-right" style="margin-bottom: 20px;">
+                        <a class="btn btn-outline-black rounded-0" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn btn-black rounded-0" type="submit">Submit Review</button>
+                    </div>
+                </form>
+            </div>            
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
