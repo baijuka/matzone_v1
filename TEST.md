@@ -116,10 +116,7 @@ on the landing page or menu links on the Navbar.
 **25. As an admin I want to be able to delete a product so that I can remove items that are no longer for sale.**  
 - The admin can delete product by clicking the 'delete' button of the item they want to delete on the shop page or by clicking on the 'delete' button on the individual product page.  
 
----------END OF TEST -----
 ## Manual testing features
-**Responsiveness**   
-See [below](#testing-responsiveness) for responsive testing.  
 
 **Register functionality**  
 Expected:   
@@ -134,13 +131,13 @@ Testing:
 6. Repeat steps 4 and 5 for username and password.
 7. Fill in an email address, a unique username and a password.
 8. Confirm that the message 'Verify your e-mail address' appears.
-9. Confirm that a toast message appears with the text 'Confirmation e-mail sent to X.' (X = your email address).
+9. Confirm that a toast message appears with the text 'Confirmation e-mail sent to user email address.
 10. Go to your email inbox and confirm an email was sent to confirm your email address.
 11. Click the link in the email.
 12. Confirm that you're redirected to a page to confirm your email address.
 13. Click the 'Confirm' button.
 14. Confirm you are redirected to the signin page.
-15. Confirm a success toast message appears with the text 'You have confirmed X.'.
+15. Confirm a success toast message appears with the text 'You have confirmed email address'.
 16. Log out by clicking the logout button in the navbar.
 17. Repeat the sign up process with the same details you entered before.
 18. Confirm that the message 'A user is already registered with this e-mail address.' appears.
@@ -164,7 +161,7 @@ Testing:
 9. Confirm that the message 'The username and/or password you specified are not correct.' appears.
 10. Fill in your username and password.
 11. Confirm you are redirected to your home page.
-12. Confirm a success toast appears with the text 'Successfully signed in as Y.' (Y is your username).
+12. Confirm a success toast appears with the text 'Successfully signed in as 'username'.
 
 Result:  
 A user can log in to the website by filling in the login form correctly.
@@ -194,14 +191,12 @@ A user can go to the search bar and search products by keyword (name or descript
 Testing:
 1. On any page, click the search icon at the top of the page.
 2. Confirm a search bar pops up.  
-3. Fill in the keyword 'lamp' in the search bar.
-4. Confirm that you are redirected to the shop page and the product 'Levitating Moon Lamp' is shown.
-5. Fill in the keyword 'paramount' in the search bar.
-6. Confirm that you are redirected to the shop page and the product 'Wireless headphones' is shown.
-7. Click on the image of the headphones to go to the product page.
-8. Confirm the word 'paramount' is in the description for the headphones.
-9. Fill in the keyword 'banana' in the search bar.
-10. Confirm that you are redirected to the shop page the message '0 Products found for "banana"' is displayed and no products are shown.  
+3. Fill in the keyword 'rubber' in the search bar.
+4. Confirm that you are redirected to the products page with all availabe 'rubber' products shown.
+5. Fill in the keyword 'coco' in the search bar.
+6. Confirm that you are redirected to the products page and all the 'coco' products are shown.
+7. Fill in the keyword 'kitchen' in the search bar.
+8. Confirm that you are redirected to the products page and all the products that have either kitchen in their name or description are shown.
 
 Result:  
 A user can go to the search bar and search products by keyword (name or description).  
@@ -211,11 +206,11 @@ Expected:
 A user can use the category buttons on the products page to display the products by category.
 
 Testing:
-1. Go to the products page and click on the 'Accessories' button if you're using a large screen or select 'Accessories' from the dropdown button if you're using a small screen.
-2. Confirm that only products with category 'Accessories' are displayed.
+1. Go to the products page and click on the 'Rubber Mats' and then 'Rubber Mat Rolls' menu item if you're using a large screen or select 'Rubber Mats' and then 'Rubber Mat Rolls' from the dropdown item if you're using a small screen.
+2. Confirm that only products with category 'Rubber Mat Rolls' are displayed.
 3. Repeat steps 1 and 2 for the other categories.
 4. Click on the 'All Products' button.
-5. Confirm that all recipes are displayed.
+5. Confirm that all categoy of mats are displayed.
 
 Result:  
 A user can use the category buttons on the products page to display the products by category.
@@ -239,12 +234,13 @@ Expected:
 A user can see special offers and is reminded to get that offer during shopping.
 
 Testing:  
-1. Go to any page and confirm that at the top of the page a banner is shown with the text 'FREE DELIVERY ON ORDERS OVER $50!'.  
-2. Go to the shop page, click the image of 'Manta Sleep Mask' to go to that product page.  
-3. Click 'Add to bag'.
-4. Confirm that the success toast message has the text 'Spend $10.01 more to get free delivery!' at the bottom.  
-5. Click on 'Go to secure checkout'.
-6. Confirm that the text 'You could get free delivery by spending just $10.01 more!' appears above the 'secure checkout' button.
+1. Go to any page and confirm that at the top of the page a banner is shown with the text 'FREE DELIVERY ON ORDERS OVER £50!'.  
+2. Go to the shop page, click the image of 'Dolphin O-Ring Rolls' to go to that product page. 
+3. Choosse size 1x7.5m. 
+4. Click 'Add to bag'.
+5. Confirm that the success toast message has the text 'Spend £9.10 more to get free delivery!' at the bottom.  
+6. Click on 'Go to secure checkout'.
+7. Confirm that the text 'You could get free delivery by spending just £9.10 more!' appears above the 'secure checkout' button.
 
 Result:  
 A user can see special offers and is reminded to get that offer during shopping.  
@@ -257,8 +253,8 @@ Testing:
 1. Go to any page.
 2. In the browser's address bar, remove or add one or more characters at the end and press enter.
 3. Confirm a message '404 page not found' is shown.
-4. Confirm there is a button 'Go back home' at the bottom of the page.
-5. Click the button and confirm you are redirected to the home page of the website.
+4. Confirm there is a button 'Back To Shopping' at the bottom of the page.
+5. Click the button and confirm you are redirected to the products page of the website.
 
 Result:  
 A user gets a error 404 page when a page can't be displayed and can get back by clickin a button.
@@ -291,19 +287,17 @@ When a user buys a product, the Stripe payment process is secure and working.
 
 **Confirmation modal**  
 Expected:  
-A modal asking the user to confirm their action pops up, when the user clicks a 'delete' button.
+A modal page asking the user to confirm their action pops up, when the user clicks a 'delete' button.
 
 Testing:
 1. Log in as admin.
 2. Go to the shop page and select any product.
 3. Click the 'Delete Product' button.
-4. Confirm a modal pops up that asks 'Are you sure you want to delete this product?'.
+4. Confirm  you are redirected to a page that asks you 'Are you sure you want to delete?'.
 5. Click 'no'.
 
 Result:  
-A modal asking the user to confirm their action pops up, when the user clicks a 'delete' button.
-
-> For confirmation modal of delete review, see below CRUD - User - Delete review.
+A modal page asking the user to confirm their action pops up, when the user clicks a 'delete' button.
 
 **Social icons**  
 Expected:  
@@ -339,6 +333,8 @@ Testing:
 Result:  
 The user can send the site owner a message by filling in the contact form.
 
+<<END OF TEST >>
+   
 #### CRUD (Create, Read, Update, Delete) functionality.
 > User:  
 **Add Review**  
