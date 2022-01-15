@@ -17,9 +17,9 @@ class ContactForm(forms.ModelForm):
             'message': 'Message',
         }
 
-        self.fields['first_name'].widget.attrs['autofocus'] = True
-        for field in self.fields:
-            placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'space-form rounded-0'
-            self.fields[field].label = False
+        # self.fields['first_name'].widget.attrs['autofocus'] = True
+        # for field in self.fields:
+        #     placeholder = placeholders[field]
+        #     self.fields[field].widget.attrs['placeholder'] = placeholder
+        #     self.fields[field].widget.attrs['class'] = 'space-form rounded-0'
+        #     self.fields[field].label = False

@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect, reverse
-from django.core.mail import send_mail
 from .models import Contact
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -43,7 +42,7 @@ def contact_submit(request):
                 subject,
                 body,
                 settings.DEFAULT_FROM_EMAIL,
-                [email],
+                ['baijuka@yahoo.com'],
                 fail_silently=False,
             )
 

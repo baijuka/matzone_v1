@@ -1,24 +1,36 @@
 {% extends "base.html" %}
 {% load static %}
-
+{% block extra_title %} - contact us {% endblock %}
 {% block extra_css %}
+    <link rel="stylesheet" href="{% static 'home/css/main.css' %}">
 {% endblock %}
 
-
-{% block content %}
-<div class="dark-overlay"></div>
-<div class="container-fluid">
-    <div class="row">
-        <div class="col">
-            <hr class="w-75 mx-auto">
-            <h1 class="display-4 text-center title">Contact Us</h1>
-            <hr class="w-75 mx-auto">
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
         </div>
     </div>
+{% endblock%}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
     <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="title mb-4 text-center">Contact Us</h2>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="form-container col-8 offset-2 p-5">
+    <form method="POST" class="was-validated" action="{% url 'contact_submit' %}">
+      {% csrf_token %}
+      <div class="row">
         <div class="col-12 col-md-6 mx-auto">
             <div class="mb-5">
-                <h6 class="text-muted">Please fill out the form below and we'll get back to
+                <h6>Please fill out the form below and we'll get back to
                     you as soon as possible.</h6>
                 <small class="text-muted"><i>* is a required field</i></small>
             </div>
@@ -26,11 +38,13 @@
                 {% csrf_token %}
                 {{ form|crispy }}
                 <div class="d-flex justify-content-end gap-4 py-5">
-                    <a href="{% url 'contact_submit' %}" class="btn btn-outline-light rounded-0">Cancel</a>
-                    <button class="btn btn-light rounded-0" type="submit">Send</button>
+                    <a href="{% url 'contact_submit' %}" class="btn btn-outline-light text-dark rounded-0">Cancel</a>
+                    <button class="btn btn-secondary rounded-0" type="submit">Send</button>
                 </div>
             </form>
         </div>
     </div>
+      <br>
+    </form>
 </div>
 {% endblock %}
