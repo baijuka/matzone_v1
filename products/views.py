@@ -181,6 +181,11 @@ def add_review(request, product_id):
     url = request.META.get('HTTP_REFERER')
 
     if request.user.is_authenticated:
+        review_exist = Review.objects.filter(user_profile__id=request.user.id, product__id=product_id)
+        if review_exist:
+            messages.error(request, 'You already reviewed this product.  To edit the review goto your Profile page and click Edit button')
+            return redirect(url)
+
         if request.method == 'POST':
             try:
                 reviews = Review.objects.get(user_profile__id=request.user.id, product__id=product_id)
