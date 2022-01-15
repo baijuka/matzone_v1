@@ -272,8 +272,5 @@ def delete_review(request, review_id):
         context = {
             'review': review,
         }
-            # messages.error(request, 'Cannot delete review, \
-            #     this is not your review')
-            # return redirect(reverse('profile'))
         return render(request, template, context)    
 

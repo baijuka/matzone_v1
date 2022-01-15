@@ -28,9 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = "DEVELOPMENT" in os.environ
-# DEBUG = True
 
-#ALLOWED_HOSTS = ['localhost', '0.0.0.0']
 ALLOWED_HOSTS = ['ms4-matzone-v1.herokuapp.com', 'localhost']
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-kumquat-parakeet-z36s5rb5.ws-eu23.gitpod.io']
@@ -109,8 +107,6 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
-
-#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
