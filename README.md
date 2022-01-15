@@ -115,8 +115,8 @@ Store Owner |Delete a product |Remove items that are no longer for sale
 3. The option to see reviews on products.
 4. The option to Create, Read, Edit and Delete (CRUD) own reviews.
 
-## <a name="structure"></a> Structure
-## **Structure Level**
+## <a name="structure"></a> Structure Level
+
 ### **Interaction Design and Information Design**
 The overall look is kept the same on each page as much as possible, to enhance single-use-learning:
 - The header and footer are kept mostly the same on each page.
@@ -147,7 +147,7 @@ The website has 19 pages, plus 3 error handler pages. Each page will have a navb
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
 The main navigation bar has links to home, products, shop, about, contact, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
-When the user is admin, an extra link for site managing is shown.  
+When the user is admin, an extra link for site administration is shown.  
 
 The footer has a section with contact the business and links to social media accounts.
 
@@ -182,7 +182,7 @@ redirected to the home page. There is a button to the register page, in case the
 
 - **The profile page:**  
 This is the personal page of the user. Here the user can see and edit their shipping information, 
-see an overview of their orders (with a link to that order) and any reviews they have written.
+see an overview of their orders (with a link to that order) and view, edit or delete their product reviews.
 
 - **The product management page:**  
 On this page, the admin can add a new product or  product by filling in the form. After submitting the admin 
@@ -234,30 +234,7 @@ Relational databases are widely used to store complex data.  Its primary key, fo
 
 ![Database](./static/wireframe/schemadiagram.png)
 
-## **Skeleton Level**
-### Wireframes
-- [Home Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/index.pdf)  
-- [Products Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-list.pdf)  
-- [Product Details Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-details.pdf)  
-- [About Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/about.pdf)  
-- [Product Management Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/product-management.pdf)  
-- [Contact Page](https://github.com/baijuka/matzone_v1/blob/main/static/wireframe/contact.pdf)  
-
---------------------
-**Interaction design:**
-* User friendly interface to ensure usability and to encourage the user to return
-* Responsive and visible links which change on hover to provide user feedback as they navigate the site
-* Ability to exit pop ups so a user is not forced to use the browser navigation tools
-
-**Information Architecture:**
-* Navigation bar at the top of the page
-* Footer at the bottom of the page - sticky to the bottom so it is only visible when the bottom of the page is reached
-* Responsive navigation bar - adjusting for mobile for ease of use
-* Responsive images to ensure they fit within the designated spaces, no matter what device is being used or the size of the screen
-* All features are appropriate size and responsive for mobile and desktop viewing
-* All information is appropriate and relative to the subject and not misleading or hard to find
-
-## <a name="skeleton"></a> Skeleton
+## <a name="skeleton"></a> Skeleton Level
 **Wireframes** for desktop, tablet and mobile deiveces were created using Balsamiq Desktop App.  
 -   Home Page Wireframe -<a href="./static/wireframe/index.pdf" target="_blank" >Home Page</a>
 -   About Page - <a href="./static/wireframe/about.pdf" target="_blank" >About</a>
@@ -328,6 +305,7 @@ admin to delete a product.
 - **Sharing option** via social media, email or other ways of communication.
 - **Deleting a profile**, when a user doesn't want to use the account anymore.
 - **Wishlisht** for users to save their favourite products.
+- **Inventory** for users to confirm the available stock and for the site owner to know the current stock level.
 
 
 
