@@ -260,14 +260,20 @@ def delete_review(request, review_id):
             delete a review.')
         return redirect(reverse('login'))
 
-    if request.user.is_authenticated:
+    # if request.user.is_authenticated:
+    if request.method == "POST":
         review = get_object_or_404(Review, pk=review_id)
+        review.delete()
+        messages.success(request, 'Your review has been deleted.')
+        return redirect(reverse('profile'))
+    else:
+        review = get_object_or_404(Review, pk=review_id)
+        template = 'products/delete_review.html'
+        context = {
+            'review': review,
+        }
+            # messages.error(request, 'Cannot delete review, \
+            #     this is not your review')
+            # return redirect(reverse('profile'))
+        return render(request, template, context)    
 
-        if request.user:
-            review.delete()
-            messages.success(request, 'Your review has been deleted.')
-            return redirect(reverse('profile'))
-        else:
-            messages.error(request, 'Cannot delete review, \
-                this is not your review')
-            return redirect(reverse('profile'))

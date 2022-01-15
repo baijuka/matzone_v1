@@ -105,8 +105,6 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-
-        
        
         #this is for prefill form
         if request.user.id == None:

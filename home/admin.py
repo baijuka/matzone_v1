@@ -7,6 +7,9 @@ class ContactAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'email',
+        'message',
+        'date_sent',
     )
+    ordering = ('-date_sent',)
 
 admin.site.register(Contact, ContactAdmin)

@@ -18,13 +18,10 @@ def add_to_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     size = None
-    print('POST values', request.POST)
     if 'product_size' in request.POST:
         product_variation = ProductVariation.objects.filter(product=product, price=float(request.POST['product_size']))
-        print('Product variation', list(product_variation)[0].size)
         size = list(product_variation)[0].size
     bag = request.session.get('bag', {})
-    print("bag:",bag)
     
 
     if size:
@@ -81,7 +78,6 @@ def adjust_bag(request, item_id):
             messages.success(request, f'Removed {product.name} from your bag')
 
     request.session['bag'] = bag
-    print("bag updated",bag)
     return redirect(reverse('view_bag'))
 
 
