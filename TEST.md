@@ -73,11 +73,11 @@ on the landing page or menu links on the Navbar.
 
 ### Sorting and Searching:
 **14. As a shopper I want to be able to	sort products by category so that I can narrow down my search.**  
-- On the shop page the user can sort product by category, by clicking the relevant button for large screens.  
+- On the products page the user can sort product by category, by clicking the relevant button for large screens.  
 - For smaller screens the user can sort by category by selecting the relevant category from the dropdown button.  
 
 **15. As a shopper I want to be able to	filter the list of products by rating, price, name and category so that I can choose a product better.**  
-- On the shop page, the user can click on the 'sort by' combo box and select a filter by which they want the products to be filtered.  
+- On the products page, the user can click on the 'sort by' combo box and select a filter by which they want the products to be filtered.  
 
 **16. As a shopper I want to be able to	search for a product by keywords, such as name or description so that I can find a specific product I’d like to purchase.**  
 - The user can click on the search icon at the top of the page and enter a search term. All products name, category and description are queried by the search term.  
@@ -114,7 +114,7 @@ on the landing page or menu links on the Navbar.
 - The edit product page has a prefilled form where the admin can edit the product.  
 
 **25. As an admin I want to be able to delete a product so that I can remove items that are no longer for sale.**  
-- The admin can delete product by clicking the 'delete' button of the item they want to delete on the shop page or by clicking on the 'delete' button on the individual product page.  
+- The admin can delete product by clicking the 'delete' button of the item they want to delete on the producs page or by clicking on the 'delete' button on the individual product page.  
 
 ## Manual testing features
 
@@ -235,7 +235,7 @@ A user can see special offers and is reminded to get that offer during shopping.
 
 Testing:  
 1. Go to any page and confirm that at the top of the page a banner is shown with the text 'FREE DELIVERY ON ORDERS OVER £50!'.  
-2. Go to the shop page, click the image of 'Dolphin O-Ring Rolls' to go to that product page. 
+2. Go to the products page, click the image of 'Dolphin O-Ring Rolls' to go to that product page. 
 3. Choosse size 1x7.5m. 
 4. Click 'Add to bag'.
 5. Confirm that the success toast message has the text 'Spend £9.10 more to get free delivery!' at the bottom.  
@@ -264,7 +264,7 @@ Expected:
 When a user buys a product, the Stripe payment process is secure and working.  
 
 Testing:  
-1. Go to the shop page and select a product and click 'add to bag'. 
+1. Go to the products page and select a product and click 'add to bag'. 
 2. Click the 'go to secure checkout' button and then the 'secure checkout' button.
 3. Fill in the delivery information form.
 4. For the credit card payment information use 4242 4242 4242 4242, any date in the future, any cvc number and any postcode and click 'complete order'.  
@@ -291,7 +291,7 @@ A modal page asking the user to confirm their action pops up, when the user clic
 
 Testing:
 1. Log in as admin.
-2. Go to the shop page and select any product.
+2. Go to the products page and select any product.
 3. Click the 'Delete Product' button.
 4. Confirm  you are redirected to a page that asks you 'Are you sure you want to delete?'.
 5. Click 'no'.
@@ -333,7 +333,6 @@ Testing:
 Result:  
 The user can send the site owner a message by filling in the contact form.
 
-<<END OF TEST >>
    
 #### CRUD (Create, Read, Update, Delete) functionality.
 > User:  
@@ -342,7 +341,7 @@ Expected:
 A new review is added when the user fills in the add review form.
 
 Testing:
-1. Log in and go to the shop page.
+1. Log in and go to the products page.
 2. Select any product and scroll down to Reviews.
 3. Click on the 'Write a review' button.
 4. Confirm a add review form is shown.
@@ -424,7 +423,7 @@ An existing product is edited when the admin fills in the edit product form.
 
 Testing:
 1. Log in as admin.
-2. Go to your shop page and select any product.
+2. Go to your products page and select any product.
 3. Confirm you are redirected to the product page.
 4. Confirm there is an 'Edit Product' button.
 5. Click the 'Edit Review' button and confirm you are redirected to the product management page.
@@ -444,7 +443,7 @@ A product is deleted when the user clicks on the 'DELETE' button of a product.
 
 Testing:
 1. Log in as admin.
-2. Go to your shop page and select any product.
+2. Go to your products page and select any product.
 3. Click the 'DELETE' button of one of your categories (tip: create a new test product first.).
 4. Confirm a modal pops up with the message 'Are you sure you want to delete this category?'
 5. Click 'YES'.

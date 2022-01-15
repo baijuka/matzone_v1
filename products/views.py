@@ -205,13 +205,20 @@ def add_review(request, product_id):
                     data.save()
                     messages.success(request, 'Thank you! Your review has been submitted.')
                     return redirect(reverse('products'))
+                else:
+                    messages.error(request, 'Failed to add review. \
+                        Please ensure the form is valid.')
+                    template = 'products/add_review.html'
+                    product = get_object_or_404(Product, id=product_id)
+                    context = {
+                        'product': product,
+                    }
         else:
             template = 'products/add_review.html'
             product = get_object_or_404(Product, id=product_id)
             context = {
                 'product': product,
             }
-        
         return render(request, template, context)
     else:
         messages.error(request, 'Sorry, only logged in users can \
