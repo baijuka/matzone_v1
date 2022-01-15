@@ -1,8 +1,12 @@
 from django.shortcuts import render, redirect, reverse
-from products.models import Product
+from django.core.mail import send_mail
 from .models import Contact
 from django.contrib import messages
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
+from .forms import ContactForm
 
 # Create your views here.
 
@@ -18,25 +22,44 @@ def about(request):
 
 
 def contact_submit(request):
-    """A view to return the contact page"""
     if request.method == "POST":
-        contact = Contact()
-        first_name = request.POST.get("firstname")
-        last_name = request.POST.get("lastname")
-        email = request.POST.get("email")
-        message = request.POST.get("message")
-        contact.first_name = first_name
-        contact.last_name = last_name
-        contact.email = email
-        contact.message = message
-        contact.save()
-        messages.success(
-            request,
-            f"Your message has been sent, thank you for contacting us!",
-        )
-    return redirect(reverse("home"))
+        contact_form = ContactForm(request.POST)
 
+        if contact_form.is_valid():
+            # Send email to customer
+            email = request.POST['email']
+            first_name = request.POST['first_name']
+            last_name = request.POST['first_name']
+            message = request.POST['message']
+            subject = ('We have receiced your message')
+            body = render_to_string('home/confirmation_emails/' +
+                                    'customer_confirmation_email.txt',
+                                    {'first_name': first_name,
+                                        'subject': subject,
+                                        'message': message,
+                                     })
 
-def contact_form(request):
-    """A view to render the contact form page"""
-    return render(request, "home/contact.html")
+            send_mail(
+                subject,
+                body,
+                settings.DEFAULT_FROM_EMAIL,
+                [email],
+                fail_silently=False,
+            )
+
+            # save message to database
+            contact_form.save()
+
+            messages.success(request, 'Your message was sent successfully!')
+            return redirect(reverse('contact_submit'))
+        else:
+            messages.error(request, 'Failed to send message. \
+                Please ensure the form is valid.')
+    else:
+        contact_form = ContactForm()
+
+        context = {
+            'form': contact_form,
+        }
+
+        return render(request, 'home/contact.html', context)

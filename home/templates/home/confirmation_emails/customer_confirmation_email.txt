@@ -1,0 +1,12 @@
+Dear {{ first_name }},
+
+We have received your message. 
+
+Your message is:
+{{ message }}
+
+We will get back to you as soon as possible.
+
+Kind regards,
+
+Matzone.
