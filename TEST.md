@@ -342,21 +342,21 @@ A new review is added when the user fills in the add review form.
 
 Testing:
 1. Log in and go to the products page.
-2. Select any product and scroll down to Reviews.
-3. Click on the 'Write a review' button.
+2. Double click to go to product detail page and scroll down to Reviews.
+3. Click on the 'Rate and review this product' button.
 4. Confirm a add review form is shown.
 5. Don't fill out the review form and click the 'Submit' button.
 6. Confirm a warning message appears.
-7. Fill in the review form, except the review title.
+7. Fill in the review form, except the review subject.
 8. Confirm a warning message appears.
-9. Repeat steps 6 and 7 for comment and rating.
+9. Repeat steps 6 and 7 for review and rating.
 10. Fill in the review form and the click the 'Submit' button.
-11. Confirm that a succes toast message appears with the text 'Review succesfully added!'
-12. Confirm you stay at the product page.
+11. Confirm that a succes toast message appears with the text 'Thank you! Your review has been submitted.'
+12. Confirm you stay at the products page.
 13. Scroll down and confirm that your review is added to the Reviews.
 
 Result:  
-A new recipe is added when the user fills in the add review form.
+A new review is added when the user fills in the add review form.
 
 **Edit review**  
 Expected:  
@@ -364,16 +364,14 @@ An existing review is edited when the user fills in the edit review form.
 
 Testing:
 1. Log in.
-2. Go to your profile page, go to 'My Reviews' and click the 'Go to Product' button.
-3. Confirm you are redirected to the product page and scroll down to Reviews.
-4. Confirm that your review has an 'Edit Review' button.
-5. Click the 'Edit Review' button and confirm you are redirected to the edit review page.
-6. Confirm the form is prefilled with the data of the existing review.
-7. Change any of the input fields.
-8. Click the 'Edit Review' button.
-9. Confirm that a succes toast message appears with the text 'Your review is edited successfully!'
-10. Confirm you are redirected to the product page.
-11. Scroll down to Reviews and confirm that your change is shown in the review.
+2. Go to your profile page, go to 'My Reviews' and click the 'Edit' button of an existing review.
+3. Confirm you are redirected to the edit review page.
+4. Confirm the form is prefilled with the data of the existing review.
+5. Change any of the input fields.
+6. Click the 'Update Review' button.
+7. Confirm that a succes toast message appears with the text 'Your review is edited successfully!'
+8. Confirm you are redirected to the profiles page.
+9. Scroll down to My Reviews section and confirm that your change is shown in the review.
 
 Result:  
 An existing review is edited when the user fills in the edit review form.
@@ -384,14 +382,13 @@ A review is deleted when the user clicks on the 'DELETE' icon of a review.
 
 Testing:
 1. Log in.
-2. Go to your profile page, go to 'My Reviews' and click the 'Go to Product' button.
-3. Confirm you are redirected to the product page and scroll down to Reviews.
-4. Confirm that your review has a 'Delete' icon.
-3. Click the 'delete' icon and confirm a modal pops up with the message 'Are you sure you want to delete this review?'
-4. Click 'Delete'.
-5. Confirm that a succes toast message appears with the text 'Your review has been deleted.'
-6. Confirm you stay at the product page.
-7. Scroll down to Reviews and confirm the review is deleted.
+2. Go to your profile page, go to 'My Reviews'.
+3. Confirm that your review has a 'Delete' icon.
+4. Click the 'delete' icon and confirm a modal pops up with the message 'Are you sure you want to delete this review?'
+5. Click 'Delete'.
+6. Confirm that a succes toast message appears with the text 'Your review has been deleted.'
+7. Confirm you stay at the profiles page.
+8. Scroll down to My Reviews section and confirm the review is deleted.
 
 Result:  
 A review is deleted when the user clicks on the 'DELETE' icon of a review.
@@ -407,7 +404,7 @@ Testing:
 3. Confirm you are redirected to the product management page.
 4. Don't fill out the form and click the 'Add Product' button.
 5. Confirm a warning message appears.
-6. Fill in the form, except the name field.
+6. Fill in the form, except the category field.
 7. Confirm a warning message appears.
 8. Repeat steps 6 and 7 for the other fields that are required.
 9. Fill in the review form and the click the 'Add Product' button.
@@ -444,8 +441,8 @@ A product is deleted when the user clicks on the 'DELETE' button of a product.
 Testing:
 1. Log in as admin.
 2. Go to your products page and select any product.
-3. Click the 'DELETE' button of one of your categories (tip: create a new test product first.).
-4. Confirm a modal pops up with the message 'Are you sure you want to delete this category?'
+3. Click the 'DELETE' button of one of your products.
+4. Confirm a modal pops up with the message 'Are you sure you want to delete this product?'
 5. Click 'YES'.
 6. Confirm that a succes toast message appears with the text 'Product deleted!'
 7. Confirm you are redirected to the products page.
@@ -468,35 +465,45 @@ You can validate the rendered page by:
 
 Or  
 - Enter the url of the Heroku live link.
-
-However, when authentication is used, the live link can't be used to validate the page.
-Furthermore, the live site of Heroku takes a while to update after committing.   
-Therefore I've opted to use the source code to render the pages.
+   
+I've opted to use the source code to render the pages.
 
 Running the code through the validator gives: 
-#### For about.html:
-- 3 errors and 1 warning three times are shown.  
 
-1. *Element `<hr>` not allowed as child of element `<ul>` in this context.*  
+W3C Markup Validation Service 
+#### For about.html:
+- No errors or warnings to show.  
+
+#### For products.html:
+1. *The type attribute is unnecessary for JavaScript resources.*  
 Fix:  
-You can't have header tags as children within a `<ul></ul>`, you can only have `<li>` elements as children.  
-So wrap the `<hr>` in `<li></li>`.  
-2. *No `<li>` element in scope but a `<li>` end tag seen.*  
-Fix:  
-Remove the extra `<li>` element.  
-3. *The aria-labelledby attribute must point to an element in the same document.*  
-The aria-labelledby doesn't point to a matching id. Add `id="offcanvasNavbarLabel"` to the `<h3>` in the offcanvas 
-component.  
-4. *The type attribute is unnecessary for JavaScript resources.*  
-Fix:  
-Up until html5 type was needed for the browser to distinguish between js and other text. With html5 it is no longer needed.
+Up until HTML5 type was needed for the browser to distinguish between js and other text. With HTML5 it is no longer needed.
 The default type for `<script>` tags is JavaScript, so you don’t need to include the type for JS resources.    
 Remove the `type="text/javascript"`.  
 This will be done for all the other scripts on other pages as well.  
 
+#### For product_detail.html:  
+1. *The type attribute is unnecessary for JavaScript resources.*  
+Fix:  
+Up until HTML5 type was needed for the browser to distinguish between js and other text. With HTML5 it is no longer needed.
+The default type for `<script>` tags is JavaScript, so you don’t need to include the type for JS resources.    
+Remove the `type="text/javascript"`.    
+
+#### For add_product.html:  
+1. *The type attribute is unnecessary for JavaScript resources.*  
+Fix:  
+Up until HTML5 type was needed for the browser to distinguish between js and other text. With HTML5 it is no longer needed.
+The default type for `<script>` tags is JavaScript, so you don’t need to include the type for JS resources.    
+Remove the `type="text/javascript"`.  
+
+#### For edit_product.html:  
+- No errors or warnings to show. 
+
+#### For product_detail.html:  
+- No errors or warnings to show.  
+
 #### For bag.html:  
 - No errors or warnings to show.  
-    > Note: I've added a product to the bag first.  
 
 #### For checkout.html:  
 - No errors or warnings to show.  
@@ -510,115 +517,12 @@ This will be done for all the other scripts on other pages as well.
 #### For index.html:
 - No errors or warnings to show.  
 
-#### For add_product.html:  
-- 2 errors are shown.  
-1. *Duplicate attribute id*  
-Fix:  
-The include of `include "django/forms/widgets/attrs.html"` already has an id attribute in there.  
-`Select Image <input id="new-image" type="{{ widget.type }}" name="{{ widget.name }}"{% include "django/forms/widgets/attrs.html" %}>`  
-So remove the `id="new-image"` from the select image.  
-2. *Element p not allowed as child of element strong in this context.*  
-Fix:  
-remove `<strong>`.  
-
-#### For edit_product.html:  
-- 2 errors are shown.  
-
-1. *Duplicate attribute class.*  
-Fix:  
-Remove the merge the 2 classes into 1 class.  
-2. *An img element must have an alt attribute, except under certain conditions.*  
-Fix:  
-Add an alt to the img element in custom_clearable_file_input.html.   
-
-#### For products.html:  
-- 2 errors and 2 warnings are shown 5 times.  
-
-1. *Duplicate ID confirmDelete.*  
-Fix:  
-Create unique id's by adding the product id to delete modals by use of Jinja notation:  
-`id="confirmDelete{{ product.id }}"`  
-2. *Duplicate ID exampleModalLabel.*  
-Fix:  
-Create unique id's by adding the product id to to `<h6>` by use of Jinja notation:  
-`id="exampleModalLabel{{ product.id }}"`  
-> This has been done on other pages with similar forms as well.  
-#### For product_detail.html:  
-
-1. *Attribute placeholder not allowed on element select at this point.*  
-Fix:  
-Remove the placeholder from the select element by deleting `self.fields['rating'].widget.attrs['placeholder'] = 'Add your rating'` from the review model.  
-
-#### For products.html:  
+#### For profile.html:  
 - No errors or warnings to show.  
 
-#### For product_detail.html:  
+#### For add_review.html:  
+- No errors or warnings to show.  
 
-1. *Duplicate ID id_title*
-Partial Fix:  
-Crispy forms renders the title field with it's own id based on the input title.
-According to the django crispy forms docs you can change the id of the fields (label and input/select) by changing the
-attribute in the forms.py.  
-So I decided to make a second class named EditReviewForm and change the id's in there:  
-    ```
-    class EditReviewForm(forms.ModelForm):
-        """ Create a form fro users to add a review """
-        class Meta:
-            model = Review
-            fields = ('title', 'comment', 'rating')
-            widgets = {
-                'title': forms.TextInput(attrs={'id': 'edit_title'}),
-                'comment': forms.Textarea(attrs={'id': 'edit_comment'}),
-                'rating': forms.Select(attrs={'id': 'edit_rating'}),
-            }
-        ...
-    ```  
-I changed the form rendering on reviews.html:  
-    ```
-    {% csrf_token %}
-    <div class="div">
-        {{ review_edit_form.title|as_crispy_field }}
-    </div>
-    <div class="div">
-        {{ review_edit_form.comment|as_crispy_field }}
-    </div>
-    <div class="div">
-        {{ review_edit_form.rating|as_crispy_field }}
-    </div>
-    ```  
-This fixes the duplicate ID's for the input and select fields.  
-However, the duplicate ID's for the `<div>`'s are still there.  
-Add Picture
-After a long session with Tutoring we still couldn't fix the error.  
-To be on the safe side and to make the page pass the W3C validation, I've decided to put the edit review option on a different page.    
-After creating a separate edit review page no more errors or warnings are shown.  
-
-#### For profile.html:  
-- 1 error is shown.  
-Add picture
-1. *Attribute placeholder not allowed on element select at this point*  
-Fix:  
-The form is rendering a placeholder for the country select element. So the select element for country shouldn't get a placeholder. 
-Upon inspecting the forms.py in profile. I noticed that all elements get a placeholder with respective name due to:  
-    ```
-    for field in self.fields:
-        if field != 'default_country':
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-        self.fields[field].widget.attrs['placeholder'] = placeholder
-    ```
-So the to not give the country element a placeholder, the last line should be inside the `if field != 'default_country':` statement.  
-    ```
-    for field in self.fields:
-        if field != 'default_country':
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-    ```
 #### For edit_review.html:  
 - No errors or warnings to show.  
 
@@ -637,23 +541,19 @@ So the to not give the country element a placeholder, the last line should be in
 #### For 500.html:
 - No errors or warnings to show. 
 
----
 ### CSS  
 [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) is used to check the CSS of the web document.
 Running the code through the validator gives:
 #### For base.css:
 - No errors are found. 
 
-#### For checkout.css:  
+#### For custom.css:  
 - No errors are found.  
 
-#### For product.css:  
+#### For main.css:  
 - No errors are found.  
 
-#### For profile.css:  
-- No errors are found.
 
----
 ### Javascript  
 [JSHint](https://jshint.com/) is used to check the validity of the Javascript of the web document.  
 It is recommended to add **`/* jshint esversion: 6 */`** at the top of the .js file to tell JSHint that your code uses ECMAScript 6 specific syntax.  
@@ -665,7 +565,10 @@ Running the code through the validator gives:
 #### For countryfield.js:
 - No errors or warnings are shown.  
 
----
+#### For price.js:
+- No errors or warnings are shown.  
+
+--- END OF TEST --
 ### Python  
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
 Due to the large amound of python files, I'll only mention the files with big errors or warnings, leaving out the 
