@@ -568,14 +568,11 @@ Running the code through the validator gives:
 #### For price.js:
 - No errors or warnings are shown.  
 
---- END OF TEST --
 ### Python  
 [PEP8 online](http://pep8online.com/) is used to check the python code for PEP8 requirements.
-Due to the large amound of python files, I'll only mention the files with big errors or warnings, leaving out the 
-whitespace or line to long errors.
-Before checking the app.py file, I tried to remove as many mistakes beforehand, such as extra whitespaces, maximum
-code line length of 72, correct line breaks, etc.  
-- No large errors were found.
+
+I have tested the code in the pep8online.com and and refactored the code and tested again. 
+- No major errors were found after refactroing.
 
 ---
 ## Testing browser compatibility
