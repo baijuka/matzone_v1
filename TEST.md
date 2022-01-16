@@ -596,6 +596,41 @@ To test the responsiveness of the website, I've used Chrome Dev Tools by:
 The testing was done on widths down to a screen resolution of 280px.  
 All the elements on each page were checked.  
 
-No issues arrose.
+### **Tested devices**
+- iPhone SE
+- iPhone XR
+- iPhone 12 Pro
+- Pixel 5
+- Samsung Galaxy S8+
+- Samsung Galaxy S20 Ultra
+- iPad Air
+- iPad Mini
+- Surface Pro 7
+- Surface Prod Duo
+- Galaxy Gold
+- Samsung Galaxy A51/71
+- Nest Hub
+- Nest Hub Max
 
-## Bugs and problems
+### **Bugs and problems**
+
+Shopping bag quantiy field was not clearly visible on few of the above devices
+
+Fix: 
+Added media queries as follows:
+```
+    @media screen and (max-width: 855px) and (min-width: 390px) {
+        #bag-adjust {
+            display: table-caption;
+        }
+```
+
+Even though problem solved, I found following devices have minor issues and decided to leave as it is for the time being
+
+- iPhone SE 
+   * In shopping bag page quantiy field a bit sticks out to the right
+- Samsung Galaxy S8+
+   * In shopping bag page quantiy field a bit sticks out to the right
+- Galaxy Fold
+   * In shopping bag page does not fit within the width of the device, scrolls to right
+- On some other devices Remove button in the shopping bag page is not aligned to the left 
