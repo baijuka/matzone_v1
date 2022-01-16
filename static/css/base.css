@@ -386,7 +386,17 @@ footer {
         margin-left: 0;
         padding-left: 0;
     } 
+
+    #bag-container {
+        padding-left: 2px;
+    }
 }
 
+@media screen and (max-width: 855px) and (min-width: 390px) {
+    #bag-adjust {
+        display: table-caption;
+    }
+
+}
 
 
