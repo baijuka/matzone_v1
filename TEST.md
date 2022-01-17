@@ -1,7 +1,7 @@
 Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/README.md)
 
 # **Testing**
-## [Table of Contents]
+## Table of Contents
 - [Testing User stories](#testing-user-stories)  
     * [Viewing and navigation](#viewing-and-navigation)
     * [Registration and User Accounts](#registration-and-user-accounts)
