@@ -624,7 +624,7 @@ All the elements on each page were checked.
 Solution: 
 Added media queries as follows in `base.css`:
 ```
-    @media screen and (max-width: 855px) and (min-width: 390px) {
+    @media screen and (max-width: 855px) and (min-width: 290px) {
         #bag-adjust {
             display: table-caption;
         }
