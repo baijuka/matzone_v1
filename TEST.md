@@ -1,7 +1,7 @@
 Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/README.md)
 
 # **Testing**
-## [Table of Contents](#contents)
+## [Table of Contents]
 - [Testing User stories](#testing-user-stories)  
     * [Viewing and navigation](#viewing-and-navigation)
     * [Registration and User Accounts](#registration-and-user-accounts)
@@ -685,4 +685,4 @@ It matches the following example:
 
 I have decided to leave the above issues for the time being as I am approaching the deadline and to be fixed in the future version of the project. 
 
-[Back to contents](#contents)
+[Back to contents](#table-of-contents)
