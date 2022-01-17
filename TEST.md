@@ -1,7 +1,7 @@
 Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/README.md)
 
 # **Testing**
-## Table of Contents
+## [Table of Contents](#contents)
 - [Testing User stories](#testing-user-stories)  
     * [Viewing and navigation](#viewing-and-navigation)
     * [Registration and User Accounts](#registration-and-user-accounts)
@@ -334,8 +334,8 @@ Result:
 The user can send the site owner a message by filling in the contact form.
 
    
-#### CRUD (Create, Read, Update, Delete) functionality.
-> User:  
+### CRUD (Create, Read, Update, Delete) functionality.
+User:  
 **Add Review**  
 Expected:  
 A new review is added when the user fills in the add review form.
@@ -511,6 +511,9 @@ Remove the `type="text/javascript"`.
 #### For checkout_success.html:
 - No errors or warnings to show.  
 
+#### **Stripe webhooks testing**
+
+![stripe webhooks testing](static/wireframe/stripe-webhook.png)
 #### For contact.html:  
 - No errors or warnings to show.  
 
@@ -614,10 +617,12 @@ All the elements on each page were checked.
 
 ### **Bugs and problems**
 
-Shopping bag quantiy field was not clearly visible on few of the above devices
+**Responsive issues**
 
-Fix: 
-Added media queries as follows:
+*Bug* - Shopping bag quantiy field was not clearly visible on few of the above devices
+
+Solution: 
+Added media queries as follows in `base.css`:
 ```
     @media screen and (max-width: 855px) and (min-width: 390px) {
         #bag-adjust {
@@ -634,3 +639,50 @@ Even though problem solved, I found following devices have minor issues and deci
 - Galaxy Fold
    * In shopping bag page does not fit within the width of the device, scrolls to right
 - On some other devices Remove button in the shopping bag page is not aligned to the left 
+
+ **Checkout form validation**
+
+*Bug* - Phone number input Field allowed non numeric charaters upon submission.
+
+*Solution*
+
+On search at [stackoverflow](https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number) I could found a solution which uses regular expression to match standard 10 digit phone number
+
+Add Regular Expression in `form.py`:
+
+```
+self.fields["phone_number"].widget.attrs.update(
+            {
+                "pattern": "^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"
+            }
+        )
+```
+It matches the following example:
+
+```
+18005551234
+1 800 555 1234
++1 800 555-1234
++86 800 555 1234
+1-800-555-1234
+1 (800) 555-1234
+(800)555-1234
+(800) 555-1234
+(800)5551234
+800-555-1234
+800.555.1234
+800 555 1234x5678
+8005551234 x5678
+1    800    555-1234
+1----800----555-1234
+```
+
+### **Unresolved Issues**
+
+- Add product functionality does not accept more than one image attach to the product.
+- Edit product functionality comes up with the option to add only one product variation at a time.  If you don't have a product variation to add you need to check delete box to delete the empty form before submitting the edit form.
+- Shopping bag has some minor responsive issues on few devices.
+
+I have decided to leave the above issues for the time being as I am approaching the deadline and to be fixed in the future version of the project. 
+
+[Back to contents](#contents)
