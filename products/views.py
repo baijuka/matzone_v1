@@ -31,7 +31,7 @@ def all_products(request):
                 if direction == 'desc':
                     sortkey = f'-{sortkey}'
             products = products.order_by(sortkey)
-            
+
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
@@ -40,10 +40,12 @@ def all_products(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "You didn't enter any search criteria!")
+                messages.error(
+                    request, "You didn't enter any search criteria!")
                 return redirect(reverse('products'))
-            
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+
+            queries = Q(
+                name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
     current_sorting = f'{sort}_{direction}'
@@ -80,9 +82,10 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
     variation_formset = formset_factory(ProductVariationForm, extra=1)
-    
+
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have permission to access this page.")
+        messages.error(
+            request, "Sorry, you don't have permission to access this page.")
         return redirect(reverse('home'))
 
     if request.method == 'POST':
@@ -99,11 +102,12 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+            Please ensure the form is valid.')
     else:
         form = ProductForm()
         formset = variation_formset()
-                
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -117,15 +121,18 @@ def add_product(request):
 def edit_product(request, product_id):
     """ Edit a product in the store """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have permission to access this page.")
+        messages.error(request, "Sorry, you don't have permission \
+        to access this page.")
         return redirect(reverse('home'))
-        
+
     product = get_object_or_404(Product, id=product_id)
-    variationFormset = inlineformset_factory(Product, ProductVariation, fields="__all__", extra=1)
+    variationFormset = inlineformset_factory(
+        Product, ProductVariation, fields="__all__", extra=1)
     formset = variationFormset(instance=product)
- 
+
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES or None, instance=product)       
+        form = ProductForm(
+            request.POST, request.FILES or None, instance=product)
         formset = variationFormset(request.POST, instance=product)
         if form.is_valid():
             form.save()
@@ -135,10 +142,12 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to update product. \
+            Please ensure the form is valid.')
     else:
-        instance = get_object_or_404(Product, id=product_id)   
-        form = ProductForm(request.POST or None, request.FILES or None, instance=instance)
+        instance = get_object_or_404(Product, id=product_id)
+        form = ProductForm(
+            request.POST or None, request.FILES or None, instance=instance)
         formset = variationFormset(instance=product)
 
         messages.info(request, f'You are editing {product.name}')
@@ -157,7 +166,8 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product from the store """
     if not request.user.is_superuser:
-        messages.error(request, "Sorry, you don't have permission to access this page.")
+        messages.error(request, "Sorry, you don't have permission \
+        to access this page.")
         return redirect(reverse('home'))
 
     if request.method == "POST":
@@ -173,25 +183,29 @@ def delete_product(request, product_id):
         }
     return render(request, template, context)
 
-    
-#Credit : https://www.youtube.com/watch?v=eIN1nZCt7Ww
+
+# Credit : https://www.youtube.com/watch?v=eIN1nZCt7Ww
 
 @login_required
 def add_review(request, product_id):
     url = request.META.get('HTTP_REFERER')
 
     if request.user.is_authenticated:
-        review_exist = Review.objects.filter(user_profile__id=request.user.id, product__id=product_id)
+        review_exist = Review.objects.filter(
+            user_profile__id=request.user.id, product__id=product_id)
         if review_exist:
-            messages.error(request, 'You already reviewed this product.  To edit the review goto your Profile page and click Edit button')
+            messages.error(request, 'You already reviewed this product.  \
+            To edit the review goto your Profile page and click Edit button')
             return redirect(url)
 
         if request.method == 'POST':
             try:
-                reviews = Review.objects.get(user_profile__id=request.user.id, product__id=product_id)
+                reviews = Review.objects.get(
+                    user_profile__id=request.user.id, product__id=product_id)
                 form = ReviewForm(request.POST, instance=reviews)
                 form.save()
-                messages.success(request, 'Thank you! Your review has been updated.')
+                messages.success(request, 'Thank you! Your \
+                review has been updated.')
                 return redirect(reverse('products'))
             except Review.DoesNotExist:
                 form = ReviewForm(request.POST)
@@ -203,7 +217,8 @@ def add_review(request, product_id):
                     data.product_id = product_id
                     data.user_profile_id = request.user.id
                     data.save()
-                    messages.success(request, 'Thank you! Your review has been submitted.')
+                    messages.success(request, 'Thank you! \
+                    Your review has been submitted.')
                     return redirect(reverse('products'))
                 else:
                     messages.error(request, 'Failed to add review. \
@@ -237,7 +252,7 @@ def edit_review(request, review_id):
     if request.user.is_authenticated:
         review = get_object_or_404(Review, pk=review_id)
         if request.method == 'POST':
-            form = ReviewForm(request.POST, instance=review)       
+            form = ReviewForm(request.POST, instance=review)
             if form.is_valid():
                 form.save()
                 messages.success(request, 'Your review is \
@@ -279,5 +294,4 @@ def delete_review(request, review_id):
         context = {
             'review': review,
         }
-        return render(request, template, context)    
-
+        return render(request, template, context)

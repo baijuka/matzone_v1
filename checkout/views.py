@@ -1,4 +1,5 @@
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import (
+    render, redirect, reverse, get_object_or_404, HttpResponse)
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -68,8 +69,10 @@ def checkout(request):
                         )
                         order_line_item.save()
                     else:
-                        for items_by_size, quantity in item_data['items_by_size'].items():
-                            psize = ProductVariation.objects.get(size=items_by_size,product=product)
+                        for items_by_size, quantity in \
+                          item_data['items_by_size'].items():
+                            psize = ProductVariation.objects.get(
+                                size=items_by_size, product=product)
                             order_line_item = OrderLineItem(
                                 order=order,
                                 product=product,
@@ -80,21 +83,24 @@ def checkout(request):
                             order_line_item.save()
                 except Product.DoesNotExist:
                     messages.error(request, (
-                        "One of the products in your bag wasn't found in our database. "
+                        "One of the products in your bag wasn't \
+                        found in our database. "
                         "Please call us for assistance!")
                     )
                     order.delete()
                     return redirect(reverse('view_bag'))
 
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(reverse(
+                'checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:
-            messages.error(request, "There's nothing in your bag at the moment")
+            messages.error(
+                request, "There's nothing in your bag at the moment")
             return redirect(reverse('products'))
 
         current_bag = bag_contents(request)
@@ -105,8 +111,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
-       
-        #this is for prefill form
+        # this is for prefill form
         if request.user.id == None:
             order_form = OrderForm()
         else:
@@ -116,13 +121,14 @@ def checkout(request):
             order_form.initial['full_name'] = user_data.default_full_name
             order_form.initial['email'] = user.email
             order_form.initial['phone_number'] = user_data.default_phone_number
-            order_form.initial['street_address1'] = user_data.default_street_address1
-            order_form.initial['street_address2'] = user_data.default_street_address2
+            order_form.initial['street_address1'] = \
+                user_data.default_street_address1
+            order_form.initial['street_address2'] = \
+                user_data.default_street_address2
             order_form.initial['town_or_city'] = user_data.default_town_or_city
             order_form.initial['postcode'] = user_data.default_postcode
             order_form.initial['country'] = user_data.default_country
-            order_form.initial['county'] = user_data.default_county         
-
+            order_form.initial['county'] = user_data.default_county
     if not stripe_public_key:
         messages.warning(request, 'Stripe public key is missing. \
             Did you forget to set it in your environment?')

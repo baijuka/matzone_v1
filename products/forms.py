@@ -4,9 +4,11 @@ from .models import Product, Category, ProductVariation, Review
 
 
 class ProductForm(forms.ModelForm):
-    category = forms.ModelChoiceField(required=True, queryset=Category.objects.all())
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
-    
+    category = forms.ModelChoiceField(
+        required=True, queryset=Category.objects.all())
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput)
+
     class Meta:
         model = Product
         fields = '__all__'
@@ -17,13 +19,13 @@ class ProductForm(forms.ModelForm):
             field.widget.attrs['class'] = 'border-black rounded-0'
 
 
-class ProductVariationForm(forms.ModelForm): 
+class ProductVariationForm(forms.ModelForm):
     class Meta:
         model = ProductVariation
         fields = ('size', 'price', 'stock')
 
+
 class ReviewForm(forms.ModelForm):
     class Meta:
         model = Review
-        fields = ['subject','review', 'rating']
-
+        fields = ['subject', 'review', 'rating']

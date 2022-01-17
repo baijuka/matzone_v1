@@ -1,6 +1,6 @@
 from products.models import Product, ProductVariation
 from django.contrib import messages
-from django.shortcuts import(
+from django.shortcuts import (
  render, redirect, reverse, HttpResponse, get_object_or_404)
 
 

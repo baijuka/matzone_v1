@@ -37,7 +37,8 @@ class OrderForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'stripe-style-input'
             self.fields[field].label = False
-        # Credit: https://stackoverflow.com/questions/16699007/regular-expression-to-match-standard-10-digit-phone-number
+        # Credit: https://stackoverflow.com/questions/16699007/
+        # regular-expression-to-match-standard-10-digit-phone-number
         self.fields["phone_number"].widget.attrs.update(
             {
                 "pattern": "^\s*(?:\+?(\d{1,3}))?[-. (]*(\d{3})[-. )]*(\d{3})[-. ]*(\d{4})(?: *x(\d+))?\s*$"

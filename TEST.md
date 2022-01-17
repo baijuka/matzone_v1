@@ -283,7 +283,11 @@ Testing:
 
 Result:  
 When a user buys a product, the Stripe payment process is secure and working.
->Note: for extensive testing of Stripe see their guide on [testing](https://stripe.com/docs/testing)
+>Note: for more information about testing see the stripe document on [testing](https://stripe.com/docs/testing)
+
+#### **Stripe webhooks testing**
+
+![stripe webhooks testing](static/wireframe/stripe-webhook.png)
 
 **Confirmation modal**  
 Expected:  
@@ -511,9 +515,6 @@ Remove the `type="text/javascript"`.
 #### For checkout_success.html:
 - No errors or warnings to show.  
 
-#### **Stripe webhooks testing**
-
-![stripe webhooks testing](static/wireframe/stripe-webhook.png)
 #### For contact.html:  
 - No errors or warnings to show.  
 
