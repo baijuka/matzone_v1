@@ -410,7 +410,7 @@ Committing to GitHub is done as follow:
         ```
         python3 manage.py loaddata products
         ```  
-	And then the productvariations:  
+        And then the productvariations  
         ```
         python3 manage.py loaddata productvariations
         ```
