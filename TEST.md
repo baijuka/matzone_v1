@@ -680,6 +680,7 @@ It matches the following example:
 - Add product functionality does not accept more than one image attach to the product.
 - Edit product functionality comes up with the option to add only one product variation at a time.  If you don't have a product variation to add you need to check delete box to delete the empty form before submitting the edit form.
 - Shopping bag has some minor responsive issues on few devices.
+- A logged user can review the product they did not buy.  
 
 I have decided to leave the above issues for the time being as I am approaching the deadline and to be fixed in the future version of the project. 
 
