@@ -21,11 +21,9 @@ Go back to the [README file](https://github.com/baijuka/matzone_v1/blob/main/REA
 
 ## Testing user stories
 ### Viewing and navigation:
-
-## Testing user stories
-### Viewing and navigation:
 **1. As a shopper I want to be able to	view a list of products so that I can see what is available.**
-- To view all the available products, the user can navigate to the products page via the landing page either by clicking on the menu links on the Navbar or SHOP NOW button on the landing page:  
+- To view all the available products, the user can navigate to the products page via the landing page either by clicking on the menu links on the Navbar or SHOP NOW button on the landing page
+  
 **2. As a shopper I want to be able to	view individual product so that I can identify the price, description, product rating and other details.**  
 - To view individual products and get more information about them, first the user need to go to produt list either by clicking the 'SHOP NOW' button
 on the landing page or menu links on the Navbar.
@@ -38,7 +36,7 @@ on the landing page or menu links on the Navbar.
 - The user can navigate to the about page by clicking the link in the navbar:  
 
 **5. As a shopper I want to be able to	contact the site owner/business so that I can get answer to my questions or get more information about certain things.**  
-- The user can navigate to the contact page by clicking the link in the navbar.    
+- The user can navigate to the contact page by clicking the link in the navbar or in the footer.    
 - There the user can fill in a contact form and send it to the site owner/business.  
 
 **6. As a shopper I want to be able to	see reviews on the products so that I can make a better decision which product to buy.**  
@@ -56,19 +54,19 @@ on the landing page or menu links on the Navbar.
 - There the user can fill in the sign up form  
 
 **10. As a user I want to be able to easily login or logout so that I can access my account and personal account information.**  
-- A user can click the 'My Account' navlink and then click 'Sign In' to sign in:  
-- When a user is logged in, they can click the 'My Account' navlink and click on 'Log Out':  
+- A user can click the 'My Account' navlink and then click 'Sign In' to sign in.  
+- When a user is logged in, they can click the 'My Account' navlink and click on 'Log Out'.  
 
 **11. As a user I want to be able to easily reset my password in case I forget it so that I can recover access to my account when I forget my password.**  
-- On the sign in page (see above) there is a 'Forgot Password?' link:  
-- After clicking the link, the user will be redirected to a password recover page, where they can fill in the form to reset their password:  
+- On the sign in page (see above) there is a 'Forgot Password?' link.  
+- After clicking the link, the user will be redirected to a password recover page, where they can fill in the form to reset their password.  
 
 **12. As a user I want to be able to receive some kind of confirmation after registering so that I can confirm that my account registration was successful.**  
 - After registration a confirmation email is sent to the address that is given.  
 
 **13. As a user I want to be able to have a personalised user profile so that I can view my personal order history and update my personal account information and My Reviews.**  
-- When a user is logged in, they can click on 'My Account' and then on 'My Profile' to go to their personal profile page:  
-- On that page they have an overview of their delivery information, order history and reviews:    
+- When a user is logged in, they can click on 'My Account' and then on 'My Profile' to go to their personal profile page.  
+- On that page they have an overview of their delivery information, order history and reviews.    
 - The user can update their delivery information by editing the form.   
 
 ### Sorting and Searching:
@@ -397,7 +395,7 @@ Testing:
 Result:  
 A review is deleted when the user clicks on the 'DELETE' icon of a review.
 
-> Admin  
+Admin:  
 **Add Product**  
 Expected:  
 A new product is added when the admin fills in the add product form.
@@ -472,9 +470,8 @@ Or
    
 I've opted to use the source code to render the pages.
 
-Running the code through the validator gives: 
+W3C Markup Validation Service result:
 
-W3C Markup Validation Service 
 #### For about.html:
 - No errors or warnings to show.  
 
