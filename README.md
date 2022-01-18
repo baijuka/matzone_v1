@@ -242,6 +242,8 @@ Relational databases are widely used to store complex data.  Its primary key, fo
 -   Product Detail Page - <a href="./static/wireframe/product-details.pdf" target="_blank" >Product Detail</a>
 -   Contact Page - <a href="./static/wireframe/contact.pdf" target="_blank" >Contact</a>
 -   Product Management Page - <a href="./static/wireframe/product-management.pdf" target="_blank" >Product Management</a>
+-   Product Review Page - <a href="./static/wireframe/review.pdf" target="_blank" >Review</a>
+
 
 
 ## <a name="surface"></a> Surface

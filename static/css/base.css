@@ -120,8 +120,8 @@ footer {
     text-align: center;
     position: absolute; 
     margin-left: 0 ; 
-    margin-right: 0; 
-    bottom: 0; 
+    margin-right: 0;
+    margin-top: 8%;  
   }
   .social {
     font-size: 1.5rem;
@@ -399,4 +399,9 @@ footer {
 
 }
 
+@media screen and (max-width: 1180px) and (min-width: 750px) {
+    footer {
+        margin-top: 45%;
+    }
 
+}
