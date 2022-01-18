@@ -99,11 +99,11 @@ Store Owner |Delete a product |Remove items that are no longer for sale
 9. A contact page with contact form where users can contact the site’s owner.
 10. Individual pages for products to display its details.
 11. Indication/banner for offers or deals.
-12. A shopping cart icon with relevant info that is displayed at all times.
+12. A shopping cart icon with relevant info that is displayed all the time.
 13. An admin page with options to Create, Read, Edit and Delete (CRUD) products.
 14. An option to search the site.
 15. An option to filter and sort.
-16. An indication of search term and numbers of results.
+16. An indication of search term and number of results.
 17. A checkout page with details on the shopping items.
 18. An option to adjust items in the shopping bag.
 19. Secure checkout via Stripe payment.
@@ -145,7 +145,7 @@ leads back to the home page.
 	FRONTEND
 The website has 19 pages, plus 3 error handler pages. Each page will have a navbar and a footer.
 The links in the navigation bar are shown depending on whether a user is logged in or not and if the user is the admin or not.
-The main navigation bar has links to home, products, shop, about, contact, account, shopping basket and search.
+The main navigation bar has links to home, products, about, contact, account, shopping basket and search.
 When a user is logged in, the register and login links are hidden and a profile link and logout link are shown.
 When the user is admin, an extra link for site administration is shown.  
 
@@ -163,7 +163,7 @@ the name of the product, base price, rating and a link to the individual product
 
 - **The product details page:**  
 This is where the individual product is displayed. The user can get more information about the  product, 
-like description and price. There is an option to choose the size and quantiy of the product to be purchased.
+like description, size and price. There is an option to choose the size and quantiy of the product to be purchased.
 
 - **The about page:**  
 This page has a short description about the website and the background of the  products.
@@ -189,7 +189,7 @@ On this page, the admin can add a new product or  product by filling in the form
 is redirected to the individual page of the added product.
 
 - **The edit product page:**  
-On this page, the admin can edit an existing product by editing the pre filled form. After submitting the admin is redirected to the individual
+On this page, the admin can edit an existing product by editing the pre-filled form. After submitting the admin is redirected to the individual
 page of the updated product.
 
 - **The delete product confirmation page:**  
@@ -208,8 +208,8 @@ After submitting the form, the user gets a confirmation email. The order summary
 This page is shown when the payment was successfull. It has an overview of the order, delivery details and payment details. 
 
 - **The order history page:**  
-This page is used to display the history orders made by each individual user. Users should be logged in to view this page and can be accessed 
-thorugh My Profile link.
+This page is used to display the history of orders made by each individual user. Users should be logged in to view this page and can be accessed 
+through My Profile link.
 
 - **The review page:**  
 This page is intented for logged in users to add product rating and reviews. 
@@ -257,7 +257,7 @@ stability and seriousness.
 ## **Existing Features**
 
 - **Responsiveness** on all viewports, which allows users to use the website on all devices.
-- A **navigation bar**, which allows users to easily navigate the website. On devices below 992px, part of the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
+- A **navigation bar**, which allows users to easily navigate the website. On small and medium devices, part of the navbar collapses into a hamburger menu, to reduce the real estate and to create a cleaner, calmer look.
 - **Register functionality**, which allows users to create an account, by filling in the register form. 
 - **Login functionality**, which allows users to log in their account, by filling in the login form. 
 - **Logout functionality**, which allows users to log out of their account, by clicking the logout button.
@@ -276,7 +276,7 @@ admin to delete a product.
 
 **Forms**  
 - A form that allows users to register for an account, by filling in the sign up form on the signup page.
-- A form that allows users to log in to the site, by filling in the log in form on the signin page.
+- A form that allows users to log in to the site, by filling in the log in form on the sign in page.
 - A form that allows users to get in contact with the website owner, by filling in the contact form on the contact page.
 - A form that allows users to edit their delivery information, by filling out/editing the default delivery information form on their profile page.
 - A form that allows users to add a review for a product by filling in the add review form the product details page.  
@@ -406,10 +406,14 @@ Committing to GitHub is done as follow:
         ```
         python3 manage.py loaddata categories
         ```  
-        And then the products:  
+        Then the products:  
         ```
         python3 manage.py loaddata products
         ```  
+	And then the productvariations:  
+        ```
+        python3 manage.py loaddata productvariations
+        ```
     
 3. **Create a superuser**  
     - Type: `python3 manage.py createsuperuser`  
