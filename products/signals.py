@@ -6,7 +6,6 @@ from .models import Product, ProductVariation, Review
 
 @receiver(post_save, sender=ProductVariation)
 def update_baseprice(sender, instance, created, **kwargs):
-
     instance.product.update_baseprice()
 
 
