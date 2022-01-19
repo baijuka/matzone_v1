@@ -34,7 +34,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
 
     def update_baseprice(self):
-        self.baseprice = self.variations.aggregate(
+        self.baseprice = variations.aggregate(
             Min('price'))['price__min'] or 0
         self.save()
 
