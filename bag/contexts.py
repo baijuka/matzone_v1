@@ -24,7 +24,6 @@ def bag_contents(request):
             for size, quantity in item_data['items_by_size'].items():
                 product_variation = list(ProductVariation.objects.filter(
                     product=product, size=size))[0]
-                print('product variaton in bag today', product_variation.price)
                 total += quantity * product_variation.price
                 product_count += quantity
                 bag_items.append({
