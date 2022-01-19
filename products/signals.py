@@ -5,13 +5,12 @@ from .models import Product, ProductVariation, Review
 
 
 @receiver(post_save, sender=ProductVariation)
-def update_baseprice(sender, instance, created, **kwargs):
-
+def update_on_save(sender, instance, created, **kwargs):
     instance.product.update_baseprice()
 
 
 @receiver(post_delete, sender=ProductVariation)
-def update_baseprice(sender, instance, **kwargs):
+def update_on_delete(sender, instance, **kwargs):
     instance.product.update_baseprice()
 
 

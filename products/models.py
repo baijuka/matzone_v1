@@ -39,8 +39,7 @@ class Product(models.Model):
         self.save()
 
     def update_rating(self):
-        self.rating = float(self.reviews.aggregate(
-            Avg('rating'))['rating__avg']) or 0
+        self.rating = float(self.reviews.aggregate(Avg('rating'))['rating__avg']) or 0
         self.save()
 
     def __str__(self):
