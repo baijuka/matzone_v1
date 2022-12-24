@@ -178,7 +178,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# THE FOLLOWING LINES OF CODE IS DISABLED DUE TO THE EXPIRATION OF AWS FREE TIER.
+# THE FOLLOWING LINES OF CODE ARE DISABLED DUE TO THE EXPIRATION OF AWS FREE TIER.
+###########################################################################
 # if 'USE_AWS' in os.environ:
 #    AWS_S3_OBJECT_PARAMETERS = {
 #        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
